@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0E1620">
+  <title>lucid — Lo real, para todos.</title>
+  <meta name="description" content="Plataforma argentina para invertir en activos reales: inmuebles, bonos, acciones y franquicias. Con respaldo a la vista y renta clara.">
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=zodiak@400,401,700,701&f[]=switzer@400,500,600,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+  <!-- =========================================================== Pill nav flotante -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__pill">
+      <a href="#top" class="site-header__wordmark" aria-label="lucid, ir al inicio">
+        lucid
+      </a>
+      <nav class="site-header__nav" aria-label="Navegación principal">
+        <a href="#manifiesto" class="site-header__link">Qué es</a>
+        <a href="#verticales" class="site-header__link">Mundos</a>
+        <a href="#respaldo" class="site-header__link">Respaldo</a>
+      </nav>
+      <a href="app.html" class="site-header__cta">Ingresar</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========================================================= HERO
+         "Tokenized assembly": el fondo se arma delante de los ojos
+         del usuario — cientos de cuadraditos (unidades fraccionadas)
+         que empiezan dispersos por la pantalla y migran a sus
+         posiciones en una grilla. Metáfora del producto: cada celda
+         es una parte; todas juntas forman el fondo sobre el que se
+         planta el wordmark. El nombre queda limpio en el centro. -->
+    <section class="hero-brand" aria-labelledby="hero-wordmark">
+      <h1 class="visually-hidden" id="hero-wordmark">lucid</h1>
+      <div class="hero-mesh" aria-hidden="true">
+        <svg class="hero-mesh__svg" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+    </section>
+
+    <!-- ========================================================= TAGLINE (INTEGRAL)
+         La frase se ve completa en una vista, con mezcla tipográfica
+         dentro de la misma línea:  Lo (roman) · real, (bold italic ámbar)
+         · para todos. (regular italic).  La palabra "real," queda como
+         ancla visual — que es exactamente el argumento de Lucid. -->
+    <section class="tagline-block" aria-labelledby="tagline-title" id="tagline">
+      <div class="tagline-block__inner">
+        <div class="tagline-block__aurora" aria-hidden="true"></div>
+        <h2 class="tagline" id="tagline-title" aria-label="Lo real, para todos.">
+          <span class="tagline__line" aria-hidden="true">
+            <span class="tagline__word tagline__word--roman">Lo</span>
+            <span class="tagline__word tagline__word--brand">real,</span>
+          </span>
+          <span class="tagline__line" aria-hidden="true">
+            <span class="tagline__word tagline__word--italic">para todos.</span>
+          </span>
+        </h2>
+        <span class="tagline__caption" aria-hidden="true">— Manifiesto · Lucid 2026</span>
+      </div>
+    </section>
+
+    <!-- ========================================================= MANIFIESTO -->
+    <section class="manifesto" id="manifiesto" aria-labelledby="manifesto-title">
+      <div class="manifesto__inner">
+        <p class="manifesto__text" id="manifesto-title">
+          Una plataforma argentina para invertir en <em>activos reales tokenizados</em> — inmuebles, bonos, acciones y franquicias. Fraccionados y registrados digitalmente, con respaldo legal a la vista y renta clara en dólares.
+        </p>
+        <p class="manifesto__signature">— El equipo de lucid, Buenos Aires, 2026.</p>
+      </div>
+    </section>
+
+    <!-- ========================================================= COMPROMISO
+         Dato ancla: convierte la promesa abstracta en compromiso concreto.
+         Con sello monograma "l." — actúa como acta / estampilla notarial. -->
+    <section class="anchor" aria-labelledby="anchor-title">
+      <div class="anchor__inner">
+        <span class="anchor__mark" aria-hidden="true">l<span class="anchor__mark-dot">.</span></span>
+        <span class="anchor__eyebrow" id="anchor-title">Compromiso</span>
+        <p class="anchor__text">
+          Primera propiedad · <em>Departamento en Palermo, CABA</em> · Q4 2026
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================= MUNDOS
+         Cada RWA es una pantalla completa. Ilustración editorial SVG a la
+         derecha (blueprint / gráfico / grilla / mapa según el mundo),
+         texto a la izquierda. Fondo levemente teñido con el color del mundo. -->
+    <section class="worlds" id="verticales" aria-label="Los cuatro mundos">
+
+      <!-- ============= 01 · Propiedades ================================ -->
+      <article class="world world--propiedades" aria-labelledby="w1-title">
+        <div class="world__inner">
+          <div class="world__marker" aria-hidden="true">01 <span>/ 04</span></div>
+
+          <div class="world__content">
+            <span class="world__overline">
+              <span class="world__number">01</span> · Propiedades
+            </span>
+            <h3 class="world__title" id="w1-title">El ladrillo, <em>en pedacitos.</em></h3>
+            <p class="world__desc">Comprá tu parte de departamentos, locales y edificios argentinos. Cobrás renta mensual en dólares y ves la escritura desde el primer día.</p>
+            <div class="world__action">
+              <span class="world__status">
+                <span class="world__status-dot" aria-hidden="true"></span> Muy pronto
+              </span>
+              <form class="notify-form" data-notify="propiedades" novalidate>
+                <input class="notify-form__input" type="email" name="email" required placeholder="Tu correo" aria-label="Correo para avisarte de Propiedades">
+                <button class="notify-form__submit" type="submit">Avisame</button>
+                <span class="notify-form__success" role="status">✓ Te avisamos</span>
+              </form>
+            </div>
+          </div>
+
+          <div class="world__visual" aria-hidden="true">
+            <svg class="world__svg" viewBox="0 0 320 480" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Silueta del edificio -->
+              <rect x="40" y="40" width="240" height="400"/>
+              <!-- Separadores de piso -->
+              <line x1="40" y1="120" x2="280" y2="120"/>
+              <line x1="40" y1="200" x2="280" y2="200"/>
+              <line x1="40" y1="280" x2="280" y2="280"/>
+              <line x1="40" y1="360" x2="280" y2="360"/>
+              <!-- Ventanas de 4 pisos superiores -->
+              <rect x="70" y="60" width="40" height="50"/>
+              <rect x="140" y="60" width="40" height="50"/>
+              <rect x="210" y="60" width="40" height="50"/>
+              <rect x="70" y="140" width="40" height="50"/>
+              <rect x="140" y="140" width="40" height="50"/>
+              <rect x="210" y="140" width="40" height="50"/>
+              <rect x="70" y="220" width="40" height="50"/>
+              <rect x="140" y="220" width="40" height="50"/>
+              <rect x="210" y="220" width="40" height="50"/>
+              <rect x="70" y="300" width="40" height="50"/>
+              <rect x="140" y="300" width="40" height="50"/>
+              <rect x="210" y="300" width="40" height="50"/>
+              <!-- Planta baja: entrada + vidrieras -->
+              <rect x="70" y="380" width="55" height="40"/>
+              <rect x="195" y="380" width="55" height="40"/>
+              <rect x="140" y="370" width="40" height="70"/>
+              <!-- Marca de "tu parte" — piso 2, ventana central, coloreada -->
+              <rect class="world__svg-highlight" x="140" y="220" width="40" height="50" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============= 02 · Bonos ====================================== -->
+      <article class="world world--bonos" aria-labelledby="w2-title">
+        <div class="world__inner">
+          <div class="world__marker" aria-hidden="true">02 <span>/ 04</span></div>
+
+          <div class="world__content">
+            <span class="world__overline">
+              <span class="world__number">02</span> · Bonos
+            </span>
+            <h3 class="world__title" id="w2-title">Deuda argentina, <em>sin planilla.</em></h3>
+            <p class="world__desc">Bonos soberanos y corporativos accesibles desde un click. Vencimiento, cupón y rendimiento explicados en criollo, sin jerga bursátil.</p>
+            <div class="world__action">
+              <span class="world__status">
+                <span class="world__status-dot" aria-hidden="true"></span> Muy pronto
+              </span>
+              <form class="notify-form" data-notify="bonos" novalidate>
+                <input class="notify-form__input" type="email" name="email" required placeholder="Tu correo" aria-label="Correo para avisarte de Bonos">
+                <button class="notify-form__submit" type="submit">Avisame</button>
+                <span class="notify-form__success" role="status">✓ Te avisamos</span>
+              </form>
+            </div>
+          </div>
+
+          <div class="world__visual" aria-hidden="true">
+            <svg class="world__svg" viewBox="0 0 400 320" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Grilla de fondo (sutil) -->
+              <g class="world__svg-grid" opacity="0.35">
+                <line x1="40" y1="60" x2="360" y2="60"/>
+                <line x1="40" y1="120" x2="360" y2="120"/>
+                <line x1="40" y1="180" x2="360" y2="180"/>
+                <line x1="40" y1="240" x2="360" y2="240"/>
+                <line x1="120" y1="30" x2="120" y2="290"/>
+                <line x1="200" y1="30" x2="200" y2="290"/>
+                <line x1="280" y1="30" x2="280" y2="290"/>
+              </g>
+              <!-- Ejes -->
+              <line x1="40" y1="290" x2="360" y2="290"/>
+              <line x1="40" y1="30" x2="40" y2="290"/>
+              <!-- Curva de rendimiento -->
+              <path d="M 60 260 Q 140 240 200 180 T 340 60" stroke-width="1.8"/>
+              <!-- Puntos de datos -->
+              <circle class="world__svg-highlight" cx="60" cy="260" r="5" fill="currentColor" stroke="none"/>
+              <circle class="world__svg-highlight" cx="200" cy="180" r="5" fill="currentColor" stroke="none"/>
+              <circle class="world__svg-highlight" cx="340" cy="60" r="5" fill="currentColor" stroke="none"/>
+              <!-- Guías punteadas -->
+              <line x1="200" y1="290" x2="200" y2="180" stroke-dasharray="3 5" opacity="0.5"/>
+              <line x1="40" y1="180" x2="200" y2="180" stroke-dasharray="3 5" opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============= 03 · Acciones =================================== -->
+      <article class="world world--acciones" aria-labelledby="w3-title">
+        <div class="world__inner">
+          <div class="world__marker" aria-hidden="true">03 <span>/ 04</span></div>
+
+          <div class="world__content">
+            <span class="world__overline">
+              <span class="world__number">03</span> · Acciones
+            </span>
+            <h3 class="world__title" id="w3-title">Ser parte <em>de empresas argentinas.</em></h3>
+            <p class="world__desc">Participaciones en compañías locales que crecen y reparten resultados. Vas a ver los balances como si fueran tuyos — porque una parte lo es.</p>
+            <div class="world__action">
+              <span class="world__status">
+                <span class="world__status-dot" aria-hidden="true"></span> Muy pronto
+              </span>
+              <form class="notify-form" data-notify="acciones" novalidate>
+                <input class="notify-form__input" type="email" name="email" required placeholder="Tu correo" aria-label="Correo para avisarte de Acciones">
+                <button class="notify-form__submit" type="submit">Avisame</button>
+                <span class="notify-form__success" role="status">✓ Te avisamos</span>
+              </form>
+            </div>
+          </div>
+
+          <div class="world__visual" aria-hidden="true">
+            <svg class="world__svg" viewBox="0 0 400 400" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Grilla 8x8 = 64 celdas de participación -->
+              <rect x="40" y="40" width="320" height="320"/>
+              <line x1="80" y1="40" x2="80" y2="360"/>
+              <line x1="120" y1="40" x2="120" y2="360"/>
+              <line x1="160" y1="40" x2="160" y2="360"/>
+              <line x1="200" y1="40" x2="200" y2="360"/>
+              <line x1="240" y1="40" x2="240" y2="360"/>
+              <line x1="280" y1="40" x2="280" y2="360"/>
+              <line x1="320" y1="40" x2="320" y2="360"/>
+              <line x1="40" y1="80" x2="360" y2="80"/>
+              <line x1="40" y1="120" x2="360" y2="120"/>
+              <line x1="40" y1="160" x2="360" y2="160"/>
+              <line x1="40" y1="200" x2="360" y2="200"/>
+              <line x1="40" y1="240" x2="360" y2="240"/>
+              <line x1="40" y1="280" x2="360" y2="280"/>
+              <line x1="40" y1="320" x2="360" y2="320"/>
+              <!-- Tu parte: una celda destacada -->
+              <rect class="world__svg-highlight" x="160" y="160" width="40" height="40" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- ============= 04 · Franquicias ================================ -->
+      <article class="world world--franquicias" aria-labelledby="w4-title">
+        <div class="world__inner">
+          <div class="world__marker" aria-hidden="true">04 <span>/ 04</span></div>
+
+          <div class="world__content">
+            <span class="world__overline">
+              <span class="world__number">04</span> · Franquicias
+            </span>
+            <h3 class="world__title" id="w4-title">Modelos probados, <em>plata en la mesa.</em></h3>
+            <p class="world__desc">Franquicias operativas que reparten sus resultados mes a mes. Vas a saber cuánto vendió cada local y qué te toca a vos.</p>
+            <div class="world__action">
+              <span class="world__status">
+                <span class="world__status-dot" aria-hidden="true"></span> Muy pronto
+              </span>
+              <form class="notify-form" data-notify="franquicias" novalidate>
+                <input class="notify-form__input" type="email" name="email" required placeholder="Tu correo" aria-label="Correo para avisarte de Franquicias">
+                <button class="notify-form__submit" type="submit">Avisame</button>
+                <span class="notify-form__success" role="status">✓ Te avisamos</span>
+              </form>
+            </div>
+          </div>
+
+          <div class="world__visual" aria-hidden="true">
+            <svg class="world__svg" viewBox="0 0 400 400" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Mapa: frame -->
+              <rect x="40" y="40" width="320" height="320"/>
+              <!-- Grilla sutil -->
+              <g class="world__svg-grid" opacity="0.35">
+                <line x1="120" y1="40" x2="120" y2="360"/>
+                <line x1="200" y1="40" x2="200" y2="360"/>
+                <line x1="280" y1="40" x2="280" y2="360"/>
+                <line x1="40" y1="120" x2="360" y2="120"/>
+                <line x1="40" y1="200" x2="360" y2="200"/>
+                <line x1="40" y1="280" x2="360" y2="280"/>
+              </g>
+              <!-- Marcadores de locales -->
+              <circle cx="95" cy="130" r="16" opacity="0.4"/>
+              <circle class="world__svg-highlight" cx="95" cy="130" r="6" fill="currentColor" stroke="none"/>
+              <circle cx="240" cy="90" r="16" opacity="0.4"/>
+              <circle class="world__svg-highlight" cx="240" cy="90" r="6" fill="currentColor" stroke="none"/>
+              <circle cx="315" cy="185" r="16" opacity="0.4"/>
+              <circle class="world__svg-highlight" cx="315" cy="185" r="6" fill="currentColor" stroke="none"/>
+              <circle cx="160" cy="245" r="16" opacity="0.4"/>
+              <circle class="world__svg-highlight" cx="160" cy="245" r="6" fill="currentColor" stroke="none"/>
+              <circle cx="275" cy="305" r="16" opacity="0.4"/>
+              <circle class="world__svg-highlight" cx="275" cy="305" r="6" fill="currentColor" stroke="none"/>
+              <circle cx="85" cy="290" r="16" opacity="0.4"/>
+              <circle class="world__svg-highlight" cx="85" cy="290" r="6" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ========================================================= CÓMO FUNCIONA -->
+    <section class="how" aria-labelledby="how-title">
+      <div class="how__inner">
+        <h2 class="how__title" id="how-title">Cómo <em>funciona</em>.</h2>
+        <ol class="how__steps">
+          <li class="how-step">
+            <span class="how-step__number">01</span>
+            <div>
+              <h3 class="how-step__title">Elegís</h3>
+              <p class="how-step__desc">Recorrés los activos disponibles, ves quién está atrás de cada uno y qué renta paga. Sin letra chica.</p>
+            </div>
+          </li>
+          <li class="how-step">
+            <span class="how-step__number">02</span>
+            <div>
+              <h3 class="how-step__title">Invertís desde poco</h3>
+              <p class="how-step__desc">Comprás tu parte desde montos accesibles. Depositás en pesos o dólares, con reglas claras.</p>
+            </div>
+          </li>
+          <li class="how-step">
+            <span class="how-step__number">03</span>
+            <div>
+              <h3 class="how-step__title">Cobrás renta</h3>
+              <p class="how-step__desc">Recibís lo que te corresponde cada mes, en dólares, en tu cuenta lucid. Retirás cuando quieras.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========================================================= RESPALDO -->
+    <section class="respaldo" id="respaldo" aria-labelledby="respaldo-title">
+      <div class="respaldo__inner">
+        <div>
+          <span class="respaldo__eyebrow">Respaldo</span>
+          <h2 class="respaldo__title" id="respaldo-title">Cada peso, con algo real <em>atrás</em>.</h2>
+        </div>
+        <div class="respaldo__points">
+          <div class="respaldo-point">
+            <div class="respaldo-point__label">Estructura legal</div>
+            <p class="respaldo-point__text">Cada activo pasa por un fideicomiso o vehículo regulado por la CNV, con escritura pública verificable.</p>
+          </div>
+          <div class="respaldo-point">
+            <div class="respaldo-point__label">Custodia</div>
+            <p class="respaldo-point__text">Los fondos están en cuentas bancarias segregadas. Lucid no toca tu plata sin autorización.</p>
+          </div>
+          <div class="respaldo-point">
+            <div class="respaldo-point__label">Documentación abierta</div>
+            <p class="respaldo-point__text">La escritura, el fideicomiso y los estados financieros se ven desde tu panel. Cualquiera puede auditar.</p>
+          </div>
+          <div class="respaldo-point">
+            <div class="respaldo-point__label">Renta en dólares</div>
+            <p class="respaldo-point__text">Distribuimos lo que corresponde en USD. Retirás cuando quieras a la cuenta o billetera que elijas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= ASISTENCIA -->
+    <section class="assist-landing" aria-labelledby="assist-title">
+      <div class="assist-landing__inner">
+        <h2 class="assist-landing__title" id="assist-title">¿Tenés dudas? Hablá con una persona. <em>De verdad.</em></h2>
+        <p class="assist-landing__desc">Somos humanos, atendemos humanos. Agendá una llamada de 15 minutos con alguien del equipo y te explicamos lo que necesites.</p>
+        <a href="#" class="assist-landing__cta">Agendar llamada</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================== Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <span class="site-footer__wordmark">
+          lucid
+        </span>
+        <span class="site-footer__seals" style="text-align:left">© 2026 · Buenos Aires</span>
+      </div>
+      <div class="site-footer__seals">
+        Regulado · Custodia bancaria · Asistencia humana
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/landing.js?v=11"></script>
+</body>
+</html>

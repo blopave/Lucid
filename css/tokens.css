@@ -1,0 +1,215 @@
+/* ==========================================================================
+   LUCID · Design tokens
+   Paleta "Mercado nocturno" — dark-first, navy petróleo con tinta crema.
+   Escapa del "otro dark UI genérico" invirtiendo la temperatura:
+   fondo frío, tinta cálida, acentos saturados vivos.
+
+   Referencias madre: Ondo Finance (RWA institucional), Ethena, Klim.
+   ========================================================================== */
+
+:root {
+  /* ============================================================
+     Superficies — navy petróleo, no negro puro
+     ============================================================ */
+  --bg:    #0E1620;   /* base — landing y dashboard */
+  --bg-1:  #131C2A;   /* elevación 1 — bloques teñidos sutiles */
+  --bg-2:  #182338;   /* card estándar */
+  --bg-3:  #1F2C42;   /* superficie fuerte — hover, chips */
+
+  /* ============================================================
+     Texto — crema cálida, no blanco frío
+     ============================================================ */
+  --text-primary:   #ECE4D0;
+  --text-secondary: #A4B4CA;
+  --text-muted:     #6D7D93;
+  --text-disabled:  #4A5872;
+
+  /* ============================================================
+     Bordes hairline
+     ============================================================ */
+  --border:        rgba(236, 228, 208, 0.10);
+  --border-strong: rgba(236, 228, 208, 0.18);
+  --border-focus:  rgba(229, 178, 74, 0.55);   /* halo ámbar en focus */
+
+  /* ============================================================
+     Marca — ámbar Lucid
+     Único en fintech AR. Cercano a oro / trigo / reserva.
+     No es naranja pop; es un ámbar profundo con warmth.
+     ============================================================ */
+  --brand:       #E5B24A;
+  --brand-hover: #FFC96B;
+  --brand-ink:   #F5C670;
+  --brand-tint:  rgba(229, 178, 74, 0.14);
+
+  /* ============================================================
+     Verticales — cada mundo con su color propio
+     ============================================================ */
+  /* Propiedades — terracota (identidad del vertical) */
+  --world-propiedades:      #C96F4A;
+  --world-propiedades-tint: rgba(201, 111, 74, 0.14);
+  --world-propiedades-ink:  #E89873;
+
+  /* Bonos — cobalto Base */
+  --world-bonos:      #4A9EFF;
+  --world-bonos-tint: rgba(74, 158, 255, 0.14);
+  --world-bonos-ink:  #7CB8FF;
+
+  /* Acciones — verde menta Pendle */
+  --world-acciones:      #7BD69C;
+  --world-acciones-tint: rgba(123, 214, 156, 0.14);
+  --world-acciones-ink:  #9CE0B5;
+
+  /* Franquicias — magenta Uniswap-adjacent (único en fintech AR) */
+  --world-franquicias:      #D14A8C;
+  --world-franquicias-tint: rgba(209, 74, 140, 0.14);
+  --world-franquicias-ink:  #E876AA;
+
+  /* ============================================================
+     Performance — verdes y rojos que dialogan con la paleta
+     ============================================================ */
+  --positive: #7BD69C;
+  --negative: #E77070;
+
+  /* ============================================================
+     Tipografía — Zodiak (display serif) + Switzer (body sans)
+     Zodiak: serif de display con cortes modernistas. Italic
+     como gesto editorial principal (wordmark, tagline).
+     Switzer: neo-grotesque refinado tipo Söhne, cuerpo silencioso.
+     JetBrains Mono se queda para cifras tabulares.
+     ============================================================ */
+  --font-display: 'Zodiak', 'Times New Roman', serif;
+  --font-body:    'Switzer', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Escala tipográfica (rem, base 16px) */
+  --text-xs:   0.6875rem;   /* 11px */
+  --text-sm:   0.8125rem;   /* 13px */
+  --text-base: 0.9375rem;   /* 15px — un pelo más grande, Geist respira */
+  --text-md:   1rem;        /* 16px */
+  --text-lg:   1.25rem;     /* 20px */
+  --text-xl:   1.75rem;     /* 28px */
+  --text-2xl:  2.5rem;      /* 40px */
+  --text-3xl:  4rem;        /* 64px */
+
+  /* Pesos */
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;
+
+  /* Line heights */
+  --leading-tight: 1.02;
+  --leading-snug:  1.30;
+  --leading-base:  1.55;
+
+  /* Espaciado */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
+
+  /* Radius */
+  --radius-sm:   10px;   /* controles */
+  --radius-md:   12px;   /* CTAs pill (pulze pattern) */
+  --radius-lg:   16px;   /* cards */
+  --radius-xl:   20px;   /* superficies grandes */
+  --radius-full: 999px;  /* pills, dots, nav flotante */
+
+  /* Transiciones */
+  --ease:            cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 150ms var(--ease);
+  --transition-base: 200ms var(--ease);
+  --transition-slow: 250ms var(--ease);
+
+  /* Layout */
+  --max-width:        1180px;
+  --max-width-narrow: 880px;
+  --topbar-height:    64px;
+}
+
+/* ==========================================================================
+   Reset y base
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+  font-weight: var(--weight-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

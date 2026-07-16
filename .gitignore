@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs y caches
+*.log
+.cache/
+tmp/
+
+# Env / secretos
+.env
+.env.local
+.env.*.local
+
+# Salidas de tests / herramientas
+node_modules/
+.playwright-mcp/
+
+# Screenshots temporales que a veces caen acá
+*-screenshot.png

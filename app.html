@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0E1620">
+  <title>lucid · Panel</title>
+  <meta name="description" content="lucid — invertí en activos reales, con respaldo a la vista.">
+
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- ============================================================ Topbar -->
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a href="index.html" class="wordmark" aria-label="lucid, ir al sitio público">
+          lucid
+        </a>
+
+        <nav class="topbar__nav" aria-label="Navegación principal">
+          <a href="#" class="nav__link nav__link--active" aria-current="page">Inicio</a>
+          <a href="#" class="nav__link">Explorar</a>
+          <a href="#" class="nav__link">Movimientos</a>
+        </nav>
+
+        <div class="topbar__actions">
+          <button class="avatar" aria-label="Tu cuenta" data-avatar>PV</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <!-- ============================================================ Hero -->
+      <section class="hero" aria-labelledby="hero-label">
+        <div class="hero__main">
+          <span class="hero__label" id="hero-label">Tu portfolio</span>
+
+          <div class="hero__total">
+            <span class="hero__currency">US$</span>
+            <span class="hero__amount" data-total-int aria-live="polite">0</span><span class="hero__cents" data-total-dec>,00</span>
+          </div>
+
+          <div class="hero__meta">
+            <span class="hero__delta hero__delta--up" data-delta>
+              <span class="hero__delta-arrow" aria-hidden="true">↑</span>
+              <span data-delta-value>+0,00%</span>
+              <span class="hero__delta-abs" data-delta-abs>US$ 0,00</span>
+            </span>
+            <span class="hero__delta-period" data-delta-period>este mes</span>
+
+            <span class="hero__separator" aria-hidden="true"></span>
+
+            <span class="hero__rent">
+              Renta recibida este mes
+              <span class="hero__rent-value" data-rent>US$ 0,00</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="hero__actions" role="group" aria-label="Acciones de dinero">
+          <button class="btn btn--secondary" aria-label="Depositar dinero">Depositar</button>
+          <button class="btn btn--ghost"     aria-label="Retirar dinero">Retirar</button>
+        </div>
+      </section>
+
+      <!-- ============================================================ Composición -->
+      <section class="section" id="composition-section" aria-labelledby="composition-title" hidden>
+        <div class="section__header">
+          <h2 class="section__title" id="composition-title">Composición</h2>
+          <span class="section__hint">Cómo se reparte tu portfolio.</span>
+        </div>
+        <div class="composition" data-composition></div>
+      </section>
+
+      <!-- ============================================================ Mis activos -->
+      <section class="section" aria-labelledby="assets-title">
+        <div class="section__header">
+          <h2 class="section__title" id="assets-title">Tus activos</h2>
+          <span class="section__hint">Cada uno con su respaldo legal a la vista.</span>
+        </div>
+        <div class="assets-grid" data-assets></div>
+      </section>
+
+      <!-- ============================================================ Mundos -->
+      <section class="section" aria-labelledby="worlds-title">
+        <div class="section__header">
+          <h2 class="section__title" id="worlds-title">Explorar mundos</h2>
+          <span class="section__hint">Cuatro tipos de activos reales. Uno por uno, bien hecho.</span>
+        </div>
+        <div class="worlds-row" data-worlds></div>
+      </section>
+
+      <!-- ============================================================ Asistente humano -->
+      <section class="section" aria-labelledby="assist-title">
+        <div class="assist">
+          <h2 class="assist__title" id="assist-title">¿Tenés dudas? Hablá con una persona. De verdad.</h2>
+          <p class="assist__desc">Somos humanos, atendemos humanos. Agendá una llamada de 15 minutos con alguien del equipo y te explicamos lo que necesites.</p>
+          <button class="btn btn--secondary assist__cta">Agendar llamada</button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ============================================================ Footer -->
+    <footer class="footer">
+      <div class="footer__inner">
+        Regulado · Custodia bancaria · Asistencia humana
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

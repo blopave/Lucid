@@ -1,0 +1,1139 @@
+/* ==========================================================================
+   LUCID · Landing (público, pre-login)
+   Dark-first "Mercado nocturno". Hero pulze-inspired: aurora sutil,
+   wordmark Unbounded ExtraBold, pill nav flotante con glassmorphism gradual.
+   ========================================================================== */
+
+/* ==========================================================================
+   HEADER — patrón pulz.
+   scrollY = 0            → invisible total (opacity 0, corrido arriba).
+   scrollY > threshold    → desliza + aparece + fondo con blur + hairline.
+   Hero queda limpio: sólo el wordmark, sin nav encima al arrancar.
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--space-3);
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+  transition:
+    opacity 0.45s var(--ease),
+    transform 0.45s var(--ease);
+}
+
+.site-header--visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.site-header__pill {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: 52px;
+  padding: 0 var(--space-2) 0 var(--space-4);
+  border-radius: var(--radius-full);
+  background: rgba(24, 35, 56, 0);
+  border: 1px solid transparent;
+  backdrop-filter: blur(0) saturate(1);
+  -webkit-backdrop-filter: blur(0) saturate(1);
+  box-shadow: 0 0 0 0 transparent;
+  transition:
+    background 0.35s var(--ease),
+    border-color 0.35s var(--ease),
+    backdrop-filter 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
+  width: 100%;
+  max-width: 720px;
+}
+
+.site-header--visible .site-header__pill {
+  background: rgba(24, 35, 56, 0.72);
+  border-color: var(--border-strong);
+  backdrop-filter: blur(15px) saturate(1.2);
+  -webkit-backdrop-filter: blur(15px) saturate(1.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+}
+
+.site-header__wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: baseline;
+  transition: color var(--transition-fast);
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  justify-content: center;
+}
+
+.site-header__link {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--text-secondary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.site-header__link:hover {
+  color: var(--text-primary);
+  background: var(--border);
+}
+
+.site-header__cta {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--text-primary);
+  color: var(--bg);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.site-header__cta:hover {
+  background: var(--brand);
+  color: var(--bg);
+}
+
+/* ==========================================================================
+   HERO — "Tokenized assembly"
+   Wordmark centrado y limpio. Detrás, un mesh de ~cientos de cuadraditos
+   que empiezan dispersos por la pantalla y migran a sus posiciones en
+   una grilla — enacts la asamblea fraccionada que hace Lucid.
+   ========================================================================== */
+
+.hero-brand {
+  position: relative;
+  min-height: 100vh;
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Wordmark accesible — h1 con class .visually-hidden. El h1 existe
+   sólo para lectores de pantalla y SEO. El visual del hero se resuelve
+   íntegro dentro del SVG del mesh (celdas + text en el mismo sistema
+   de coordenadas para transición perfecta). */
+
+/* ---------- Mesh que compone el wordmark ----------------------------
+   El SVG no cubre todo el hero: se dimensiona al tamaño del wordmark
+   y se centra. landing.js samplea los píxeles del texto "lucid" en
+   Zodiak Bold Italic y coloca una celda por cada punto sampleado.
+   Al ensamblarse, las celdas DIBUJAN la palabra.
+
+   Handoff scroll-linked: la variable --hero-progress escala + traslada
+   el conjunto al scrollear (mismo comportamiento que tenía el wordmark
+   Zodiak — ahora aplicado al SVG del mesh).
+--------------------------------------------------------------------- */
+
+.hero-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: var(--text-primary);
+  will-change: transform, opacity;
+  transform-origin: 50% 50%;
+  transform:
+    scale(calc(1 - var(--hero-progress, 0) * 0.72))
+    translateY(calc(var(--hero-progress, 0) * -32vh));
+  opacity: calc(1 - var(--hero-progress, 0) * 1.55);
+}
+
+.hero-mesh__svg {
+  /* Ancho responsive — el wordmark ocupa 82vw en desktop, tope 900px. */
+  width: min(900px, 82vw);
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.hero-mesh__cell {
+  fill: var(--text-primary);
+  opacity: 0;
+  /* Posición inicial random escrita por JS via --init-x / --init-y. */
+  transform: translate(var(--init-x, 0px), var(--init-y, 0px));
+  transform-box: fill-box;
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1600ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--delay, 0ms);
+}
+
+/* Variante brand: celdas que forman la letra ámbar (por defecto, la "u"). */
+.hero-mesh__cell--brand {
+  fill: var(--brand);
+}
+
+/* Fase 1 — ensamblado: cada celda arriba a su posición final visible. */
+.hero-brand.is-assembled .hero-mesh__cell {
+  opacity: 0.95;
+  transform: translate(0, 0);
+}
+
+/* Fase 2 — cristalización: celdas se desvanecen para dejar paso al
+   <text> SVG que vive en el mismo sistema de coordenadas — el crossfade
+   es perfecto porque ocupan los mismos píxeles y el mismo color. */
+.hero-brand.is-materialized .hero-mesh__cell {
+  opacity: 0;
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0ms;
+}
+
+/* ---------- Wordmark final: <text> SVG dentro del mismo SVG del mesh ---
+   Renderizamos "lucid" en Zodiak Bold Italic a la MISMA escala y posición
+   que usó el canvas para samplear las celdas — así el resultado final es
+   exactamente el mismo tamaño y coordenadas que la asamblea tokenizada.
+   Cristaliza (opacity 0 → 1) cuando .hero-brand recibe .is-materialized. */
+.hero-mesh__text {
+  font-family: 'Zodiak', 'Times New Roman', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 500px;     /* Debe matchear la constante HERO_FONT en landing.js */
+  fill: var(--text-primary);
+  opacity: 0;
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-mesh__text-brand {
+  fill: var(--brand);
+}
+
+.hero-brand.is-materialized .hero-mesh__text {
+  opacity: 1;
+}
+
+/* Reduced-motion: mesh no participa, text aparece directo. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-mesh__cell {
+    display: none;
+  }
+  .hero-mesh__text {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/* ==========================================================================
+   TAGLINE (INTEGRAL) — la frase completa en una vista, con mezcla
+   tipográfica dentro de la misma línea. Signature Cursor / Anthropic.
+
+   Sección corta (130vh) con sticky de 100vh que sostiene la frase
+   durante 30vh antes de soltar al manifiesto. Entrada line-by-line
+   stagger via IntersectionObserver.
+   ========================================================================== */
+
+.tagline-block {
+  position: relative;
+  height: 130vh;
+}
+
+.tagline-block__inner {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  gap: var(--space-5);
+}
+
+/* Aurora — atmósfera de fondo, con parallax vertical sutil */
+.tagline-block__aurora {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--tagline-parallax, 0px));
+  width: min(1400px, 130vw);
+  height: 100%;
+  background:
+    radial-gradient(ellipse 40% 45% at 30% 45%, rgba(229, 178, 74, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 35% 40% at 70% 55%, rgba(209, 74, 140, 0.13) 0%, transparent 60%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+/* La frase completa: dos líneas apiladas centradas.
+   Cada palabra recibe su tratamiento propio via subclass. */
+.tagline {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9.5vw, 7.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0;
+  max-width: 18ch;
+}
+
+.tagline__line {
+  display: block;
+  overflow: hidden;
+}
+
+.tagline__word {
+  display: inline-block;
+  margin-right: 0.22em;
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tagline__word:last-child { margin-right: 0; }
+
+/* Tratamientos por palabra — mezcla dentro de la misma frase */
+.tagline__word--roman {
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text-primary);
+}
+.tagline__word--brand {
+  font-weight: 700;
+  font-style: italic;
+  color: var(--brand);
+}
+.tagline__word--italic {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+/* Reveal line-by-line con stagger — Anthropic canon */
+.tagline.is-in .tagline__word {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tagline.is-in .tagline__line:nth-child(1) .tagline__word { transition-delay: 0ms; }
+.tagline.is-in .tagline__line:nth-child(2) .tagline__word { transition-delay: 220ms; }
+
+/* Caption editorial debajo — el sello del manifiesto */
+.tagline__caption {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.7s var(--ease) 0.5s,
+    transform 0.7s var(--ease) 0.5s;
+}
+
+.tagline.is-in ~ .tagline__caption,
+.tagline-block__inner:has(.tagline.is-in) .tagline__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   MANIFIESTO — una línea editorial sobre bg-1
+   ========================================================================== */
+
+.manifesto {
+  position: relative;
+  padding: var(--space-7) var(--space-4);
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.manifesto__inner {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+}
+
+.manifesto__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: var(--space-4);
+  display: block;
+}
+
+.manifesto__text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  /* Reveal en entrada: parte translúcido y corrido, entra al verse. */
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s var(--ease),
+    transform 0.9s var(--ease);
+}
+
+.manifesto.is-in .manifesto__text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.manifesto__text em {
+  font-style: italic;
+  color: var(--brand);
+}
+
+/* Firma humana — cambia el tono de "plataforma" a "carta escrita por gente". */
+.manifesto__signature {
+  margin-top: var(--space-5);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--text-md);
+  color: var(--text-muted);
+  letter-spacing: 0.005em;
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.9s var(--ease) 0.35s,
+    transform 0.9s var(--ease) 0.35s;
+}
+
+.manifesto.is-in .manifesto__signature {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   COMPROMISO — dato ancla, con sello monograma "l."
+   Convierte la promesa en compromiso concreto. Editorial notarial.
+   ========================================================================== */
+
+.anchor {
+  padding: var(--space-6) var(--space-4);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  text-align: center;
+  position: relative;
+}
+
+.anchor__inner {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Sello monograma "l." — acta / estampilla notarial */
+.anchor__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--bg-1);
+  border: 1px solid var(--border-strong);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  line-height: 1;
+  padding-bottom: 4px;
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.02em;
+}
+.anchor__mark-dot {
+  color: var(--brand);
+  margin-left: 1px;
+}
+
+.anchor__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.anchor__text {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  max-width: 40ch;
+}
+
+.anchor__text em {
+  font-style: italic;
+  color: var(--brand);
+}
+
+/* ==========================================================================
+   MUNDOS — cada RWA en su propia pantalla completa (100vh).
+   Layout split: texto izquierda, ilustración SVG derecha.
+   Fondo levemente teñido con el color del mundo (radial desde arriba-derecha).
+   ========================================================================== */
+
+.worlds {
+  display: flex;
+  flex-direction: column;
+}
+
+.world {
+  position: relative;
+  min-height: 100vh;
+  padding: calc(var(--topbar-height) + var(--space-5)) var(--space-4) var(--space-6);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.world:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Tinte de fondo del mundo — radial-gradient (halo circular difuso) muy sutil */
+.world::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 65% 55% at 88% 0%, var(--world-tint, transparent) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.world__inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+/* Contador arriba a la derecha — "01 / 04" */
+.world__marker {
+  position: absolute;
+  top: calc(var(--topbar-height) + var(--space-3));
+  right: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  letter-spacing: 0.1em;
+  z-index: 2;
+}
+.world__marker span {
+  color: var(--text-muted);
+  opacity: 0.7;
+  margin-left: 2px;
+}
+
+/* ---------- Content (texto a la izquierda) ---------- */
+
+.world__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 56ch;
+}
+
+.world__overline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.world__number {
+  color: var(--world-color, var(--text-primary));
+}
+
+.world__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s var(--ease) 0.12s,
+    transform 0.9s var(--ease) 0.12s;
+}
+
+/* El fragmento en <em> del título va en italic Zodiak regular — gesto editorial. */
+.world__title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.world__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 52ch;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.9s var(--ease) 0.28s,
+    transform 0.9s var(--ease) 0.28s;
+}
+
+.world__action {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.9s var(--ease) 0.42s,
+    transform 0.9s var(--ease) 0.42s;
+}
+
+.world__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: var(--bg-1);
+}
+
+.world__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--world-color, var(--brand));
+  animation: pulse 2s var(--ease) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+/* Reveal state: cuando el mundo entra al viewport (via IntersectionObserver
+   añade la clase .is-in), todos los elementos internos hacen fade+rise. */
+.world.is-in .world__overline,
+.world.is-in .world__title,
+.world.is-in .world__desc,
+.world.is-in .world__action {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Visual (SVG ilustración editorial a la derecha) ---------- */
+
+.world__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--world-color, var(--brand));
+  /* Parallax vertical sutil — landing.js escribe --world-parallax con el scroll. */
+  transform: translateY(var(--world-parallax, 0px));
+  will-change: transform;
+}
+
+.world__svg {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  filter: drop-shadow(0 0 42px color-mix(in srgb, currentColor 35%, transparent));
+}
+
+/* Animación de trazo (stroke-drawing): los elementos con contorno
+   arrancan con dashoffset alto (invisibles), transicionan a 0 = trazo dibujado.
+   dasharray 1400 es un valor grande suficiente para cualquier path razonable. */
+.world__svg path,
+.world__svg rect,
+.world__svg line,
+.world__svg circle:not(.world__svg-highlight),
+.world__svg polyline {
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  transition: stroke-dashoffset 1.6s var(--ease) 0.35s;
+}
+
+.world.is-in .world__svg path,
+.world.is-in .world__svg rect,
+.world.is-in .world__svg line,
+.world.is-in .world__svg circle:not(.world__svg-highlight),
+.world.is-in .world__svg polyline {
+  stroke-dashoffset: 0;
+}
+
+/* Elementos rellenos (celda destacada, puntos de datos): fade-in
+   después de que el trazo ya se dibujó. */
+.world__svg-highlight {
+  opacity: 0;
+  transition: opacity 0.6s var(--ease) 1.4s;
+}
+
+.world.is-in .world__svg-highlight {
+  opacity: 0.92;
+}
+
+/* ---------- Colores por mundo ---------- */
+.world--propiedades {
+  --world-color: var(--world-propiedades);
+  --world-tint:  color-mix(in srgb, var(--world-propiedades) 10%, transparent);
+}
+.world--bonos {
+  --world-color: var(--world-bonos);
+  --world-tint:  color-mix(in srgb, var(--world-bonos) 10%, transparent);
+}
+.world--acciones {
+  --world-color: var(--world-acciones);
+  --world-tint:  color-mix(in srgb, var(--world-acciones) 10%, transparent);
+}
+.world--franquicias {
+  --world-color: var(--world-franquicias);
+  --world-tint:  color-mix(in srgb, var(--world-franquicias) 10%, transparent);
+}
+
+/* ==========================================================================
+   FORM DE CAPTURA — usado por todos los mundos "Muy pronto"
+   ========================================================================== */
+
+.notify-form {
+  display: flex;
+  gap: var(--space-2);
+  width: 100%;
+  max-width: 340px;
+}
+
+.notify-form__input {
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: var(--text-sm);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.notify-form__input::placeholder {
+  color: var(--text-muted);
+}
+
+.notify-form__input:focus {
+  outline: none;
+  border-color: var(--brand);
+}
+
+.notify-form__submit {
+  height: 40px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--text-primary);
+  color: var(--bg);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  transition: background var(--transition-fast);
+}
+
+.notify-form__submit:hover {
+  background: var(--brand);
+}
+
+.notify-form__success {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: var(--space-2) 0;
+}
+
+.notify-form.is-sent .notify-form__input,
+.notify-form.is-sent .notify-form__submit {
+  display: none;
+}
+
+.notify-form.is-sent .notify-form__success {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ==========================================================================
+   CÓMO FUNCIONA
+   ========================================================================== */
+
+.how {
+  padding: var(--space-7) var(--space-4);
+  background: var(--bg-1);
+}
+
+.how__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.how__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  color: var(--text-primary);
+}
+
+.how__title em {
+  font-style: normal;
+  color: var(--brand);
+}
+
+.how__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+}
+
+.how-step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-top: 1px solid var(--border);
+}
+
+.how-step:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.how-step__number {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  padding-top: 4px;
+}
+
+.how-step__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-lg);
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  margin-bottom: var(--space-1);
+}
+
+.how-step__desc {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  line-height: 1.55;
+  max-width: 52ch;
+}
+
+/* ==========================================================================
+   RESPALDO — banda oscura con acento ámbar
+   ========================================================================== */
+
+.respaldo {
+  padding: var(--space-7) var(--space-4);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.respaldo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--brand), transparent);
+  opacity: 0.4;
+}
+
+.respaldo__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.respaldo__eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--brand);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.respaldo__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  color: var(--text-primary);
+}
+
+.respaldo__title em {
+  font-style: normal;
+  color: var(--brand);
+}
+
+.respaldo__points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.respaldo-point {
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--border);
+}
+
+.respaldo-point__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: var(--space-1);
+}
+
+.respaldo-point__text {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   ASISTENCIA HUMANA (landing)
+   ========================================================================== */
+
+.assist-landing {
+  padding: var(--space-7) var(--space-4);
+}
+
+.assist-landing__inner {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.assist-landing__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--text-primary);
+  max-width: 26ch;
+}
+
+.assist-landing__title em {
+  font-style: normal;
+  color: var(--brand);
+}
+
+.assist-landing__desc {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  max-width: 52ch;
+}
+
+.assist-landing__cta {
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--brand);
+  color: var(--bg);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  margin-top: var(--space-2);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.assist-landing__cta:hover {
+  background: var(--brand-hover);
+}
+
+/* ==========================================================================
+   SITE FOOTER
+   ========================================================================== */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: var(--space-5) var(--space-4);
+  background: var(--bg-1);
+}
+
+.site-footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.site-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.site-footer__wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.site-footer__seals {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-align: right;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  /* Los mundos apilan en móvil: texto arriba, visual abajo. */
+  .world__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+  .world__visual {
+    order: -1;
+  }
+  .world__svg {
+    max-width: 280px;
+  }
+  .world {
+    min-height: auto;
+    padding: calc(var(--topbar-height) + var(--space-4)) var(--space-3) var(--space-5);
+  }
+  .world__title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  .how__inner,
+  .respaldo__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  .respaldo__points {
+    grid-template-columns: 1fr;
+  }
+  .site-header__nav {
+    display: none;
+  }
+  .site-header__pill {
+    max-width: min(100%, 380px);
+    padding: 0 var(--space-1) 0 var(--space-3);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-brand {
+    min-height: 88vh;
+  }
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  .site-footer__seals {
+    text-align: left;
+  }
+  .notify-form {
+    max-width: 100%;
+  }
+}
