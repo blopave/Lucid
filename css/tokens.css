@@ -84,7 +84,7 @@
   /* Escala tipográfica (rem, base 16px) */
   --text-xs:   0.6875rem;   /* 11px */
   --text-sm:   0.8125rem;   /* 13px */
-  --text-base: 0.9375rem;   /* 15px — un pelo más grande, Geist respira */
+  --text-base: 0.9375rem;   /* 15px */
   --text-md:   1rem;        /* 16px */
   --text-lg:   1.25rem;     /* 20px */
   --text-xl:   1.75rem;     /* 28px */
@@ -181,6 +181,11 @@ a {
 img, svg {
   display: block;
   max-width: 100%;
+}
+
+/* `[hidden]` debe ganar por sobre reglas con display: flex/grid/block. */
+[hidden] {
+  display: none !important;
 }
 
 .num {

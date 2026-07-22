@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style type="text/css"><![CDATA[
+      @import url('https://api.fontshare.com/v2/css?f[]=zodiak@700&f[]=switzer@500&display=swap');
+      .wm { font-family: 'Zodiak', 'Times New Roman', serif; font-weight: 700; font-style: italic; fill: #ECE4D0; letter-spacing: -0.045em; }
+      .tag { font-family: 'Switzer', system-ui, sans-serif; font-weight: 500; fill: #A4B4CA; letter-spacing: -0.005em; }
+    ]]></style>
+    <radialGradient id="halo" cx="50%" cy="45%" r="55%">
+      <stop offset="0%"  stop-color="#E5B24A" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#0E1620" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- fondo navy petróleo -->
+  <rect width="1200" height="630" fill="#0E1620"/>
+  <!-- halo ámbar sutil -->
+  <rect width="1200" height="630" fill="url(#halo)"/>
+
+  <!-- wordmark: "lucid" en Zodiak Bold Italic + punto ámbar sobre la "i".
+       Coordenadas del punto afinadas ópticamente para 260px, text-anchor middle. -->
+  <g transform="translate(600 330)">
+    <text class="wm" font-size="260" text-anchor="middle" y="0">lucid</text>
+    <circle cx="138" cy="-158" r="34" fill="#E5B24A"/>
+  </g>
+
+  <!-- tagline abajo -->
+  <text class="tag" font-size="30" text-anchor="middle" x="600" y="470">Lo real, para todos.</text>
+
+  <!-- caption editorial -->
+  <text font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" fill="#6D7D93"
+        letter-spacing="4" text-anchor="middle" x="600" y="560">— MANIFIESTO · LUCID 2026 —</text>
+</svg>

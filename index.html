@@ -7,6 +7,15 @@
   <title>lucid — Lo real, para todos.</title>
   <meta name="description" content="Plataforma argentina para invertir en activos reales: inmuebles, bonos, acciones y franquicias. Con respaldo a la vista y renta clara.">
 
+  <meta property="og:title" content="lucid — Lo real, para todos.">
+  <meta property="og:description" content="Plataforma argentina para invertir en activos reales: inmuebles, bonos, acciones y franquicias. Con respaldo a la vista y renta clara.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="lucid — Lo real, para todos.">
+  <meta name="twitter:description" content="Plataforma argentina para invertir en activos reales: inmuebles, bonos, acciones y franquicias. Con respaldo a la vista y renta clara.">
+  <meta name="twitter:image" content="img/og.png">
+
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -26,12 +35,13 @@
   <header class="site-header" id="site-header">
     <div class="site-header__pill">
       <a href="#top" class="site-header__wordmark" aria-label="lucid, ir al inicio">
-        lucid
+        <span aria-hidden="true">luc<span class="wm-i">ı<span class="wm-dot"></span></span>d</span>
       </a>
       <nav class="site-header__nav" aria-label="Navegación principal">
         <a href="#manifiesto" class="site-header__link">Qué es</a>
         <a href="#verticales" class="site-header__link">Mundos</a>
         <a href="#respaldo" class="site-header__link">Respaldo</a>
+        <a href="#preguntas" class="site-header__link">Preguntas</a>
       </nav>
       <a href="app.html" class="site-header__cta">Ingresar</a>
     </div>
@@ -51,6 +61,10 @@
       <div class="hero-mesh" aria-hidden="true">
         <svg class="hero-mesh__svg" xmlns="http://www.w3.org/2000/svg"></svg>
       </div>
+      <a href="#tagline" class="hero-hint" data-hero-hint aria-label="Desplazarse hacia abajo">
+        <span class="hero-hint__label">deslizá</span>
+        <span class="hero-hint__arrow" aria-hidden="true">↓</span>
+      </a>
     </section>
 
     <!-- ========================================================= TAGLINE (INTEGRAL)
@@ -355,21 +369,82 @@
         <div class="respaldo__points">
           <div class="respaldo-point">
             <div class="respaldo-point__label">Estructura legal</div>
-            <p class="respaldo-point__text">Cada activo pasa por un fideicomiso o vehículo regulado por la CNV, con escritura pública verificable.</p>
+            <p class="respaldo-point__text">Cada activo pasará por un fideicomiso o vehículo enmarcado en la normativa CNV, con escritura pública verificable.</p>
           </div>
           <div class="respaldo-point">
             <div class="respaldo-point__label">Custodia</div>
-            <p class="respaldo-point__text">Los fondos están en cuentas bancarias segregadas. Lucid no toca tu plata sin autorización.</p>
+            <p class="respaldo-point__text">Los fondos estarán en cuentas segregadas. lucid no va a poder tocar tu plata sin tu autorización.</p>
           </div>
           <div class="respaldo-point">
             <div class="respaldo-point__label">Documentación abierta</div>
-            <p class="respaldo-point__text">La escritura, el fideicomiso y los estados financieros se ven desde tu panel. Cualquiera puede auditar.</p>
+            <p class="respaldo-point__text">La escritura, el fideicomiso y los estados financieros se van a ver desde tu panel. Cualquiera va a poder auditar.</p>
           </div>
           <div class="respaldo-point">
             <div class="respaldo-point__label">Renta en dólares</div>
-            <p class="respaldo-point__text">Distribuimos lo que corresponde en USD. Retirás cuando quieras a la cuenta o billetera que elijas.</p>
+            <p class="respaldo-point__text">Vamos a distribuir lo que corresponde en USD. Vas a poder retirar cuando quieras a la cuenta que elijas.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= FAQ DURA
+         "Las preguntas que nadie contesta." — cuatro respuestas incómodas
+         en un acordeón nativo (details/summary), estilizado según el sistema.
+         Sin superlativos, sin prometer inexistencias. Foco visible por teclado.
+    -->
+    <section class="faq" id="preguntas" aria-labelledby="faq-title">
+      <div class="faq__inner">
+        <div class="faq__head">
+          <span class="faq__eyebrow">Sin edulcorar</span>
+          <h2 class="faq__title" id="faq-title">Las preguntas que <em>nadie contesta.</em></h2>
+          <p class="faq__intro">Las respuestas incómodas, de frente. Porque la confianza se construye explicando el día de tormenta.</p>
+        </div>
+        <ol class="faq__list">
+          <li>
+            <details class="faq-item">
+              <summary class="faq-item__q">
+                <span class="faq-item__q-text">¿Qué pasa si lucid cierra?</span>
+                <span class="faq-item__q-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__a">
+                <p>El activo no será de lucid: estará en un fideicomiso separado que sobrevive a la plataforma. Tu derecho queda registrado y el fiduciario responde por él.</p>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="faq-item">
+              <summary class="faq-item__q">
+                <span class="faq-item__q-text">¿Quién tiene mi plata?</span>
+                <span class="faq-item__q-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__a">
+                <p>Nunca lucid directamente: los fondos operarán por cuentas segregadas y la custodia de los valores por los canales regulados.</p>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="faq-item">
+              <summary class="faq-item__q">
+                <span class="faq-item__q-text">¿Cómo salgo de la inversión?</span>
+                <span class="faq-item__q-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__a">
+                <p>Con honestidad: la reventa de activos reales todavía no es instantánea en ningún lugar del mundo. Vas a conocer el mecanismo y los plazos de salida antes de invertir, no después.</p>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details class="faq-item">
+              <summary class="faq-item__q">
+                <span class="faq-item__q-text">¿Cómo sé que el activo existe?</span>
+                <span class="faq-item__q-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-item__a">
+                <p>Escritura, fideicomiso y documentación visibles desde tu panel. Lo que no se puede mostrar, no se vende.</p>
+              </div>
+            </details>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -382,23 +457,38 @@
       </div>
     </section>
 
+    <!-- ========================================================= LISTA DE ESPERA
+         Cierre. Un solo input, mismo sistema visual que los notify-form
+         de los mundos "Muy pronto". CTA claro, sin promesas. -->
+    <section class="waitlist" id="waitlist" aria-labelledby="waitlist-title">
+      <div class="waitlist__inner">
+        <h2 class="waitlist__title" id="waitlist-title">Sé de los <em>primeros.</em></h2>
+        <p class="waitlist__desc">Dejanos tu correo y te avisamos cuando abra la primera propiedad.</p>
+        <form class="notify-form waitlist__form" data-notify="general" novalidate>
+          <input class="notify-form__input" type="email" name="email" required placeholder="Tu correo" aria-label="Tu correo para la lista de espera">
+          <button class="notify-form__submit" type="submit">Anotarme</button>
+          <span class="notify-form__success" role="status">✓ Te avisamos</span>
+        </form>
+      </div>
+    </section>
+
   </main>
 
   <!-- =========================================================== Footer -->
   <footer class="site-footer">
     <div class="site-footer__inner">
       <div class="site-footer__brand">
-        <span class="site-footer__wordmark">
-          lucid
+        <span class="site-footer__wordmark" aria-label="lucid">
+          <span aria-hidden="true">luc<span class="wm-i">ı<span class="wm-dot"></span></span>d</span>
         </span>
         <span class="site-footer__seals" style="text-align:left">© 2026 · Buenos Aires</span>
       </div>
       <div class="site-footer__seals">
-        Regulado · Custodia bancaria · Asistencia humana
+        Estructura bajo normativa CNV, en construcción · Asistencia humana
       </div>
     </div>
   </footer>
 
-  <script src="js/landing.js?v=11"></script>
+  <script src="js/landing.js?v=15"></script>
 </body>
 </html>

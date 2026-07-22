@@ -1,7 +1,16 @@
 /* ==========================================================================
    LUCID · Render del dashboard desde data/portfolio.json
    Vanilla JS, sin build. La UI se hidrata de los datos, nunca hardcodeada.
+
+   Fixture activo: DATA_URL apunta al portfolio con activos. Para probar el
+   estado vacío (usuario nuevo, aún sin invertir), cambiar DATA_URL a
+   'data/portfolio-empty.json' — el hero se hidrata en US$ 0,00 sin delta ni
+   renta y en lugar de la grilla de activos se muestra un bloque cálido con
+   CTA a la sección de mundos.
    ========================================================================== */
+
+const DATA_URL = 'data/portfolio.json';
+// const DATA_URL = 'data/portfolio-empty.json';
 
 const WORLDS = {
   propiedades: 'Propiedades',
@@ -28,7 +37,7 @@ function splitUsdParts(value) {
 }
 
 async function loadData() {
-  const res = await fetch('data/portfolio.json');
+  const res = await fetch(DATA_URL, { cache: 'no-store' });
   if (!res.ok) throw new Error('No se pudo cargar el portfolio.');
   return res.json();
 }
@@ -39,7 +48,7 @@ function animateTotal(endValue) {
   const intEl = document.querySelector('[data-total-int]');
   const decEl = document.querySelector('[data-total-dec]');
 
-  if (prefersReducedMotion) {
+  if (prefersReducedMotion || endValue === 0) {
     const parts = splitUsdParts(endValue);
     intEl.textContent = parts.int;
     decEl.textContent = ',' + parts.dec;
@@ -64,34 +73,65 @@ function animateTotal(endValue) {
 
 /* --- Hero ------------------------------------------------------------- */
 
-function renderHero(data) {
+function renderHero(data, isEmpty) {
   const { totalUsd, changePeriod, rentThisMonth } = data.portfolio;
 
   animateTotal(totalUsd);
 
-  const deltaEl = document.querySelector('[data-delta]');
-  const up = changePeriod.direction === 'up';
-  deltaEl.classList.toggle('hero__delta--up', up);
-  deltaEl.classList.toggle('hero__delta--down', !up);
-  deltaEl.querySelector('.hero__delta-arrow').textContent = up ? '↑' : '↓';
+  const meta = document.querySelector('.hero__meta');
+  const actions = document.querySelector('.hero__actions');
 
-  const sign = up ? '+' : '−';
-  document.querySelector('[data-delta-value]').textContent = `${sign}${nfPct.format(changePeriod.percent)}%`;
-  document.querySelector('[data-delta-abs]').textContent   = `· ${formatUsd(changePeriod.value)}`;
-  document.querySelector('[data-delta-period]').textContent = changePeriod.period;
-  document.querySelector('[data-rent]').textContent = formatUsd(rentThisMonth);
+  if (isEmpty) {
+    // Portfolio vacío: sin delta, sin renta, sin acciones de mover plata.
+    // Solo el total en US$ 0,00 y el label.
+    if (meta) meta.hidden = true;
+    if (actions) actions.hidden = true;
+  } else {
+    if (meta) meta.hidden = false;
+    if (actions) actions.hidden = false;
+
+    const deltaEl = document.querySelector('[data-delta]');
+    const up = changePeriod.direction === 'up';
+    deltaEl.classList.toggle('hero__delta--up', up);
+    deltaEl.classList.toggle('hero__delta--down', !up);
+    deltaEl.querySelector('.hero__delta-arrow').textContent = up ? '↑' : '↓';
+
+    const sign = up ? '+' : '−';
+    document.querySelector('[data-delta-value]').textContent = `${sign}${nfPct.format(changePeriod.percent)}%`;
+    document.querySelector('[data-delta-abs]').textContent   = `· ${formatUsd(changePeriod.value)}`;
+    document.querySelector('[data-delta-period]').textContent = changePeriod.period;
+    document.querySelector('[data-rent]').textContent = formatUsd(rentThisMonth);
+  }
 
   document.querySelector('[data-avatar]').textContent = data.user.initials;
 }
 
-/* --- Composición ------------------------------------------------------ */
+/* --- Composición ------------------------------------------------------
+   La composición se CALCULA desde los activos: suma de myShareUsd por
+   mundo, dividida por el total. No se lee del JSON.
+   Regla: sólo se muestra si hay más de un mundo representado.
+--------------------------------------------------------------------- */
 
-function renderComposition(data) {
+function computeComposition(assets) {
+  const total = assets.reduce((sum, a) => sum + a.myShareUsd, 0);
+  if (total <= 0) return [];
+
+  const byWorld = new Map();
+  for (const a of assets) {
+    byWorld.set(a.world, (byWorld.get(a.world) || 0) + a.myShareUsd);
+  }
+  return Array.from(byWorld, ([world, value]) => ({
+    world,
+    value,
+    percent: (value / total) * 100
+  })).sort((a, b) => b.value - a.value);
+}
+
+function renderComposition(assets) {
   const container = document.querySelector('[data-composition]');
   const section = document.getElementById('composition-section');
-  const comp = data.portfolio.composition || [];
+  const comp = computeComposition(assets);
 
-  // Regla: sólo aparece con más de un tipo de activo
   if (comp.length < 2) {
     section.hidden = true;
     return;
@@ -100,7 +140,6 @@ function renderComposition(data) {
 
   const frag = document.createDocumentFragment();
 
-  // Barra segmentada
   const bar = document.createElement('div');
   bar.className = 'composition__bar';
   bar.setAttribute('role', 'img');
@@ -115,7 +154,6 @@ function renderComposition(data) {
   });
   frag.appendChild(bar);
 
-  // Leyenda
   const legend = document.createElement('div');
   legend.className = 'composition__legend';
 
@@ -139,6 +177,21 @@ function renderComposition(data) {
 
 function renderAssets(data) {
   const container = document.querySelector('[data-assets]');
+  const section   = container.closest('.section');
+  const emptyEl   = document.getElementById('assets-empty');
+  const isEmpty   = data.assets.length === 0;
+
+  if (isEmpty) {
+    // Estado vacío cálido: escondemos la grilla y el header de "Tus activos",
+    // y mostramos un bloque invitando a explorar mundos.
+    section.hidden = true;
+    emptyEl.hidden = false;
+    return;
+  }
+
+  section.hidden = false;
+  emptyEl.hidden = true;
+
   const frag = document.createDocumentFragment();
 
   data.assets.forEach(a => {
@@ -213,15 +266,28 @@ function renderWorlds(data) {
   container.appendChild(frag);
 }
 
+/* --- Wiring del CTA del estado vacío ---------------------------------- */
+
+function wireEmptyStateCTA() {
+  const cta = document.querySelector('[data-empty-cta]');
+  if (!cta) return;
+  cta.addEventListener('click', () => {
+    const target = document.getElementById('worlds-section');
+    if (target) target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+  });
+}
+
 /* --- Bootstrap -------------------------------------------------------- */
 
 async function init() {
   try {
     const data = await loadData();
-    renderHero(data);
-    renderComposition(data);
+    const isEmpty = !data.assets || data.assets.length === 0;
+    renderHero(data, isEmpty);
+    renderComposition(data.assets || []);
     renderAssets(data);
     renderWorlds(data);
+    wireEmptyStateCTA();
   } catch (err) {
     console.error(err);
     document.querySelector('[data-total-int]').textContent = '—';

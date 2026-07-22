@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="12" fill="#0E1620"/>
   <text
-    x="32" y="47"
+    x="22" y="46"
     text-anchor="middle"
     font-family="Zodiak, 'Times New Roman', serif"
     font-weight="700" font-style="italic"
     font-size="44" fill="#ECE4D0"
-  >l<tspan fill="#E5B24A">.</tspan></text>
+  >l</text>
+  <circle cx="42" cy="20" r="7" fill="#E5B24A"/>
 </svg>

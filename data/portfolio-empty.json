@@ -1,0 +1,38 @@
+{
+  "user": {
+    "name": "Pablo",
+    "initials": "PV"
+  },
+  "portfolio": {
+    "totalUsd": 0,
+    "changePeriod": null,
+    "rentThisMonth": 0
+  },
+  "assets": [],
+  "worlds": [
+    {
+      "id": "propiedades",
+      "name": "Propiedades",
+      "status": "active",
+      "description": "Inmuebles con renta mensual, con escritura y fideicomiso."
+    },
+    {
+      "id": "bonos",
+      "name": "Bonos",
+      "status": "soon",
+      "description": "Deuda soberana y corporativa argentina."
+    },
+    {
+      "id": "acciones",
+      "name": "Acciones",
+      "status": "soon",
+      "description": "Participación en empresas argentinas."
+    },
+    {
+      "id": "franquicias",
+      "name": "Franquicias",
+      "status": "soon",
+      "description": "Modelos probados con distribución de renta."
+    }
+  ]
+}

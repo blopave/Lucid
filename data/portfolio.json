@@ -7,15 +7,11 @@
     "totalUsd": 46982.40,
     "changePeriod": {
       "value": 1428.60,
-      "percent": 3.14,
+      "percent": 3.04,
       "period": "este mes",
       "direction": "up"
     },
-    "rentThisMonth": 367.20,
-    "composition": [
-      { "world": "propiedades", "value": 40550.00, "percent": 86.3 },
-      { "world": "bonos",       "value":  6432.40, "percent": 13.7 }
-    ]
+    "rentThisMonth": 367.20
   },
   "assets": [
     {
@@ -66,15 +62,15 @@
     {
       "id": "bon-001",
       "world": "bonos",
-      "type": "Bono Soberano CER",
-      "location": "Vencimiento 2028",
+      "type": "Bono Global USD",
+      "location": "Vencimiento 2030",
       "myShareUsd": 6432.40,
       "rentPaidUsd": 51.50,
       "sharePercent": 0.02,
-      "imageInitials": "AE",
+      "imageInitials": "GD",
       "backing": {
         "structure": "Registro CNV",
-        "deedNumber": "Serie AE38D",
+        "deedNumber": "Serie GD30",
         "custodian": "Caja de Valores"
       }
     }

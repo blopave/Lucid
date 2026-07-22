@@ -7,11 +7,23 @@
   <title>lucid · Panel</title>
   <meta name="description" content="lucid — invertí en activos reales, con respaldo a la vista.">
 
+  <meta property="og:title" content="lucid — Lo real, para todos.">
+  <meta property="og:description" content="lucid — invertí en activos reales, con respaldo a la vista.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="lucid — Lo real, para todos.">
+  <meta name="twitter:description" content="lucid — invertí en activos reales, con respaldo a la vista.">
+  <meta name="twitter:image" content="img/og.png">
+
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=zodiak@400,401,700,701&f[]=switzer@400,500,600,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
 
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -23,8 +35,8 @@
     <!-- ============================================================ Topbar -->
     <header class="topbar">
       <div class="topbar__inner">
-        <a href="index.html" class="wordmark" aria-label="lucid, ir al sitio público">
-          lucid
+        <a href="index.html" class="wordmark" aria-label="lucid, ir al sitio público" data-wordmark>
+          <span aria-hidden="true">luc<span class="wm-i">ı<span class="wm-dot"></span></span>d</span>
         </a>
 
         <nav class="topbar__nav" aria-label="Navegación principal">
@@ -92,8 +104,20 @@
         <div class="assets-grid" data-assets></div>
       </section>
 
+      <!-- ============================================================ Estado vacío
+           Se muestra cuando el usuario todavía no invirtió (assets vacío).
+           Sustituye a la grilla de activos. Cálido, sin espectáculo.
+      -->
+      <section class="empty-state" id="assets-empty" hidden>
+        <div class="empty-state__inner">
+          <h2 class="empty-state__title">Tu primer activo real te está esperando.</h2>
+          <p class="empty-state__desc">Elegí un mundo para empezar. Cada activo viene con su respaldo a la vista.</p>
+          <button class="btn btn--secondary" type="button" data-empty-cta>Explorar mundos</button>
+        </div>
+      </section>
+
       <!-- ============================================================ Mundos -->
-      <section class="section" aria-labelledby="worlds-title">
+      <section class="section" id="worlds-section" aria-labelledby="worlds-title">
         <div class="section__header">
           <h2 class="section__title" id="worlds-title">Explorar mundos</h2>
           <span class="section__hint">Cuatro tipos de activos reales. Uno por uno, bien hecho.</span>
@@ -115,12 +139,12 @@
     <!-- ============================================================ Footer -->
     <footer class="footer">
       <div class="footer__inner">
-        Regulado · Custodia bancaria · Asistencia humana
+        Estructura bajo normativa CNV, en construcción · Asistencia humana
       </div>
     </footer>
 
   </div>
 
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=3"></script>
 </body>
 </html>

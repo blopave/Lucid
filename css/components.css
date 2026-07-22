@@ -29,9 +29,23 @@ body::before {
 }
 
 /* ---------- Wordmark ---------------------------------------------------
-   "lucid" en minúscula. La "i" es un haz (dotless ı) en color ámbar brand,
-   con leve halo — la "luz" de la marca. Se reusa en topbar y footer.
+   "lucid" en minúscula. EL GESTO DE IDENTIDAD ES EL PUNTO DE LA "i" — el
+   único elemento de color del wordmark. Técnica:
+     "luc" + <span.wm-i>ı</span> (i sin punto, U+0131)
+           + <span.wm-dot></span> (círculo posicionado absoluto sobre la ı)
+           + "d"
+   El punto usa --wm-dot-color, que defaultea a --brand. En el dashboard, el
+   contenedor puede tintear --wm-dot-color con el color del mundo activo.
    ---------------------------------------------------------------------- */
+.wordmark,
+.site-header__wordmark,
+.site-footer__wordmark {
+  --wm-dot-color: var(--brand);
+  --wm-dot-size: 0.16em;    /* ajuste óptico global — se sobreescribe por tamaño */
+  --wm-dot-offset-x: 0em;   /* corrimiento horizontal fino para centrar sobre la ı */
+  --wm-dot-offset-y: 0em;   /* corrimiento vertical: acerca/aleja de la ı */
+}
+
 .wordmark {
   display: inline-flex;
   align-items: baseline;
@@ -43,6 +57,34 @@ body::before {
   letter-spacing: -0.03em;
   color: var(--text-primary);
   user-select: none;
+  /* Afinación óptica del punto en topbar (1.35rem) */
+  --wm-dot-size: 0.19em;
+  --wm-dot-offset-x: 0.01em;
+  --wm-dot-offset-y: 0em;
+}
+
+/* La ı (dotless i, U+0131): mismo peso y estilo, sin punto tipográfico. */
+.wm-i {
+  display: inline-block;
+  font-style: italic;
+  font-weight: inherit;
+  position: relative;
+}
+
+/* Punto propio — el "haz" de lucid. Posicionado absoluto sobre la ı.
+   El bottom lo empuja arriba de la línea de x-height, alineado con donde
+   iría el punto natural en Zodiak itálica. */
+.wm-dot {
+  position: absolute;
+  left: 50%;
+  bottom: 0.92em;
+  width: var(--wm-dot-size);
+  height: var(--wm-dot-size);
+  border-radius: 50%;
+  background: var(--wm-dot-color, var(--brand));
+  transform: translate(calc(-50% + var(--wm-dot-offset-x)), var(--wm-dot-offset-y));
+  transition: background var(--transition-base);
+  pointer-events: none;
 }
 
 
@@ -590,6 +632,42 @@ body::before {
 .assist__cta {
   align-self: flex-start;
   margin-top: var(--space-1);
+}
+
+/* ==========================================================================
+   EMPTY STATE — dashboard sin activos
+   Cálido, respirado. Sustituye la grilla cuando el usuario aún no invirtió.
+   ========================================================================== */
+
+.empty-state {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-5);
+}
+
+.empty-state__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: 42ch;
+}
+
+.empty-state__title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-regular);
+  font-style: italic;
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.empty-state__desc {
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+  line-height: var(--leading-base);
 }
 
 /* ==========================================================================
