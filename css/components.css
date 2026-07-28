@@ -749,6 +749,10 @@ body::before {
   }
   .hero__actions {
     padding-top: 0;
+    /* El contenedor debe ocupar el ancho para que el flex: 1 de los botones
+       tenga efecto; sin esto el align-self: flex-start del estado base los
+       dejaba encogidos arriba a la izquierda. */
+    align-self: stretch;
   }
   .hero__actions .btn {
     flex: 1;

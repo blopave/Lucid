@@ -152,4 +152,12 @@
   .worlds-row {
     grid-template-columns: 1fr;
   }
+  /* El título de sección (serif grande) y su hint dejan de pelear por el ancho:
+     se apilan, título arriba y hint abajo. Evita que "Tus activos" y
+     "Explorar mundos" se partan en dos líneas. */
+  .section__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
 }
