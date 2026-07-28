@@ -20,5 +20,8 @@ tmp/
 node_modules/
 .playwright-mcp/
 
+# Config local de Claude Code (por usuario, no se versiona)
+.claude/settings.local.json
+
 # Screenshots temporales que a veces caen acá
 *-screenshot.png

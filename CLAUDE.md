@@ -152,8 +152,8 @@ Palermo · Q4 2026" es un compromiso, no una afirmación regulatoria).
   en el entorno, así que el flujo es abrir el SVG en Chrome + screenshot a
   1200×630, o restaurar el helper HTML temporalmente.
 
-- **`--text-muted` cumple AA-large pero NO AA en cuerpo pequeño** (ratios
-  medidos: 4.34 sobre `--bg`, 4.08 sobre `--bg-1`, 3.75 sobre `--bg-2`).
-  Se usa en labels mono de 11–13px (etiquetas de sección, hints, timestamps).
-  Es un token base — la decisión de subir su luminancia requiere aprobación
-  del dueño. Todos los `-ink` de mundos y los otros tokens de texto pasan AA.
+- **`--text-muted` — RESUELTO (jul 2026).** Con aprobación del dueño se subió
+  de `#6D7D93` a `#899AAF` para pasar WCAG AA (≥4.5) en cuerpo chico sobre las
+  cuatro superficies (ratios medidos: 6.33 `--bg`, 5.95 `--bg-1`, 5.47 `--bg-2`,
+  4.88 `--bg-3`). El valor anterior sólo cumplía AA-large. Todos los `-ink` de
+  mundos y los otros tokens de texto ya pasaban AA.

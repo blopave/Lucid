@@ -148,6 +148,7 @@ function renderComposition(assets) {
   comp.forEach(item => {
     const seg = document.createElement('div');
     seg.className = 'composition__segment';
+    seg.dataset.world = item.world;
     seg.style.width = `${item.percent}%`;
     seg.style.background = `var(--world-${item.world})`;
     bar.appendChild(seg);
@@ -160,6 +161,7 @@ function renderComposition(assets) {
   comp.forEach(item => {
     const it = document.createElement('div');
     it.className = 'composition__item';
+    it.dataset.world = item.world;
     it.innerHTML = `
       <span class="composition__dot" style="background: var(--world-${item.world});" aria-hidden="true"></span>
       <span class="composition__name">${WORLDS[item.world]}</span>
@@ -171,6 +173,34 @@ function renderComposition(assets) {
   frag.appendChild(legend);
 
   container.appendChild(frag);
+
+  wireCompositionHighlight(container);
+}
+
+/* Vincula segmentos de la barra con ítems de leyenda: al pasar por
+   cualquiera, se resalta su mundo y se atenúan los demás. Pura sensación
+   de feedback — la info ya está toda visible, así que no hace falta soporte
+   de teclado. Las transiciones (y su anulación bajo reduced-motion) las
+   maneja el CSS. */
+function wireCompositionHighlight(container) {
+  const els = container.querySelectorAll('.composition__segment, .composition__item');
+
+  const focusWorld = (world) => {
+    els.forEach(el => {
+      const match = el.dataset.world === world;
+      el.classList.toggle('is-active', match);
+      el.classList.toggle('is-dim', !match);
+    });
+  };
+
+  const clear = () => {
+    els.forEach(el => el.classList.remove('is-active', 'is-dim'));
+  };
+
+  els.forEach(el => {
+    el.addEventListener('mouseenter', () => focusWorld(el.dataset.world));
+    el.addEventListener('mouseleave', clear);
+  });
 }
 
 /* --- Assets ----------------------------------------------------------- */

@@ -199,6 +199,16 @@ body::before {
   border-color: var(--border);
 }
 
+/* ---------- Foco por teclado ------------------------------------------
+   El :focus-visible global (tokens.css) fija border-radius: 4px, lo que
+   cuadra las esquinas de cards, botones y —peor— el avatar circular al
+   navegar con Tab. Acá le devolvemos a cada superficie su radio propio,
+   conservando el halo ámbar del outline global. */
+.btn:focus-visible { border-radius: var(--radius-sm); }
+.avatar:focus-visible { border-radius: var(--radius-full); }
+.asset:focus-visible,
+.world-tile--active:focus-visible { border-radius: var(--radius-md); }
+
 /* ---------- Chip de mundo --------------------------------------------- */
 .chip {
   display: inline-flex;
@@ -368,13 +378,19 @@ body::before {
 
 .composition__segment {
   height: 100%;
-  transition: opacity var(--transition-fast);
+  transition: opacity var(--transition-base);
 }
 
 .composition__segment + .composition__segment {
   /* Gap sutil entre segmentos, sin encimar el color */
   box-shadow: -2px 0 0 0 var(--bg-1);
 }
+
+/* Resalte por mundo: al pasar por un segmento o su ítem de leyenda se
+   atenúan los demás. Feedback (200ms), no decoración. Bajo
+   prefers-reduced-motion el cambio es instantáneo (tokens.css anula las
+   transiciones), así que sigue siendo funcional sin movimiento. */
+.composition__segment.is-dim { opacity: 0.28; }
 
 .composition__legend {
   display: flex;
@@ -395,9 +411,14 @@ body::before {
   border-radius: var(--radius-full);
 }
 
-.composition__name    { color: var(--text-secondary); }
+.composition__name    { color: var(--text-secondary); transition: color var(--transition-base); }
 .composition__value   { font-family: var(--font-mono); color: var(--text-primary); font-variant-numeric: tabular-nums; }
 .composition__percent { font-family: var(--font-mono); color: var(--text-muted); font-size: var(--text-xs); }
+
+/* Ítem de leyenda: participa del resalte por mundo. */
+.composition__item { transition: opacity var(--transition-base); }
+.composition__item.is-dim { opacity: 0.42; }
+.composition__item.is-active .composition__name { color: var(--text-primary); }
 
 /* ==========================================================================
    ASSET CARD — cada posición del portfolio
@@ -426,6 +447,12 @@ body::before {
 
 .asset:active {
   transform: translateY(1px);
+}
+
+/* Pista de que la card es operable: el recuadro de iniciales se aviva al pasar. */
+.asset:hover .asset__id {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
 }
 
 .asset__head {
@@ -503,10 +530,32 @@ body::before {
   letter-spacing: -0.01em;
 }
 
+/* Respaldo "a la vista": tira teñida y recesada, para que se lea como el
+   artefacto de confianza que es (no como un label más). El punto ámbar —el
+   "haz" de lucid— hace de sello: este activo tiene su estructura legal a la
+   vista. No afirma verificación externa; marca que el respaldo está presente. */
 .asset__backing {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  padding: var(--space-2) var(--space-3);
+  padding-left: calc(var(--space-3) + 14px);
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.asset__backing::before {
+  content: '';
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--brand);
 }
 
 .asset__backing-label {
@@ -553,7 +602,9 @@ body::before {
 }
 
 .world-tile--soon {
-  opacity: 0.55;
+  /* Recesado leve: el estado "Muy pronto" muteado ya comunica que no está
+     listo, así que no hace falta hundir la tile al punto de volverla ilegible. */
+  opacity: 0.8;
 }
 
 .world-tile__head {
@@ -577,6 +628,23 @@ body::before {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+/* El mundo disponible se distingue del "muy pronto" con el ámbar de marca
+   y un punto — estado codificado en la forma, no solo en el texto. */
+.world-tile--active .world-tile__status {
+  color: var(--brand);
+}
+
+.world-tile--active .world-tile__status::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: var(--radius-full);
+  background: var(--brand);
+  vertical-align: middle;
 }
 
 .world-tile__desc {
