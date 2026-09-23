@@ -138,10 +138,15 @@ Palermo · Q4 2026" es un compromiso, no una afirmación regulatoria).
 │   └── app.js          # Render del dashboard desde portfolio.json
 ├── data/
 │   └── portfolio.json  # Datos mock del usuario/portfolio
-└── img/
-    ├── favicon.svg     # Gesto mínimo: navy + punto ámbar
-    ├── og.svg          # Open Graph — fuente vectorial
-    └── og.png          # Open Graph 1200×630 rasterizado
+├── img/
+│   ├── favicon.svg     # Gesto mínimo: navy + punto ámbar
+│   ├── og.svg          # Open Graph — fuente vectorial
+│   └── og.png          # Open Graph 1200×630 rasterizado
+└── docs/
+    └── tokenizacion/   # Informe + road map de tokenización (ver §9)
+        ├── informe-tokenizacion-lucid.pdf
+        ├── roadmap-tokenizacion-inmuebles.pdf
+        └── src/        # Fuente HTML + build.py que genera los documentos
 ```
 
 ## 8. Pendientes conocidos
@@ -157,3 +162,26 @@ Palermo · Q4 2026" es un compromiso, no una afirmación regulatoria).
   cuatro superficies (ratios medidos: 6.33 `--bg`, 5.95 `--bg-1`, 5.47 `--bg-2`,
   4.88 `--bg-3`). El valor anterior sólo cumplía AA-large. Todos los `-ink` de
   mundos y los otros tokens de texto ya pasaban AA.
+
+---
+
+## 9. Documentos vivos de tokenización
+
+`docs/tokenizacion/` guarda dos documentos que acompañan al producto:
+
+- **Informe completo** (`informe-tokenizacion-lucid.pdf`): panorama de la
+  tokenización en el mundo y en Argentina, con casos reales verificados.
+- **Road map** (`roadmap-tokenizacion-inmuebles.pdf`): cómo tokenizar un
+  inmueble en Argentina, fase por fase, con ejemplos reales.
+
+Reglas (decisión del dueño, sep 2026):
+
+- **Se actualizan mientras se trabaja sobre lucid.** Si una sesión trae data
+  nueva sobre tokenización, regulación, proveedores o casos, se incorpora a
+  estos documentos y se regeneran los PDF.
+- **Todo dato se verifica antes de entrar**, con fuente primaria o dos medios
+  serios que coincidan. Lo no confirmado se marca o queda afuera.
+- **Llevan la identidad de lucid** (§1–3) y la voz del canon (§4). El PDF no
+  tiene elementos clickeables: las fuentes van como notas numeradas.
+- El cómo (editar, generar, exportar a PDF) está en
+  `docs/tokenizacion/README.md`.

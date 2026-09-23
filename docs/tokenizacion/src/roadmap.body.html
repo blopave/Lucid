@@ -1,0 +1,628 @@
+<div class="shell">
+  
+
+  <main>
+    <header class="cover">
+      <div class="cover__top">
+        <span class="wordmark" aria-label="lucid"><span aria-hidden="true">luc<span class="wm-i">ı<span class="wm-dot"></span></span>d</span></span>
+        <span class="eyebrow">Road map · Septiembre 2026</span>
+      </div>
+      <div class="cover__grid">
+        <div style="display:grid;gap:20px">
+          <h1>Cómo tokenizar un <em>inmueble</em> en Argentina</h1>
+          <p class="cover__lead">El camino completo para tokenizar una casa, un hotel o un desarrollo: qué se decide en cada fase, quién participa, qué proveedores lo hacen hoy y qué enseñan los casos reales.</p>
+        </div>
+        <div aria-hidden="true">
+          <div class="fraction" id="fraction"></div>
+          <p class="fraction__cap">1 inmueble · 200 partes · cada una con su dueño</p>
+        </div>
+      </div>
+      <div class="facts" role="list">
+        <div class="fact" role="listitem"><b>7</b><span>fases, de revisar los papeles a repartir la renta</span></div>
+        <div class="fact" role="listitem"><b>2</b><span>inmuebles con oferta pública aprobada por la CNV</span></div>
+        <div class="fact" role="listitem"><b>81</b><span>PSAV inscriptos en la CNV, sep 2026</span></div>
+        <div class="fact" role="listitem"><b>31/12/2027</b><span>vence el período de prueba de la CNV</span></div>
+      </div>
+      <p class="cover__meta">Complementa el informe <em>Tokenización: el mundo y Argentina</em> de lucid, que reúne el panorama completo y todos los casos. Basado en el informe <em>Tokenización en el mundo y en Argentina</em> (julio 2026) y en una revisión de proveedores, normas y casos reales hecha el 23/09/2026. Cada cifra de los casos está confirmada en la fuente que la acompaña; lo que no se pudo confirmar está marcado o quedó afuera. No es asesoramiento legal, financiero ni impositivo: el armado fino se valida con un abogado de mercado de capitales y un contador.</p>
+    </header>
+
+    <nav class="print-index print-only" aria-hidden="true">
+      <p class="ch__label">Contenido</p>
+      <h2>Índice</h2>
+      <ol>
+        <li><span>01</span><div><b>Qué es tokenizar un inmueble</b><small>La idea en criollo y por qué ahora</small></div></li>
+        <li><span>02</span><div><b>El mapa completo</b><small>Las siete fases y cuánto tarda cada una</small></div></li>
+        <li><span>F0</span><div><b>¿Tu inmueble es tokenizable?</b><small>Checklist de papeles, valor y renta · caso RealT</small></div></li>
+        <li><span>F1</span><div><b>La estructura legal</b><small>Fideicomisos y sociedades · caso SeSocio</small></div></li>
+        <li><span>F2</span><div><b>El marco regulatorio</b><small>Los dos caminos · casos Landtoken e ILLA Belgrano</small></div></li>
+        <li><span>F3</span><div><b>Elegir proveedor</b><small>Quién hace qué en Argentina · caso BlackRock</small></div></li>
+        <li><span>F4–F6</span><div><b>Emitir, vender y administrar</b><small>Casos Dubái, St. Regis Aspen y Lofty</small></div></li>
+        <li><span>03</span><div><b>Casa, hotel o desarrollo</b><small>Qué cambia según el inmueble</small></div></li>
+        <li><span>04</span><div><b>Costos y riesgos</b></div></li>
+        <li><span>05</span><div><b>Seis casos que hay que conocer</b><small>Cinco que funcionaron y uno para no repetir</small></div></li>
+        <li><span>06</span><div><b>Qué significa para lucid</b></div></li>
+        <li><span>07</span><div><b>Glosario</b></div></li>
+      </ol>
+    </nav>
+
+    <!-- ============ QUÉ ES ============ -->
+    <section class="ch" id="que-es">
+      <p class="ch__label">Para empezar</p>
+      <h2>Qué es tokenizar un inmueble, <em>en criollo</em></h2>
+      <p class="lead">Tokenizar es partir el derecho a la renta y al valor de un inmueble en muchas fichas digitales, anotadas en un registro público que nadie puede borrar. El inmueble no se “sube a internet”: sigue siendo de una caja legal, casi siempre un fideicomiso, y cada ficha es una parte de esa caja.</p>
+
+      <figure>
+        <div class="fig">
+          <p class="fig__title">El recorrido de una ficha</p>
+          <p class="fig__sub">La tecnología es solo el tercer eslabón. Lo que le da valor a la ficha es el segundo.</p>
+          <div class="flow">
+            <div class="node"><b>El inmueble</b><small>Casa, hotel o desarrollo, con escritura y renta.</small><span class="who">Dueño · tasador</span></div>
+            <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="node node--core"><b>La caja legal</b><small>Un fideicomiso pasa a ser el dueño. Si alguien quiebra, el inmueble queda a salvo.</small><span class="who">Escribano · fiduciario · registro de la propiedad</span></div>
+            <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="node"><b>Las fichas</b><small>Cada una es una parte del fideicomiso, anotada en un registro público.</small><span class="who">Proveedor tecnológico · PSAV</span></div>
+            <div class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+            <div class="node"><b>Los inversores</b><small>Compran fichas, cobran su parte de la renta y pueden revenderlas.</small><span class="who">Plataforma · sociedad de bolsa</span></div>
+          </div>
+        </div>
+        <figcaption>Si hay oferta pública, la CNV (Comisión Nacional de Valores) supervisa toda la cadena y el valor queda depositado en la Caja de Valores.</figcaption>
+      </figure>
+
+      <div class="pair">
+        <div class="yes"><h4>Lo que sí hace</h4><ul>
+          <li>Baja el ticket de decenas de miles de dólares a USD 50–100.</li>
+          <li>Reparte la renta de forma automática.</li>
+          <li>Hace más fácil revender una parte.</li>
+        </ul></div>
+        <div class="no"><h4>Lo que no hace</h4><ul>
+          <li>No convierte un mal inmueble en uno bueno.</li>
+          <li>No reemplaza la escritura ni el fideicomiso.</li>
+          <li>No garantiza comprador el día que querés vender.</li>
+        </ul></div>
+      </div>
+
+      <div class="note">
+        <p class="note__k">La regla que manda</p>
+        <p>La ficha vale lo que vale la estructura legal que tiene detrás. Sin esa estructura, es un número en una pantalla.</p>
+      </div>
+      <div class="keep"><h3>Por qué ahora</h3>
+      <div class="facts" style="margin:16px 0 12px">
+        <div class="fact"><b>USD 38.830M</b><span>en activos reales tokenizados en el mundo, sep 2026</span></div>
+        <div class="fact"><b>0,6%</b><span>de ese total son inmuebles: el segmento está empezando</span></div>
+        <div class="fact"><b>1 día</b><span>tardó Dubái en vender su primer inmueble tokenizado, a 224 inversores</span></div>
+        <div class="fact"><b>USD 4,15M</b><span>emitió ILLA Belgrano, el primer edificio con oferta pública en Argentina</span></div>
+      </div>
+      <p style="font-size:var(--text-sm)">Fuentes: <a href="https://app.rwa.xyz/">RWA.xyz</a>, <a href="https://app.rwa.xyz/real-estate">RWA.xyz, inmuebles</a>, <a href="https://www.lexlatin.com/noticias/tokenizacion-fideicomiso-financiero-residencial-argentina">LexLatin</a>, <a href="https://dubailand.gov.ae/en/news-media/dld-launches-the-mena-s-first-tokenized-real-estate-project-through-the-prypco-mint-platform">Dubai Land Department</a>. El panorama completo del mercado está en el informe de lucid.</p></div>
+    </section>
+
+
+
+    <!-- ============ MAPA ============ -->
+    <section class="ch" id="mapa">
+      <p class="ch__label">El mapa completo</p>
+      <h2>Siete fases, y la tecnología es <em>una sola</em></h2>
+      <p class="lead">Lo caro y lo lento es lo legal: armar la caja que es dueña del inmueble y, si vas a ofrecerlo al público, conseguir la autorización de la CNV.</p>
+
+      <ol class="steps">
+        <li class="key"><span class="n">0</span><b>Activo</b><small>Papeles, valor y renta</small></li>
+        <li class="key"><span class="n">1</span><b>Estructura legal</b><small>El fideicomiso</small></li>
+        <li class="key"><span class="n">2</span><b>Regulación</b><small>Privado o público</small></li>
+        <li><span class="n">3</span><b>Proveedor</b><small>Quién emite y dónde</small></li>
+        <li><span class="n">4</span><b>Emisión</b><small>Cantidad, precio, reglas</small></li>
+        <li><span class="n">5</span><b>Colocación</b><small>A quién y por dónde</small></li>
+        <li><span class="n">6</span><b>Vida del activo</b><small>Renta, reportes, salida</small></li>
+      </ol>
+
+      <figure>
+        <div class="fig">
+          <p class="fig__title">Cuánto tarda cada fase, según el camino</p>
+          <p class="fig__sub">Meses desde que arrancás. Estimación propia para ordenar la magnitud, no una cotización.</p>
+          <ul class="legend"><li><span class="sw sw--priv"></span>Camino privado (fideicomiso ordinario)</li><li><span class="sw sw--pub"></span>Oferta pública con CNV</li></ul>
+          <div class="scroll"><svg id="gantt" role="img" aria-labelledby="gantt-t" style="min-width:600px;width:100%;display:block"><title id="gantt-t">Duración estimada de cada fase en el camino privado y en el de oferta pública</title></svg></div>
+        </div>
+        <figcaption>Las fases 1, 2 y 3 se trabajan en paralelo: el proveedor suele sumarse temprano porque muchos traen su propio esquema legal. La fase 6 dura todo el plazo del fideicomiso.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ FASE 0 ============ -->
+    <section class="ch" id="fase-0">
+      <p class="ch__label">Fase 0</p>
+      <h2>¿Tu inmueble es <em>tokenizable</em>?</h2>
+      <p class="lead">Sí, si tiene papeles limpios, un valor que un tercero puede defender y una renta que se puede demostrar. Acá se gana o se pierde todo lo demás.</p>
+      <p>El caso RealT en Detroit (2025) cayó con fichas impecables sobre casas sin habilitar, algunas todavía sin escriturar. Usá esta lista como filtro antes de llamar a un proveedor.</p>
+
+      <div class="checks" id="checks">
+        <fieldset><legend>Papeles</legend>
+          <label><i class="box" aria-hidden="true"></i><span>Escritura inscripta a nombre de quien aporta el inmueble</span></label>
+          <label><i class="box" aria-hidden="true"></i><span>Informe de dominio sin hipotecas, embargos ni inhibiciones</span></label>
+          <label><i class="box" aria-hidden="true"></i><span>Planos, final de obra y habilitaciones al día (en hotel, también turismo)</span></label>
+          <label><i class="box" aria-hidden="true"></i><span>Libre deuda de ABL, expensas y servicios</span></label>
+          <label><i class="box" aria-hidden="true"></i><span>Conformidad escrita de todos los dueños</span></label>
+        </fieldset>
+        <fieldset><legend>Valor</legend>
+          <label><i class="box" aria-hidden="true"></i><span>Tasación independiente, y una segunda si el monto es grande</span></label>
+          <label><i class="box" aria-hidden="true"></i><span>Estado físico documentado y plan de mantenimiento con costo</span></label>
+        </fieldset>
+        <fieldset><legend>Renta</legend>
+          <label><i class="box" aria-hidden="true"></i><span>Contratos vigentes o historial de ocupación y tarifa</span></label>
+          <label><i class="box" aria-hidden="true"></i><span>Flujo neto: renta menos expensas, impuestos, seguro, administración y vacancia</span></label>
+          <label><i class="box" aria-hidden="true"></i><span>Administrador del día a día con contrato</span></label>
+        </fieldset>
+      </div>
+
+      
+      <aside class="example">
+        <p class="example__k">Caso real · Detroit, EE.UU. · 2019–2026</p>
+        <h4>RealT: fichas impecables, casas sin papeles</h4>
+        <p>Llegó a unas 700 casas en fichas de unos USD 50. En julio de 2025 la ciudad la demandó por 408 propiedades sin certificado de habitabilidad, y una investigación encontró casas vendidas a inversores cuya escritura no estaba a su nombre. En julio de 2026 anunció la liquidación.</p>
+        <p class="case__lesson">Todo lo que falla en esta fase, falla después para los inversores.</p>
+        <div class="case__src"><a href="https://detroitmi.gov/news/city-scores-major-win-tenants-living-troubled-real-token-properties-are-subject-sweeping-lawsuit">Ciudad de Detroit</a><a href="https://www.wxyz.com/news/crypto-real-estate-company-realt-collected-millions-from-investors-for-detroit-properties-it-doesnt-own">WXYZ</a><a href="https://cryptobriefing.com/realt-crypto-real-estate-collapse/">Cryptobriefing</a></div>
+      </aside>
+      <aside class="example">
+        <p class="example__k">Caso real · Carolina del Sur, EE.UU. · 2018–2019</p>
+        <h4>Harbor: la hipoteca que nadie leyó</h4>
+        <p>Una residencia estudiantil de USD 20 millones iba a tokenizarse. La operación se cayó porque el contrato de la hipoteca existente prohibía transferirla.</p>
+        <p class="case__lesson">Antes de tokenizar, se leen todas las hipotecas y contratos que pesan sobre el inmueble.</p>
+        <div class="case__src"><a href="https://www.irei.com/news/harbor-launches-20m-tokenized-offering-student-housing-property/">IREI</a><a href="https://finance.yahoo.com/news/tokenized-real-estate-falters-another-090000644.html">CoinDesk, vía Yahoo</a></div>
+      </aside>
+      <div class="note note--warn">
+        <p class="note__k">Cuándo no conviene tokenizar</p>
+        <p>Si vas a juntar pocos inversores con tickets grandes y nadie necesita revender, un fideicomiso al costo o un fondo cerrado hace el mismo trabajo más barato. Tokenizar se justifica si necesitás al menos una de estas cosas: tickets de USD 50–100, reventa más ágil, reparto automático de la renta o inversores de otros países.</p>
+      </div>
+    </section>
+
+    <!-- ============ FASE 1 ============ -->
+    <section class="ch" id="fase-1">
+      <p class="ch__label">Fase 1</p>
+      <h2>La estructura legal: <em>quién es dueño</em> del inmueble</h2>
+      <p class="lead">Nunca se tokeniza el ladrillo: se tokeniza el derecho sobre la caja legal que es dueña del ladrillo. La variante que elijas define a quién podés vender, cuánto cuesta y cuánto protege al inversor.</p>
+
+      <div class="structs">
+        <article class="struct">
+          <span class="tag tag--pub" style="justify-self:start">Oferta pública</span>
+          <h4>Fideicomiso financiero</h4>
+          <p>Un fiduciario registrado en la CNV recibe el inmueble y emite valores; las fichas son su representación digital.</p>
+          <dl><dt>Vende a</dt><dd>Público en general, por sociedad de bolsa y por PSAV</dd><dt>Costo</dt><dd>El más caro y lento</dd><dt>Protección</dt><dd><span class="meter"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><em>Alta</em></span></dd><dt>Caso</dt><dd>Landtoken, ILLA Belgrano</dd></dl>
+        </article>
+        <article class="struct">
+          <span class="tag tag--priv" style="justify-self:start">Privado</span>
+          <h4>Fideicomiso ordinario</h4>
+          <p>Un fiduciario recibe el inmueble por escritura; el contrato define qué derecho da cada ficha.</p>
+          <dl><dt>Vende a</dt><dd>Un grupo, sin oferta pública</dd><dt>Costo</dt><dd>Más barato y rápido</dd><dt>Protección</dt><dd><span class="meter m2"><i class="f"></i><i class="f"></i><i class="f"></i><i></i><em>Media-alta</em></span></dd><dt>Caso</dt><dd>R3AL Blocks, Lena Buró</dd></dl>
+        </article>
+        <article class="struct">
+          <span class="tag" style="justify-self:start">Según cómo se ofrezca</span>
+          <h4>Sociedad de propósito único</h4>
+          <p>Una SA o SAS creada solo para ese inmueble; las fichas representan acciones o derechos sobre ella.</p>
+          <dl><dt>Vende a</dt><dd>Con oferta pública requiere CNV</dd><dt>Costo</dt><dd>Simple de armar, pesada con muchos socios</dd><dt>Protección</dt><dd><span class="meter m2"><i class="f"></i><i class="f"></i><i></i><i></i><em>Media</em></span></dd><dt>Caso</dt><dd>Lofty y RealT (EE.UU.)</dd></dl>
+        </article>
+        <article class="struct">
+          <span class="tag tag--priv" style="justify-self:start">Privado</span>
+          <h4>Boleto o derechos personales</h4>
+          <p>La ficha representa un contrato con el desarrollador, no una parte de una caja separada.</p>
+          <dl><dt>Vende a</dt><dd>Cualquiera, en los hechos</dd><dt>Costo</dt><dd>El más barato</dd><dt>Protección</dt><dd><span class="meter m1"><i class="f"></i><i></i><i></i><i></i><em>Baja</em></span></dd><dt>Caso</dt><dd>Preventas en pozo sobre Pala</dd></dl>
+        </article>
+      </div>
+
+      <h3>Los cuatro puntos que tiene que tener cualquier estructura seria</h3>
+      <ol>
+        <li><strong>Aislamiento.</strong> Si la plataforma o el desarrollador quiebran, el inmueble no entra en esa quiebra.</li>
+        <li><strong>El derecho escrito en el contrato, no en la web.</strong> Renta, valor de venta y voto figuran en el contrato o el prospecto.</li>
+        <li><strong>Partes independientes.</strong> Fiduciario, administrador, auditor y plataforma no son la misma empresa.</li>
+        <li><strong>Salida prevista.</strong> Qué pasa al final del plazo: venta y reparto, recompra o prórroga votada.</li>
+      </ol>
+      
+      <aside class="example">
+        <p class="example__k">Caso real · Argentina · 2017–2022</p>
+        <h4>SeSocio: el fiduciario que solo estaba en la publicidad</h4>
+        <p>Ofrecía partes de proyectos inmobiliarios y otros. El fideicomiso que anunciaba con BLC Trust nunca se concretó. La CNV multó a la empresa, a sus directivos y al fiduciario por oferta pública sin autorización; la plataforma se desactivó en agosto de 2022.</p>
+        <p class="case__lesson">La estructura tiene que existir en papeles firmados, no en la página web.</p>
+        <div class="case__src"><a href="https://www.cnv.gov.ar/descargas/sumarios/blob/f8c85232-2ed3-462e-86ea-4065fe5471d4">Resolución CNV</a><a href="https://www.bloomberglinea.com/2022/07/21/a-8-meses-de-comprar-a-sesocio-blockchaincom-desmantela-su-negocio-en-argentina/">Bloomberg Línea</a></div>
+      </aside>
+      <div class="note">
+        <p class="note__k">Dónde entra el escribano</p>
+        <p>Dos veces: al pasar el inmueble al fideicomiso (escritura e inscripción en el Registro de la Propiedad) y, con algunos proveedores, certificando que las fichas emitidas coinciden con lo escriturado. La ficha no da la escritura: da un derecho personal contra el fideicomiso.</p>
+      </div>
+    </section>
+
+    <!-- ============ FASE 2 ============ -->
+    <section class="ch" id="fase-2">
+      <p class="ch__label">Fase 2</p>
+      <h2>El marco regulatorio: <em>dos caminos</em></h2>
+      <p class="lead">Casi todo el mercado inmobiliario tokenizado argentino va por el camino privado. Por el público, con aprobación de la CNV, pasaron solo dos inmuebles: los campos de Landtoken y el edificio ILLA Belgrano.</p>
+
+      <div class="roads">
+        <div class="road road--pub">
+          <span class="tag tag--pub" style="justify-self:start">Camino público</span>
+          <h4>Oferta pública con representación digital</h4>
+          <ol>
+            <li>Fideicomiso financiero con fiduciario registrado</li>
+            <li>Prospecto aprobado por la CNV</li>
+            <li>Valor depositado en la Caja de Valores</li>
+            <li>Un PSAV inscripto lleva la versión digital</li>
+          </ol>
+          <p class="foot">Habilita: venta al público en general y publicidad abierta.<br>Casos: Landtoken (ago 2025), ILLA Belgrano (abr 2026).</p>
+        </div>
+        <div class="road road--priv">
+          <span class="tag tag--priv" style="justify-self:start">Camino privado</span>
+          <h4>Fuera del régimen de la CNV</h4>
+          <ol>
+            <li>Fideicomiso ordinario o boleto</li>
+            <li>Contrato claro sobre qué da cada ficha</li>
+            <li>Escribano que certifica</li>
+            <li>El proyecto declara que no es oferta pública</li>
+          </ol>
+          <p class="foot">Habilita: venta a un grupo, con costos y tiempos mucho menores.<br>Casos: Pala, R3AL Blocks, Metro Futuro, Brick-ly.</p>
+        </div>
+      </div>
+
+      <figure>
+        <div class="fig">
+          <p class="fig__title">Cómo se armó el régimen de la CNV</p>
+          <p class="fig__sub">Resoluciones generales (RG), emisiones inmobiliarias aprobadas y el vencimiento del período de prueba.</p>
+          <ul class="legend"><li><span class="sw sw--dot"></span>Norma</li><li><span class="sw sw--pub"></span>Emisión inmobiliaria aprobada</li></ul>
+          <div class="scroll"><svg id="timeline" role="img" aria-labelledby="tl-t" style="min-width:720px;width:100%;display:block"><title id="tl-t">Línea de tiempo del régimen de tokenización de la CNV, de abril 2025 a diciembre 2027</title></svg></div>
+        </div>
+        <figcaption>RG 1060 abrió la consulta; RG 1069 creó la primera etapa; RG 1081 sumó instrumentos; RG 1087 permitió no listar si el 100% se emite en formato digital; RG 1150 amplió el régimen y estiró el período de prueba hasta el 31/12/2027. Fuente: Boletín Oficial.</figcaption>
+      </figure>
+
+      <h3>Los dos casos del camino público</h3>
+      <div class="cases">
+        <article class="case">
+          <div class="case__top"><span class="case__where">Buenos Aires y Santa Fe · Campos · 2025</span><span class="tag tag--pub">Oferta pública</span></div>
+          <h4>Landtoken I</h4>
+          <div class="case__nums"><div><b>USD 20M</b><span>tope autorizado</span></div><div><b>USD 50</b><span>ticket mínimo</span></div><div><b>A-(ff)</b><span>calificación previa</span></div></div>
+          <p>Fideicomiso financiero con Allaria Fiduciaria y Caja de Valores, más una versión digital en PSAV. Se vendió por siete sociedades de bolsa y por Ripio a la vez.</p>
+          <div class="case__src"><a href="https://www.lexlatin.com/noticias/cnv-argentina-autoriza-emision-certificados-participacion-tokenizados">LexLatin</a><a href="https://www.acrup.untref.edu.ar/uploads/documents/ff6780b8d7e20b67828c888d203a66ad478a59d6663199892c58d8779701b018.pdf">Calificadora UNTREF ACR UP</a></div>
+        </article>
+        <article class="case">
+          <div class="case__top"><span class="case__where">Bajo Belgrano, CABA · Edificio · 2025–2026</span><span class="tag tag--pub">Oferta pública</span></div>
+          <h4>ILLA Belgrano I</h4>
+          <div class="case__nums"><div><b>USD 4,15M</b><span>emitidos, dic 2025</span></div><div><b>USD 100</b><span>ticket mínimo</span></div><div><b>Abr 2026</b><span>CNV aprueba la versión digital</span></div></div>
+          <p>Primero el fideicomiso financiero clásico; la ficha digital llegó cuatro meses después, con Volsmart como PSAV.</p>
+          <div class="case__src"><a href="https://www.pagbam.com/news/pagbam-advised-volsmart-on-the-authorization-for-the-tokenization-of-the-trust-securities/">PAGBAM</a><a href="https://www.lexlatin.com/noticias/tokenizacion-fideicomiso-financiero-residencial-argentina">LexLatin</a></div>
+        </article>
+      </div>
+<h3>Cuatro cosas que conviene saber antes de elegir camino</h3>
+      <ol>
+        <li><strong>Inscripto como PSAV no es lo mismo que supervisado.</strong> Estar en el registro no significa que la CNV controle cada proyecto; lo que da control sobre la emisión es la oferta pública.</li>
+        <li><strong>La ficha no da la escritura.</strong> Para transmitir un inmueble hacen falta título, modo e inscripción. Lo que se inscribe es la afectación al fideicomiso.</li>
+        <li><strong>El camino privado tiene un límite difuso.</strong> Invitar al público en general puede ser oferta pública aunque el proyecto diga lo contrario. Es la primera pregunta para el abogado.</li>
+        <li><strong>El período de prueba tiene fecha.</strong> Vence el 31/12/2027, el año de las elecciones. Después no se admiten emisiones nuevas salvo otra prórroga.</li>
+      </ol>
+      
+      <aside class="example">
+        <p class="example__k">Caso real · Brasil · 2021–2025</p>
+        <h4>Brasil: cuando la ficha se ata al registro sin una ley</h4>
+        <p>Rio Grande do Sul habilitó en 2021 inscribir inmuebles vinculados a fichas digitales. Desde octubre de 2025, ese estado, São Paulo y otros tres lo prohibieron, porque no había una ley nacional detrás.</p>
+        <p class="case__lesson">Lo que no tiene respaldo legal firme se puede revertir. Conviene ir por el camino que ya aprobó el regulador.</p>
+        <div class="case__src"><a href="https://www.registrodeimoveis.org.br/tjrssuspendenormasobretokenizaaao">Registro de Imóveis do Brasil</a><a href="https://viniciusboeira.com.br/2026/02/18/corregedorias-de-justica-proibem-que-matriculas-de-imoveis-sejam-vinculadas-a-tokens-digitais-2/">JOTA</a></div>
+      </aside>
+      <p><strong>Impuestos.</strong> Bienes Personales, Ganancias sobre la renta y el tratamiento del fideicomiso dependen de la estructura; se definen con un contador antes de emitir.</p>
+    </section>
+
+    <!-- ============ FASE 3 ============ -->
+    <section class="ch" id="fase-3">
+      <p class="ch__label">Fase 3</p>
+      <h2>Elegir proveedor: <em>quién hace qué</em></h2>
+      <p class="lead">No hay un proveedor que haga todo. Pala y Blockenfy te dan la plataforma con tu marca; R3AL Blocks y Metro Futuro arman el proyecto y lo venden; Volsmart y Allaria son el camino con la CNV. Ninguno publica sus precios de estructuración.</p>
+
+      <figure>
+        <div class="fig">
+          <p class="fig__title">El mapa de proveedores en Argentina</p>
+          <p class="fig__sub">Cuánto del proceso te resuelven, y si trabajan con oferta pública o por fuera.</p>
+          <ul class="legend"><li><span class="sw sw--dot"></span>Inscripto como PSAV en la CNV</li><li><span class="sw sw--ring"></span>No inscripto</li></ul>
+          <div class="scroll"><svg id="provmap" role="img" aria-labelledby="pm-t" style="min-width:600px;width:100%;display:block"><title id="pm-t">Mapa de proveedores por alcance del servicio y camino regulatorio</title></svg></div>
+        </div>
+        <figcaption>Registro de PSAV consultado el 23/09/2026. Token ByU y Efaysto se inscribieron en septiembre 2026 y todavía no tienen proyectos publicados.</figcaption>
+      </figure>
+
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Proveedor</th><th>Qué te resuelve</th><th>Red</th><th>Casos</th></tr></thead>
+          <tbody>
+            <tr><td><a href="https://www.palablockchain.io/solutions/casa-token">Pala · Casa Token</a></td><td>Plataforma con tu marca, verificación de identidad, certificación notarial con el Colegio de Escribanos porteño, cobros por Mercado Pago o tarjeta, reventa, seguro</td><td>Polygon</td><td>IDERO Casa Propia, hotel MYO Palermo (con Brick-ly), marketplace con Banco Coinag. Más de 20 desarrolladoras; declara USD 150M en oferta, no colocados</td></tr>
+            <tr><td><a href="https://r3al.io">R3AL Blocks</a></td><td>Estructura, emisión, cobros en pesos, dólares o cripto, custodia con Fireblocks. El inversor queda como beneficiario de un fideicomiso privado</td><td>Sin confirmar</td><td>Conectia (Monserrat), XUUM (Pinamar)</td></tr>
+            <tr><td><a href="https://blockenfy.com">Blockenfy</a></td><td>Tecnología con tu marca: fichas con verificación de identidad incorporada, pagos, reventa, paneles. No arma la estructura legal</td><td>BNB Chain, Polygon</td><td>Sin inmueble argentino público; opera en más de 10 países, según la empresa</td></tr>
+            <tr><td><a href="https://www.eltribuno.com/salta/2026-4-14-21-24-0-alianza-reental-mday-salta-suma-un-cuarto-proyecto-de-inversion-inmobiliaria-tokenizada">Reental</a></td><td>Marketplace español; las fichas son préstamos a la sociedad dueña del inmueble. Opera en Salta con Grupo MDay, sin registro como PSAV informado</td><td>Sin confirmar</td><td>Salta 4 (abr 2026): USD 958.800 en 24 horas, 132 inversores</td></tr>
+            <tr><td><a href="https://www.metrofuturo.com.ar">Metro Futuro</a></td><td>Estructura legal, emisión, rentas mensuales, reventa, cobros en varias monedas. PSAV n.º 100</td><td>Polygon</td><td>Aldeana Pilar, Altos de Benavídez, Sense Manantiales</td></tr>
+            <tr><td><a href="https://www.pagbam.com/news/pagbam-advised-volsmart-on-the-authorization-for-the-tokenization-of-the-trust-securities/">Volsmart</a></td><td>PSAV depositario y comercializador (n.º 85); fiduciario, organizador y colocador son terceros</td><td>Sin confirmar</td><td>ILLA Belgrano (USD 4,15M emitidos en dic 2025)</td></tr>
+            <tr><td>Landtoken + Allaria</td><td>Fideicomiso financiero con Allaria Fiduciaria; tecnología de Tech Demeter (Justoken). Allaria Digital es PSAV n.º 132</td><td>Sin confirmar</td><td>Campos arrendados, hasta USD 20M</td></tr>
+            <tr><td><a href="https://www.brickken.com">Brickken</a></td><td>Software español: estructura, verificación, dividendos, reventa; socio legal en Argentina</td><td>Varias</td><td>Sin caso argentino confirmado</td></tr>
+            <tr><td><a href="https://www.xcapit.com/en/blog/tokenizacion-activos-argentina-2026-fideicomiso-blockchain">Xcapit</a></td><td>Desarrollo a medida; la única con precios públicos</td><td>Compatibles con Ethereum</td><td>Sin caso inmobiliario</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure>
+        <div class="fig">
+          <p class="fig__title">Con cuánto se entra a cada proyecto</p>
+          <p class="fig__sub">Ticket mínimo por ficha, en dólares. Escala logarítmica: cada línea multiplica por 10.</p>
+          <ul class="legend"><li><span class="sw sw--priv"></span>Camino privado</li><li><span class="sw sw--pub"></span>Oferta pública con CNV</li></ul>
+          <div class="scroll"><svg id="tickets" role="img" aria-labelledby="tk-t" style="min-width:520px;width:100%;display:block"><title id="tk-t">Ticket mínimo por proyecto</title></svg></div>
+        </div>
+      </figure>
+
+      <figure>
+        <div class="fig">
+          <p class="fig__title">Qué tan grandes son las emisiones</p>
+          <p class="fig__sub">Monto total de cada proyecto, en dólares. Escala logarítmica.</p>
+          <ul class="legend"><li><span class="sw sw--priv"></span>Camino privado</li><li><span class="sw sw--pub"></span>Oferta pública con CNV</li></ul>
+          <div class="scroll"><svg id="sizes" role="img" aria-labelledby="sz-t" style="min-width:520px;width:100%;display:block"><title id="sz-t">Monto total por proyecto</title></svg></div>
+        </div>
+        <figcaption>La oferta pública se paga con escala: ILLA Belgrano emitió millones de dólares, mientras que los proyectos privados rondan los cientos de miles. Landtoken no aparece porque su monto colocado no está publicado de forma consistente; su tope autorizado es de USD 20 millones.</figcaption>
+      </figure>
+
+      
+      <aside class="example">
+        <p class="example__k">Caso real · EE.UU. · 2024</p>
+        <h4>BlackRock no tokenizó solo</h4>
+        <p>El administrador de activos más grande del mundo lanzó su fondo BUIDL en marzo de 2024 con Securitize, que emite las fichas y lleva el registro, y BNY Mellon, que custodia los bonos. Superó los USD 1.000 millones un año después.</p>
+        <p class="case__lesson">Elegir bien al proveedor es parte del producto: la marca pone la cara, el especialista pone la tecnología.</p>
+        <div class="case__src"><a href="https://investors.securitize.io/news/news-details/2024/BlackRock-Launches-Its-First-Tokenized-Fund-BUIDL-on-the-Ethereum-Network-03-20-2024/default.aspx">Securitize</a><a href="https://www.prnewswire.com/news-releases/blackrock-usd-institutional-digital-liquidity-fund-buidl-tokenized-by-securitize-surpasses-1b-in-aum-302401480.html">PR Newswire</a></div>
+      </aside>
+      <h3>Diez preguntas para hacerle a cualquier proveedor</h3>
+      <ol class="qs">
+        <li>¿Qué derecho exacto da cada ficha, y en qué documento está escrito?</li>
+        <li>¿Quién es el fiduciario, y es independiente de ustedes?</li>
+        <li>Si ustedes cierran, ¿qué pasa con el inmueble y con el registro de quién tiene qué?</li>
+        <li>¿Es oferta pública o privada? Si es privada, ¿cómo evitan cruzar la línea?</li>
+        <li>¿Están inscriptos como PSAV, o con quién se asocian para eso?</li>
+        <li>¿En qué red emiten, con qué formato de ficha, y quién auditó el código?</li>
+        <li>¿Cómo entra y sale la plata del inversor, y en qué monedas?</li>
+        <li>¿Hay reventa entre usuarios? ¿Cuánto se revendió de verdad en proyectos anteriores?</li>
+        <li>¿Cuánto cobran por armar, emitir, administrar y por cada operación?</li>
+        <li>¿Qué reportes recibe el inversor, cada cuánto y firmados por quién?</li>
+      </ol>
+    </section>
+
+    <!-- ============ FASES 4-6 ============ -->
+    <section class="ch" id="fases-4-6">
+      <p class="ch__label">Fases 4 a 6</p>
+      <h2>Emitir, vender y <em>administrar</em></h2>
+      <p class="lead">Emitir las fichas lleva días. Lo que define si el proyecto funciona viene después: vender bien y administrar todos los meses sin fallar.</p>
+
+      <h3>Fase 4 · La emisión</h3>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">Ejemplo: un departamento de USD 500.000</p>
+          <p class="fig__sub">Ejemplo ilustrativo con números redondos.</p>
+          <div class="waffle-wrap">
+            <div class="waffle" id="waffle" role="img" aria-label="100 cuadros: 80 ofrecidos a inversores, 20 retenidos por el dueño"></div>
+            <dl class="kv">
+              <div><dt>Valor tasado</dt><dd>USD 500.000</dd></div>
+              <div><dt>Fichas emitidas</dt><dd>5.000</dd></div>
+              <div><dt>Precio por ficha</dt><dd>USD 100</dd></div>
+              <div><dt><span class="sw sw--priv" style="vertical-align:-1px;margin-right:6px"></span>Ofrecidas a inversores (80%)</dt><dd>4.000</dd></div>
+              <div><dt><span class="sw" style="background:var(--bg-3);vertical-align:-1px;margin-right:6px"></span>Retenidas por el dueño (20%)</dt><dd>1.000</dd></div>
+            </dl>
+          </div>
+        </div>
+        <figcaption>Cada cuadro son 50 fichas. Que el dueño se quede con una parte es una señal de confianza: gana o pierde junto a los inversores.</figcaption>
+      </figure>
+      <ul>
+        <li><strong>La red.</strong> Para inversores chicos, una de comisiones casi nulas (Polygon, Base, Solana, Stellar): nadie quiere pagar USD 20 de comisión para cobrar USD 4 de renta.</li>
+        <li><strong>El formato.</strong> Para activos regulados, ERC-3643 lleva la verificación de identidad adentro de la ficha: pasarla a alguien no verificado falla por diseño. Es la diferencia entre efectivo y una entrada con tu nombre.</li>
+        <li><strong>Las reglas.</strong> Lista blanca de inversores habilitados, plazos mínimos y topes por persona.</li>
+        <li><strong>La auditoría del código</strong> que maneja las fichas, antes de emitir.</li>
+      </ul>
+
+      <h3>Fase 5 · La colocación</h3>
+      <p>El proceso es siempre el mismo; lo que cambia es quién le vende al inversor.</p>
+      <div class="models">
+        <div class="model"><h4>Venta directa<small>Ej.: Metro Futuro</small></h4><div class="chain"><span class="me">Plataforma del emisor</span><i>→</i><span>Inversor</span></div></div>
+        <div class="model"><h4>Marca blanca<small>Ej.: desarrolladores sobre Pala o Blockenfy</small></h4><div class="chain"><span>Tecnología de terceros</span><i>→</i><span class="me">Marca del emisor</span><i>→</i><span>Inversor</span></div></div>
+        <div class="model"><h4>Marketplace<small>Ej.: R3AL Blocks, Reental</small></h4><div class="chain"><span>Desarrollador</span><i>→</i><span class="me">Marketplace</span><i>→</i><span>Inversor</span></div></div>
+        <div class="model"><h4>Mercado de capitales<small>Ej.: Landtoken, Volsmart</small></h4><div class="chain"><span>Fideicomiso financiero</span><i>→</i><span class="me">Sociedad de bolsa o PSAV</span><i>→</i><span>Inversor</span></div></div>
+      </div>
+      <div class="note">
+        <p class="note__k">El doble canal</p>
+        <p>Landtoken vende por las dos puertas a la vez: el inversor tradicional compra por su sociedad de bolsa sin ver nada de cripto, y el digital compra la ficha por un PSAV. Del lado del inversor, la compra lleva unos 10 minutos más la verificación de identidad, que tarda de minutos a 3 días hábiles.</p>
+      </div>
+
+      
+      <aside class="example">
+        <p class="example__k">Caso real · Dubái · 2025</p>
+        <h4>Prypco Mint: la demanda aparece cuando hay certeza</h4>
+        <p>El registro de la propiedad de Dubái emite los títulos como fichas. La primera propiedad se vendió en un día a 224 inversores de 44 nacionalidades; la segunda, en 1 minuto 58 segundos. El 70% invertía por primera vez en inmuebles de Dubái. Ticket mínimo: AED 2.000, unos USD 545.</p>
+        <p class="case__lesson">Con respaldo oficial y ticket bajo, la colocación deja de ser el problema.</p>
+        <div class="case__src"><a href="https://dubailand.gov.ae/en/news-media/dld-launches-the-mena-s-first-tokenized-real-estate-project-through-the-prypco-mint-platform">Dubai Land Department</a><a href="https://dubailand.gov.ae/en/news-media/dubai-land-department-achieves-world-first-with-instant-sell-out-of-tokenized-real-estate/">Venta récord</a></div>
+      </aside>
+      <h3>Fase 6 · La vida del activo</h3>
+      <p>Es el trabajo de todos los meses. El administrador cobra el alquiler, descuenta los gastos y la plataforma reparte lo que queda según las fichas de cada uno.</p>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">De la renta bruta a lo que se reparte</p>
+          <p class="fig__sub">Mismo departamento, un año, en dólares. Ejemplo ilustrativo: no es una proyección ni una promesa de renta.</p>
+          <div class="scroll"><svg id="waterfall" role="img" aria-labelledby="wf-t" style="min-width:560px;width:100%;display:block"><title id="wf-t">Cascada de la renta anual: alquiler bruto menos gastos igual renta repartida</title></svg></div>
+        </div>
+        <figcaption>Mostrar la cuenta completa, y no solo el número final, es lo que separa a un proyecto serio: RealT pagaba rentas que no había cobrado.</figcaption>
+      </figure>
+      <ul>
+        <li><strong>Reportar.</strong> Estado del inmueble, ocupación, renta cobrada contra renta pagada, gastos. Con oferta pública, además, informes a la CNV.</li>
+        <li><strong>Tasar seguido.</strong> El valor de la ficha sigue al del inmueble; la frecuencia se publica antes de vender.</li>
+        <li><strong>Dar salida.</strong> Tres rutas: reventa en la plataforma, venta directa a otro inversor habilitado o esperar el fin del fideicomiso. En todo el mundo la reventa todavía es poco profunda: nadie puede prometer “vendés cuando quieras”.</li>
+        <li><strong>Decidir en conjunto.</strong> Reparaciones grandes, venta anticipada o prórroga se votan según el contrato.</li>
+      </ul>
+    <div class="cases">
+
+      <aside class="example example--half">
+        <p class="example__k">Caso real · Aspen, EE.UU. · 2018–2020</p>
+        <h4>St. Regis Aspen: dos años hasta la reventa</h4>
+        <p>El hotel vendió el 18,9% en fichas por USD 18 millones en 2018. Recién en agosto de 2020 las fichas empezaron a revenderse en un mercado secundario regulado.</p>
+        <p class="case__lesson">La salida hay que diseñarla desde el día uno, aunque llegue después.</p>
+        <div class="case__src"><a href="https://www.aspentimes.com/trending/in-18-million-deal-nearly-one-fifth-of-st-regis-aspen-sells-through-digital-tokens/">Aspen Times</a><a href="https://www.tzero.com/news/tzero-ats-begins-trading-the-st-regis-aspen-digital-security">tZERO</a></div>
+      </aside>
+      <aside class="example example--half">
+        <p class="example__k">Caso real · EE.UU.</p>
+        <h4>Lofty: salir tiene un costo</h4>
+        <p>Paga el alquiler todos los días y vende fichas de unos USD 50. Pero revender cuesta entre 5,5% y 10,5% sumando la compra y la venta, según una reseña independiente.</p>
+        <p class="case__lesson">El costo de salida se muestra antes de comprar, no después.</p>
+        <div class="case__src"><a href="https://www.crowdfundedwealth.com/reviews/lofty-review">Reseña independiente</a></div>
+      </aside>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ============ TIPOS ============ -->
+    <section class="ch" id="tipos">
+      <p class="ch__label">Según el inmueble</p>
+      <h2>Casa, hotel o desarrollo: <em>qué cambia</em></h2>
+      <p class="lead">El camino es el mismo; cambia de dónde sale la plata que cobra el inversor y qué riesgo hay que explicarle.</p>
+      <div class="types">
+        <article class="type">
+          <h4>Casa o departamento</h4>
+          <dl>
+            <div><dt>La renta sale de</dt><dd>Alquiler mensual con contrato</dd></div>
+            <div><dt>Papel extra</dt><dd>Contrato de alquiler vigente</dd></div>
+            <div><dt>Riesgo principal</dt><dd>Vacancia y morosidad</dd></div>
+            <div><dt>Se reporta</dt><dd>Renta cobrada, gastos, estado</dd></div>
+            <div><dt>Referencias</dt><dd>Lofty y RealT (EE.UU.), Metro Futuro</dd></div>
+          </dl>
+        </article>
+        <article class="type">
+          <h4>Hotel</h4>
+          <dl>
+            <div><dt>La renta sale de</dt><dd>Tarifa × ocupación − costos de operación</dd></div>
+            <div><dt>Papel extra</dt><dd>Habilitación turística, contrato con el operador, 2–3 años de balances</dd></div>
+            <div><dt>Riesgo principal</dt><dd>Estacionalidad y calidad del operador</dd></div>
+            <div><dt>Se reporta</dt><dd>Ocupación, tarifa promedio, resultado</dd></div>
+            <div><dt>Referencias</dt><dd>St. Regis Aspen (EE.UU., 2018): USD 18M por ~19% del hotel; MYO Palermo</dd></div>
+          </dl>
+        </article>
+        <article class="type">
+          <h4>Desarrollo en pozo</h4>
+          <dl>
+            <div><dt>La renta sale de</dt><dd>No hay renta hasta terminar: valorización o alquiler futuro</dd></div>
+            <div><dt>Papel extra</dt><dd>Permisos de obra, cronograma, presupuesto, garantía del desarrollador</dd></div>
+            <div><dt>Riesgo principal</dt><dd>Demoras, sobrecostos o que la obra no termine</dd></div>
+            <div><dt>Se reporta</dt><dd>Avance de obra certificado y fondos usados</dd></div>
+            <div><dt>Referencias</dt><dd>ILLA Belgrano, XUUM Pinamar, IDERO</dd></div>
+          </dl>
+        </article>
+      </div>
+      <div class="note">
+        <p class="note__k">En un hotel, separá el edificio de la operación</p>
+        <p>El inversor puede comprar una parte del edificio y cobrar un alquiler fijo que paga el operador, o una parte del resultado y asumir la estacionalidad. Mezclar las dos cosas sin aclararlo es la forma más rápida de generar un reclamo.</p>
+      </div>
+    </section>
+
+    <!-- ============ COSTOS ============ -->
+    <section class="ch" id="costos">
+      <p class="ch__label">Costos y riesgos</p>
+      <h2>Qué cuesta y <em>qué puede salir mal</em></h2>
+      <p class="lead">Ningún proveedor local publica sus tarifas. Las referencias que existen sirven para ordenar la magnitud, no para presupuestar.</p>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Concepto</th><th>Referencia</th><th>Fuente</th></tr></thead>
+          <tbody>
+            <tr><td>Diagnóstico tecnológico</td><td class="num">USD 8.000–12.000</td><td><a href="https://www.xcapit.com/en/blog/tokenizacion-activos-argentina-2026-fideicomiso-blockchain">Xcapit</a>, 4 semanas</td></tr>
+            <tr><td>Plataforma mínima a medida</td><td class="num">USD 40.000–150.000</td><td><a href="https://www.xcapit.com/en/blog/tokenizacion-activos-argentina-2026-fideicomiso-blockchain">Xcapit</a></td></tr>
+            <tr><td>Arancel de la CNV por fideicomiso financiero</td><td>Según Resolución 1/2026 de Economía; PyMEs CNV exentas</td><td><a href="https://aldiaargentina.microjuris.com/2026/01/09/legislacion-cnv-nuevos-criterios-para-el-pago-de-tasas-de-fiscalizacion-y-control/">RG 1103</a></td></tr>
+            <tr><td>Honorario de fiduciario</td><td class="num">5,5% del costo de obra</td><td>Modelo de fideicomiso al costo del Colegio de Escribanos (no es de tokenización)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>A eso se suma lo que no cambia por tokenizar: escritura y sellos, tasación, auditoría contable anual, administración del inmueble y seguro.</p>
+
+      <h3>Lo que puede salir mal</h3>
+      <div class="risks">
+        <div class="risk"><h4>El inmueble falla</h4><p>No se alquila, se deteriora o pierde valor. Tokenizar no saca el riesgo del ladrillo.</p><p class="fix">Revisión exigente en la fase 0 y administrador profesional.</p></div>
+        <div class="risk"><h4>La plataforma quiebra</h4><p>El activo queda atrapado en la quiebra, como pasó con Celsius en 2022.</p><p class="fix">Fideicomiso separado y fiduciario independiente.</p></div>
+        <div class="risk"><h4>Opacidad</h4><p>Se pagan rentas que no se cobraron o se venden fichas de algo no escriturado, como en RealT (2025).</p><p class="fix">Papeles visibles, auditor externo, renta reportada contra lo cobrado.</p></div>
+        <div class="risk"><h4>Todos quieren salir a la vez</h4><p>La reventa no alcanza y los inversores quedan atrapados justo cuando más quieren salir.</p><p class="fix">No prometer liquidez; diseñar la salida para el día de tormenta.</p></div>
+        <div class="risk"><h4>Regulación</h4><p>Un proyecto privado se considera oferta pública, o el período de prueba no se renueva después de 2027.</p><p class="fix">Abogado de mercado de capitales desde el día uno.</p></div>
+        <div class="risk"><h4>El circuito del dólar</h4><p>Vuelve el cepo o se restringen los dólares digitales. El <a href="https://www.coindesk.com/markets/2025/12/10/imf-flags-stablecoins-as-source-of-risk-to-emerging-markets-experts-say-we-aren-t-there-yet">FMI</a> y el <a href="https://www.bis.org/publ/arpdf/ar2025e3.htm">BIS</a> advirtieron que en países emergentes los dólares digitales pueden usarse para esquivar controles de cambio.</p><p class="fix">Poder cobrar y pagar también por el canal tradicional, en pesos.</p></div>
+      </div>
+    </section>
+
+    <!-- ============ LUCID ============ -->
+    <section class="ch" id="seis-casos">
+      <p class="ch__label">Para recordar</p>
+      <h2>Seis casos que <em>hay que conocer</em></h2>
+      <p class="lead">Cinco muestran que tokenizar inmuebles funciona cuando la estructura es seria. Uno muestra qué pasa cuando no lo es. Todos están desarrollados en el informe de lucid.</p>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Caso</th><th>Dónde y qué</th><th>El dato</th><th>Qué enseña</th></tr></thead>
+          <tbody>
+            <tr><td>Prypco Mint</td><td>Dubái · departamentos · 2025</td><td class="num">224 inversores en 1 día</td><td>El registro oficial detrás de la ficha crea la demanda.</td></tr>
+            <tr><td>St. Regis Aspen</td><td>EE.UU. · hotel · 2018</td><td class="num">USD 18M por el 18,9%</td><td>Encajar en la ley de valores, no esquivarla.</td></tr>
+            <tr><td>Dormy Inn Kobe</td><td>Japón · hotel · 2023</td><td class="num">Mercado regulado de Osaka</td><td>Bancos y casas de bolsa conocidos dan confianza.</td></tr>
+            <tr><td>Landtoken I</td><td>Argentina · campos · 2025</td><td class="num">Ticket USD 50</td><td>El camino de la CNV está probado y admite dos canales de venta.</td></tr>
+            <tr><td>ILLA Belgrano I</td><td>Argentina · edificio · 2025–2026</td><td class="num">USD 4,15M emitidos</td><td>La ficha puede sumarse a un fideicomiso regulado que ya funciona.</td></tr>
+            <tr><td>RealT</td><td>EE.UU. · casas · 2019–2026</td><td class="num">En liquidación desde jul 2026</td><td>Sin papeles y mantenimiento, la ficha no vale nada.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:var(--text-sm)">Fuentes: <a href="https://dubailand.gov.ae/en/news-media/dld-launches-the-mena-s-first-tokenized-real-estate-project-through-the-prypco-mint-platform">Dubai Land Department</a>, <a href="https://www.aspentimes.com/trending/in-18-million-deal-nearly-one-fifth-of-st-regis-aspen-sells-through-digital-tokens/">Aspen Times</a>, <a href="https://www.iolite.net/en/news/odx-launches-first-domestic-st-trading">ODX</a>, <a href="https://www.lexlatin.com/noticias/cnv-argentina-autoriza-emision-certificados-participacion-tokenizados">LexLatin (Landtoken)</a>, <a href="https://www.lexlatin.com/noticias/tokenizacion-fideicomiso-financiero-residencial-argentina">LexLatin (ILLA)</a>, <a href="https://cryptobriefing.com/realt-crypto-real-estate-collapse/">Cryptobriefing</a>.</p>
+    </section>
+
+    <section class="ch" id="lucid">
+      <p class="ch__label">Para el equipo</p>
+      <h2>Qué significa esto para lucid</h2>
+      <p class="lead">lucid no tiene que construir la tecnología: la alquila. Su lugar es originar buenos inmuebles y poner la cara, y asociarse para lo demás. Es lo que hace BlackRock con su fondo BUIDL.</p>
+      <div class="roles">
+        <div class="role role--own"><span class="ex">BlackRock en BUIDL</span><h4>Activo y marca</h4><p>lucid elige el inmueble, lo explica y responde por él. Es lo único que no se terceriza.</p></div>
+        <div class="role"><span class="ex">Securitize en BUIDL</span><h4>Tokenización y cumplimiento</h4><p>Un proveedor local de la fase 3.</p></div>
+        <div class="role"><span class="ex">BNY Mellon en BUIDL</span><h4>Custodia y estructura</h4><p>Fideicomiso con fiduciario independiente; Caja de Valores si hay oferta pública.</p></div>
+        <div class="role"><span class="ex">Circle en BUIDL</span><h4>Entrada y salida del dinero</h4><p>Un PSAV que convierta pesos y dólares digitales.</p></div>
+      </div>
+
+      <h3>Lo que el manual le pide al producto</h3>
+      <ol>
+        <li><strong>Un expediente por activo en el panel.</strong> Escritura, informe de dominio, tasación, contrato de fideicomiso y registro de la emisión, a la vista.</li>
+        <li><strong>Una línea de tiempo del activo.</strong> Las siete fases como estado visible de la primera propiedad de Palermo, dicho como proceso.</li>
+        <li><strong>Un flujo para dueños de inmuebles.</strong> El checklist de la fase 0 puede ser el formulario de entrada de quien quiere tokenizar su casa u hotel.</li>
+        <li><strong>La renta neta, no la bruta.</strong> Alquiler cobrado, gastos y lo repartido, como en la cascada de la fase 6.</li>
+        <li><strong>La salida explicada antes de comprar.</strong> Qué ruta de salida tiene cada activo y cuánto puede tardar.</li>
+      </ol>
+
+      <div class="note">
+        <p class="note__k">Decisiones abiertas</p>
+        <ul>
+          <li>Fideicomiso financiero con oferta pública, o fideicomiso ordinario para el piloto de Palermo.</li>
+          <li>Qué proveedor tecnológico, o si se usa uno distinto por mundo.</li>
+          <li>Quién es el fiduciario y quién administra el inmueble.</li>
+          <li>La entrada y salida del dinero: el informe menciona un PSAV propio del grupo que hay que confirmar.</li>
+          <li>La primera consulta con un abogado de mercado de capitales y un contador.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ GLOSARIO ============ -->
+    <section class="ch" id="glosario">
+      <p class="ch__label">Referencia</p>
+      <h2>Glosario</h2>
+      <dl class="gloss">
+        <div><dt>ALyC</dt><dd>Agente de Liquidación y Compensación: la sociedad de bolsa del inversor tradicional.</dd></div>
+        <div><dt>Caja de Valores</dt><dd>El depósito central donde quedan registrados los valores de oferta pública.</dd></div>
+        <div><dt>CNV</dt><dd>Comisión Nacional de Valores, el regulador del mercado de inversiones.</dd></div>
+        <div><dt>Dólar digital</dt><dd>Ficha atada 1 a 1 al dólar, usada para pagar y cobrar (en inglés, stablecoin).</dd></div>
+        <div><dt>ERC-3643</dt><dd>Formato de ficha para activos regulados, con la verificación de identidad adentro.</dd></div>
+        <div><dt>Ficha digital</dt><dd>Lo que en inglés se llama token: una parte del fideicomiso anotada en un registro público.</dd></div>
+        <div><dt>Fideicomiso financiero</dt><dd>Fideicomiso autorizado por la CNV para ofrecer sus valores al público.</dd></div>
+        <div><dt>Fideicomiso ordinario</dt><dd>Fideicomiso privado, sin oferta pública ni control de la CNV.</dd></div>
+        <div><dt>Fiduciario</dt><dd>Quien administra el fideicomiso en interés de los inversores.</dd></div>
+        <div><dt>Lista blanca</dt><dd>Inversores verificados, los únicos que pueden recibir las fichas.</dd></div>
+        <div><dt>Período de prueba</dt><dd>El sandbox de la CNV: reglas especiales bajo supervisión, hasta el 31/12/2027.</dd></div>
+        <div><dt>PSAV</dt><dd>Proveedor de Servicios de Activos Virtuales inscripto ante la CNV.</dd></div>
+        <div><dt>Registro público</dt><dd>La red (en inglés, blockchain): un registro compartido entre muchas computadoras, muy difícil de falsificar.</dd></div>
+        <div><dt>RG</dt><dd>Resolución General de la CNV.</dd></div>
+      </dl>
+
+      <h3>Sobre las fuentes</h3>
+      <p>Cada capítulo cierra con sus notas: los números en el texto remiten a la fuente de cada dato. Todas las páginas se consultaron el 23/09/2026. La base es el informe <em>Tokenización en el mundo y en Argentina</em> (julio 2026), corregido con esa verificación.</p>
+      <p style="font-size:var(--text-sm);color:var(--text-muted)">Las cifras de mercado se mueven rápido: conviene revalidarlas cada 90 días. Los rendimientos y montos de cada proyecto son los publicados por sus emisores, no garantías.</p>
+    </section>
+
+    <footer class="end">
+      <span class="wordmark" style="font-size:1.2rem" aria-label="lucid"><span aria-hidden="true">luc<span class="wm-i">ı<span class="wm-dot"></span></span>d</span></span>
+      <span>Manual de tokenización inmobiliaria · 23/09/2026 · Buenos Aires</span>
+    </footer>
+  </main>
+</div>
+<div class="tip" id="tip" hidden></div>
+
