@@ -21,7 +21,7 @@
   const wf=document.getElementById('waffle');if(wf)for(let i=0;i<100;i++){const c=document.createElement('i');if(i<80)c.className='o';wf.appendChild(c)}
 
   /* ---------- Gantt ---------- */
-  const phases=['0 · Activo','1 · Estructura legal','2 · Regulación','3 · Proveedor','4 · Emisión','5 · Colocación','6 · Vida del activo'];
+  const phases=['1 · Activo','2 · Estructura legal','3 · Regulación','4 · Proveedor','5 · Emisión','6 · Colocación','7 · Vida del activo'];
   const priv=[[0,1.5],[0.5,2.5],[1,2],[1,2.5],[2.5,3],[3,5],[5,12]];
   const pub =[[0,1.5],[1,4],[2,8],[2,4],[7.5,8],[8,10],[10,12]];
   (function(){
@@ -88,7 +88,7 @@
       {n:'Blockenfy',c:0,y:.60,psav:false,d:'Tecnología de marca blanca, fichas con verificación incorporada. No arma lo legal.'},
       {n:'Xcapit',c:0,y:.83,psav:false,d:'Desarrollo a medida. Diagnóstico USD 8–12K; plataforma USD 40–150K.'},
       {n:'Brickken',c:1,y:.60,psav:false,d:'Software español con estructuración legal; sin caso argentino confirmado.'},
-      {n:'Pala · Casa Token',c:1,y:.83,psav:false,d:'Plataforma para desarrolladores con escribanos; Polygon. Declara USD 150M en oferta.'},
+      {n:'Pala · Casa Token',c:1,y:.83,psav:false,d:'Plataforma para desarrolladores con validación notarial. Declara USD 150M en oferta.'},
       {n:'Volsmart',c:1,y:.22,psav:true,d:'PSAV n.º 85. Depositario y comercializador de ILLA Belgrano.'},
       {n:'R3AL Blocks',c:2,y:.60,psav:false,d:'Estructura, emite y vende en su marketplace. Fideicomiso privado.'},
       {n:'Metro Futuro',c:2,y:.83,psav:true,d:'PSAV n.º 100. Estructura, emite, vende y paga rentas. Fuera del régimen de oferta pública.'},

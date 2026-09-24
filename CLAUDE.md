@@ -180,7 +180,11 @@ Reglas (decisión del dueño, sep 2026):
   nueva sobre tokenización, regulación, proveedores o casos, se incorpora a
   estos documentos y se regeneran los PDF.
 - **Todo dato se verifica antes de entrar**, con fuente primaria o dos medios
-  serios que coincidan. Lo no confirmado se marca o queda afuera.
+  serios que coincidan. Lo no confirmado se marca o queda afuera. La
+  información no puede fallar: cada auditoría (fuente abierta por dato,
+  calificación A–D, veredicto) se registra en
+  `docs/tokenizacion/VERIFICACION.md`, y ante cualquier cambio de contenido se
+  audita el texto final, no las notas previas.
 - **Llevan la identidad de lucid** (§1–3) y la voz del canon (§4). El PDF no
   tiene elementos clickeables: las fuentes van como notas numeradas.
 - El cómo (editar, generar, exportar a PDF) está en

@@ -1,0 +1,36 @@
+{
+ "informe-tokenizacion-lucid.html": {
+  "resumen": 4,
+  "p1": 6,
+  "p2": 8,
+  "p3": 10,
+  "p4": 12,
+  "p5": 15,
+  "p6": 19,
+  "casos-argentina": 23,
+  "p7": 30,
+  "p8": 32,
+  "p9": 35,
+  "casos-mundo": 37,
+  "p10": 42,
+  "p11": 45,
+  "p12": 47,
+  "glosario": 49
+ },
+ "roadmap-tokenizacion-inmuebles.html": {
+  "que-es": 4,
+  "mapa": 6,
+  "paso-1": 7,
+  "paso-2": 9,
+  "paso-3": 11,
+  "paso-4": 14,
+  "paso-5": 18,
+  "paso-6": 19,
+  "paso-7": 21,
+  "tipos": 23,
+  "costos": 24,
+  "seis-casos": 26,
+  "lucid": 27,
+  "glosario": 29
+ }
+}

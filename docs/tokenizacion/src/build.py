@@ -7,7 +7,7 @@ Escribe docs/tokenizacion/informe-tokenizacion-lucid.html y
 docs/tokenizacion/roadmap-tokenizacion-inmuebles.html. El PDF se exporta desde
 ese HTML (ver docs/tokenizacion/README.md).
 """
-import re,html,os
+import re,html,os,json
 
 SRC=os.path.dirname(os.path.abspath(__file__))
 OUT=os.path.dirname(SRC)
@@ -34,6 +34,37 @@ sup.fn{font-family:var(--font-mono);font-size:.62em;color:var(--brand);margin-le
 .faq > div{padding:14px 0;border-bottom:1px solid var(--border);break-inside:avoid}
 .faq h4{margin:0 0 6px;font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text-primary)}
 .faq p{margin:0;font-size:var(--text-base)}
+
+/* ---------- aperturas de capítulo ---------- */
+.step-open{display:flex;align-items:center;gap:18px;margin:0 0 14px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.step-num{font-family:var(--font-display);font-style:italic;font-weight:700;font-size:4.2rem;line-height:.9;color:var(--brand);min-width:1.1em;letter-spacing:-.02em}
+.step-num--roman{font-size:3.4rem;font-style:normal;min-width:1.6em}
+.step-open--alt .step-num{color:var(--text-secondary)}
+.step-meta{display:grid;gap:8px}
+.step-meta .ch__label{margin:0}
+.step-title{margin:0;font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)}
+.step-bar{display:flex;gap:5px}
+.step-bar i{width:26px;height:5px;border-radius:3px;background:var(--bg-3)}
+.step-bar i.on{background:var(--brand)}
+.outcome{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;background:var(--brand-tint);border:1px solid rgba(229,178,74,.35);border-radius:12px;padding:12px 16px;margin:4px 0 22px}
+.outcome span{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.outcome p{margin:0;color:var(--text-primary);font-size:var(--text-base);max-width:none}
+/* ---------- índice ---------- */
+.print-index h2{margin-bottom:10px}
+.idx-group{margin:16px 0 0;break-inside:avoid-page}
+.print-index .idx-k{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin:0 0 2px;padding-bottom:6px;border-bottom:1px solid var(--border-strong);max-width:none}
+.print-index .idx-group ol{margin:0;display:grid}
+.print-index .idx-group li{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--border);break-inside:avoid}
+.print-index .idx-group .idx-n{font-family:var(--font-display);font-weight:700;font-size:1.2rem;color:var(--text-secondary);line-height:1;padding:0;letter-spacing:0}
+.print-index .idx-steps .idx-n{font-style:italic;color:var(--brand);font-size:1.6rem}
+.print-index .idx-group li b{font-family:var(--font-display);font-size:1.08rem}
+.print-index .idx-group li small{margin-top:2px}
+.print-index .idx-group .idx-p{padding:0;font-family:var(--font-mono);font-size:var(--text-sm);color:var(--text-secondary);min-width:2.2em;text-align:right;font-variant-numeric:tabular-nums}
+.pgmark{position:absolute;font-size:2px;line-height:1;color:#0E1620;white-space:nowrap}
+section.ch{position:relative}
+@media print{ .notes{grid-template-columns:1fr 1fr;column-gap:18px} }
+@page{background:#0E1620}
+
 .notes li code{font-family:var(--font-mono);font-size:9px;color:var(--text-secondary);word-break:break-all}
 '''
 def notes_for(sec):
@@ -54,6 +85,10 @@ def notes_for(sec):
 def build(body_path,title,footer,out):
     b=R(body_path)
     b=re.sub(r'<section class="ch".*?</section>',lambda m:notes_for(m.group(0)),b,flags=re.S)
+    b=re.sub(r'(<section class="ch" id="([^"]+)">)',lambda m:m.group(1)+f'<span class="pgmark" aria-hidden="true">@@{m.group(2)}@@</span>',b)
+    pj=os.path.join(SRC,'pages.json')
+    pages=json.load(open(pj)).get(os.path.basename(out),{}) if os.path.exists(pj) else {}
+    b=re.sub(r'<span class="idx-p" data-for="([^"]+)"></span>',lambda m:f'<span class="idx-p" data-for="{m.group(1)}">{pages.get(m.group(1),"")}</span>',b)
     # cualquier enlace restante fuera de secciones: texto plano
     b=re.sub(r'<a href="[^"]*">(.*?)</a>',r'\1',b,flags=re.S)
     c=css.replace('content:"lucid · Cómo tokenizar un inmueble en Argentina"',f'content:"{footer}"')
