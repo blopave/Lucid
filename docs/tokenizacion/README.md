@@ -20,7 +20,7 @@ Los `.html` de esta carpeta son la versión lista para imprimir de cada PDF.
 ## Cómo actualizar
 
 0. **Fecha de corte.** Si se actualizan datos, cambiar `CORTE` en `src/build.py`: es la única fecha visible de los documentos y se refleja en los dos.
-1. Editar el contenido en `src/informe.body.html` o `src/roadmap.body.html`. Los estilos compartidos están en `src/base.css` y los gráficos en `src/charts.js`, cuyos datos están escritos en el propio archivo.
+1. Editar el contenido en `src/informe.body.html` o `src/roadmap.body.html`. Los estilos compartidos están en `src/base.css`, los de los diagramas del road map en `src/diagrams.css`, y los gráficos con datos en `src/charts.js`, cuyos datos están escritos en el propio archivo.
 2. Generar los HTML desde la raíz del repo:
 
    ```
@@ -31,7 +31,7 @@ Los `.html` de esta carpeta son la versión lista para imprimir de cada PDF.
    - **Con Claude Code:** pedile que los exporte con Playwright (`page.pdf` en A4, con `printBackground: true` y media `print`).
    - **A mano:** abrir cada `.html` con Live Server en Chrome y elegir Imprimir → Guardar como PDF. Tamaño A4, márgenes predeterminados y "Gráficos de fondo" activado.
 4. **Números de página del índice.** Con los PDF recién exportados, correr
-   `python3 docs/tokenizacion/src/paginate.py` (requiere `pip install pymupdf`).
+   `python3 docs/tokenizacion/src/paginate.py` (requiere `pypdf`: `pip install pypdf`).
    Eso anota en `src/pages.json` dónde empieza cada capítulo. Después hay que
    volver a correr `build.py` y exportar los PDF otra vez. Si un cambio mueve
    páginas, se repite el ciclo hasta que `pages.json` no cambie.

@@ -19,18 +19,21 @@
  },
  "roadmap-tokenizacion-inmuebles.html": {
   "que-es": 4,
-  "mapa": 6,
-  "paso-1": 9,
-  "paso-2": 11,
-  "paso-3": 13,
-  "paso-4": 16,
-  "paso-5": 22,
+  "mapa": 7,
+  "paso-1": 10,
+  "paso-2": 12,
+  "paso-3": 15,
+  "paso-4": 18,
+  "paso-5": 21,
   "paso-6": 23,
-  "paso-7": 25,
-  "tipos": 27,
-  "costos": 28,
-  "seis-casos": 33,
-  "lucid": 34,
-  "glosario": 37
+  "paso-7": 26,
+  "salida": 28,
+  "tipos": 33,
+  "costos": 34,
+  "seis-casos": 37,
+  "lucid": 38,
+  "anexo-proveedores": 41,
+  "anexo-costos": 45,
+  "glosario": 48
  }
 }

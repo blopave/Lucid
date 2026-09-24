@@ -389,6 +389,158 @@ section.ch{position:relative}
 
 .notes li code{font-family:var(--font-mono);font-size:9px;color:var(--text-secondary);word-break:break-all}
 
+/* ---------- Diagramas del road map ----------
+   Todo con los tokens de base.css: sin colores nuevos. */
+
+/* SVG dibujados a mano */
+.dg{width:100%;height:auto;display:block}
+.dg text{font-family:var(--font-body);fill:var(--text-secondary);font-size:13px}
+.dg .t-strong{fill:var(--text-primary);font-weight:600}
+.dg .t-title{fill:var(--text-primary);font-family:var(--font-display);font-weight:700;font-size:17px}
+.dg .t-muted{fill:var(--text-muted);font-size:11.5px}
+.dg .t-mono{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;fill:var(--text-muted)}
+.dg .t-brand{fill:var(--brand)}
+.dg .t-pub{fill:var(--route-pub-ink)}
+.dg .t-priv{fill:var(--route-priv-ink)}
+.dg .t-neg{fill:var(--negative)}
+.dg .t-pos{fill:var(--positive)}
+.dg .bx{fill:var(--bg-2);stroke:var(--border-strong);stroke-width:1}
+.dg .bx-core{fill:var(--brand-tint);stroke:var(--brand);stroke-width:1.2}
+.dg .bx-pub{fill:var(--route-pub-tint);stroke:var(--route-pub);stroke-width:1}
+.dg .bx-priv{fill:var(--route-priv-tint);stroke:var(--route-priv);stroke-width:1}
+.dg .bx-soft{fill:var(--bg-1);stroke:var(--border);stroke-width:1}
+.dg .ln{stroke:var(--text-muted);stroke-width:1.5;fill:none}
+.dg .ln-brand{stroke:var(--brand);stroke-width:2;fill:none}
+.dg .ln-pub{stroke:var(--route-pub);stroke-width:2.5;fill:none}
+.dg .ln-priv{stroke:var(--route-priv);stroke-width:2.5;fill:none}
+.dg .ln-dash{stroke:var(--negative);stroke-width:1.5;stroke-dasharray:5 5;fill:none}
+.dg .ln-soft{stroke:var(--border-strong);stroke-width:1;fill:none}
+.dg .dot-brand{fill:var(--brand)}
+.dg .dot-pub{fill:var(--route-pub)}
+.dg .dot-priv{fill:var(--route-priv)}
+.dg .dot-bg{fill:var(--bg)}
+.dg .ar{fill:var(--text-muted)}
+.dg .ar-brand{fill:var(--brand)}
+
+/* ---------- El proceso en una página ---------- */
+.journey{list-style:none;padding:0;margin:24px 0;max-width:none;display:grid;gap:0;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:var(--bg-1)}
+.journey li{display:grid;grid-template-columns:44px 1.1fr 1.25fr 1fr;gap:14px;align-items:start;padding:12px 16px;border-bottom:1px solid var(--border);margin:0;position:relative}
+.journey li:last-child{border-bottom:0}
+.journey li.hd{padding:9px 16px;background:var(--bg-2)}
+.journey li.hd span{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+.journey .jn{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-style:italic;font-weight:700;font-size:1.05rem;background:var(--bg-3);color:var(--text-primary)}
+.journey li.slow .jn{background:var(--brand);color:var(--bg)}
+.journey b{display:block;color:var(--text-primary);font-size:var(--text-base);line-height:1.3}
+.journey small{display:block;color:var(--text-secondary);font-size:var(--text-sm);line-height:1.4;margin-top:2px}
+.journey .who{display:flex;flex-wrap:wrap;gap:4px}
+.journey .who span{font-size:11px;line-height:1.3;padding:3px 7px;border-radius:6px;background:var(--bg-3);color:var(--text-secondary)}
+.journey .who span.pub{background:var(--route-pub-tint);color:var(--route-pub-ink)}
+.journey .out{font-size:var(--text-sm);color:var(--text-primary);line-height:1.4}
+.journey .slow-tag{display:inline-block;margin-top:5px;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+
+.sw--brand{background:var(--brand);border-radius:50%}
+
+/* ---------- Filtros del paso 1 ---------- */
+.gates{display:grid;grid-template-columns:1fr 22px 1fr 22px 1fr 22px .9fr;gap:8px;align-items:stretch;margin:4px 0 0}
+.gate{border:1px solid var(--border-strong);border-radius:12px;background:var(--bg-2);padding:12px;display:grid;gap:4px;align-content:start}
+.gate .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.gate b{color:var(--text-primary);font-size:var(--text-base);line-height:1.25}
+.gate small{color:var(--text-secondary);font-size:12px;line-height:1.4}
+.gate--ok{border-color:rgba(123,214,156,.5);background:linear-gradient(0deg,rgba(123,214,156,.08),rgba(123,214,156,.08)),var(--bg-2)}
+.gate--ok .k{color:var(--positive)}
+.gates .arrow{display:grid;place-items:center;color:var(--text-muted)}
+.gates .arrow svg{width:16px;height:16px;transform:none}
+
+/* ---------- Decisión: ¿conviene? ---------- */
+.decide{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;margin:4px 0 0}
+.decide__q{border:1px solid var(--border-strong);border-radius:12px;background:var(--bg-2);padding:14px 16px;display:grid;gap:8px;align-content:start}
+.decide__q b{color:var(--text-primary);font-size:var(--text-base)}
+.decide__q ul{list-style:none;padding:0;margin:0;display:grid;gap:6px;max-width:none}
+.decide__q li{margin:0;font-size:var(--text-sm);display:grid;grid-template-columns:18px 1fr;gap:6px;color:var(--text-secondary)}
+.decide__q li::before{content:"?";font-family:var(--font-mono);color:var(--brand)}
+.decide__a{display:grid;gap:10px}
+.decide__a div{border-radius:12px;padding:12px 14px;border:1px solid var(--border);background:var(--bg-1);display:grid;gap:3px}
+.decide__a span{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.decide__a .si{border-color:rgba(123,214,156,.45)} .decide__a .si span{color:var(--positive)}
+.decide__a .no span{color:var(--text-muted)}
+.decide__a p{margin:0;font-size:var(--text-sm);color:var(--text-primary)}
+
+/* ---------- Cuatro puntos / pilares ---------- */
+.pillars{list-style:none;padding:0;margin:16px 0 24px;max-width:none;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.pillars li{margin:0;border:1px solid var(--border);border-radius:14px;background:var(--bg-1);padding:14px;display:grid;gap:6px;align-content:start}
+.pillars li > span{font-family:var(--font-display);font-style:italic;font-weight:700;font-size:1.6rem;line-height:1;color:var(--brand)}
+.pillars b{color:var(--text-primary);font-size:var(--text-base);line-height:1.25}
+.pillars small{color:var(--text-secondary);font-size:12.5px;line-height:1.45}
+
+/* ---------- Anatomía de una ficha ---------- */
+.anatomy{display:grid;grid-template-columns:1fr 200px 1fr;gap:14px;align-items:center}
+.anatomy__col{display:grid;gap:12px}
+.anatomy__item{border:1px solid var(--border);border-radius:12px;background:var(--bg-2);padding:11px 13px;display:grid;gap:3px}
+.anatomy__item span{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.anatomy__item b{color:var(--text-primary);font-size:var(--text-base);line-height:1.25}
+.anatomy__item small{color:var(--text-secondary);font-size:12px;line-height:1.4}
+.token-card{aspect-ratio:1;border-radius:50%;border:2px solid var(--brand);background:radial-gradient(circle at 50% 40%,var(--brand-tint),var(--bg-1) 70%);display:grid;place-items:center;text-align:center;padding:26px}
+.token-card b{display:block;font-family:var(--font-display);font-size:1.35rem;color:var(--text-primary);line-height:1.1}
+.token-card small{display:block;font-family:var(--font-mono);font-size:10.5px;color:var(--text-muted);margin-top:6px;letter-spacing:.04em}
+
+/* ---------- Tarjetas de casos compactas ---------- */
+.cases6{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
+.c6{border:1px solid var(--border);border-radius:14px;background:var(--bg-1);padding:14px;display:grid;gap:8px;align-content:start}
+.c6--fail{border-color:rgba(231,112,112,.4)}
+.c6 .where{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.c6 h4{margin:0;font-family:var(--font-display);font-size:1.15rem;line-height:1.2}
+.c6 .big{font-family:var(--font-mono);font-size:1.05rem;color:var(--brand);line-height:1.25}
+.c6--fail .big{color:var(--negative)}
+.c6 p{margin:0;font-size:12.5px;line-height:1.45}
+.mini-cases{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
+.mini-cases .example{margin:0}
+
+/* ---------- Esquema de capas (lucid) ---------- */
+.stack{display:grid;gap:0;margin:8px 0 0}
+.stack__row{display:grid;grid-template-columns:190px 1fr;gap:16px;align-items:center}
+.stack__node{border:1px solid var(--border-strong);border-radius:12px;background:var(--bg-2);padding:10px 14px;display:grid;gap:2px}
+.stack__node b{color:var(--text-primary);font-size:var(--text-base);line-height:1.25}
+.stack__node small{color:var(--text-secondary);font-size:12px;line-height:1.4}
+.stack__node.core{border-color:var(--brand);background:linear-gradient(0deg,var(--brand-tint),var(--brand-tint)),var(--bg-2)}
+.stack__who{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-align:right}
+.stack__row.core .stack__who{color:var(--brand)}
+.stack__link{display:grid;grid-template-columns:190px 1fr;gap:16px;height:18px}
+.stack__link i{justify-self:center;width:2px;height:100%;background:var(--border-strong)}
+
+/* ---------- Rutas de salida ---------- */
+.exits{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:4px 0 0}
+.exit{border:1px solid var(--border);border-radius:14px;background:var(--bg-2);padding:14px;display:grid;gap:8px;align-content:start}
+.exit .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand)}
+.exit b{color:var(--text-primary);font-size:1.02rem;line-height:1.25;font-family:var(--font-display)}
+.exit small{color:var(--text-secondary);font-size:12.5px;line-height:1.45}
+.exit dl{margin:4px 0 0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:12px;border-top:1px solid var(--border);padding-top:8px}
+.exit dt{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);padding-top:2px}
+.exit dd{margin:0;color:var(--text-secondary)}
+
+/* anexos */
+.step-open--annex .step-num{color:var(--text-muted)}
+
+@media print{
+  .journey li,.pillars li,.c6,.exit,.gate,.anatomy__item,.stack__row{break-inside:avoid}
+  .journey,.gates,.decide,.anatomy,.stack,.exits,.cases6,.mini-cases{break-inside:avoid}
+}
+@media (max-width:720px){
+  .journey li{grid-template-columns:36px 1fr}
+  .journey li > :nth-child(n+3){grid-column:2}
+  .journey li.hd{display:none}
+  .gates,.decide,.anatomy,.exits,.cases6,.mini-cases,.pillars{grid-template-columns:1fr}
+  .gates .arrow svg{transform:rotate(90deg)}
+  .stack__row,.stack__link{grid-template-columns:1fr}
+  .stack__who{text-align:left}
+}
+@media print{
+  .example{break-inside:avoid}
+  .print-index .idx-group{margin-top:10px}
+  .print-index .idx-group li{padding:4px 0}
+  .print-index .idx-group li small{margin-top:0}
+}
+.exits--4{grid-template-columns:repeat(2,1fr)}
+
 </style>
 <div class="shell">
   <main>
@@ -891,7 +1043,7 @@ section.ch{position:relative}
         </table>
       </div>
       <p style="font-size:var(--text-sm)">Fuentes: El Economista (Pala)<sup class="fn">15</sup>, Blockenfy<sup class="fn">16</sup>, Metro Futuro<sup class="fn">17</sup>, R3AL Blocks<sup class="fn">18</sup>, El Tribuno (Reental)<sup class="fn">19</sup>, iProfesional (ILLA)<sup class="fn">20</sup>.</p>
-      <p>El mapa completo de proveedores está en el paso 4 del road map, y lo que se sabe de sus costos, en su sección “Qué cuesta”. Lo que sigue relativamente vacío es la marca masiva de confianza para el ahorrista común. El mercado de capitales regulado lo ocupan Landtoken y Volsmart; la tecnología, Pala y Blockenfy; el ahorro minorista con marca propia está abierto.</p>
+      <p>El mapa de proveedores está en el paso 4 del road map, y el detalle de cada uno y de sus costos, en sus anexos. Lo que sigue relativamente vacío es la marca masiva de confianza para el ahorrista común. El mercado de capitales regulado lo ocupan Landtoken y Volsmart; la tecnología, Pala y Blockenfy; el ahorro minorista con marca propia está abierto.</p>
 
       <h3>Los cuatro roles, aplicados a un proyecto argentino</h3>
       <p>BlackRock no tokenizó su fondo BUIDL sola: repartió el trabajo en cuatro roles. El mismo mapa sirve para decidir qué se construye y qué se terceriza en Argentina.</p>
@@ -956,7 +1108,7 @@ section.ch{position:relative}
             <div><b>321 ha</b><span>en Carlos Casares y Christophersen</span></div>
             <div><b>A-(ff)</b><span>calificación antes de colocar</span></div>
           </div>
-          <p>Fideicomiso financiero con Allaria Fiduciaria, depósito en Caja de Valores y una versión digital para operar en PSAV, con Tech Demeter (Justoken) como proveedor tecnológico. Se colocó a través de siete sociedades de bolsa, y la versión digital se ofrece en PSAV habilitados: SatoshiTango, Ripio, Belo y “Allaria Crypto”, según el informe de la calificadora previo a la colocación. Los dos campos entraron como aporte de sus dueños, valuados en USD 2,19 millones.</p>
+          <p>Fideicomiso financiero con Allaria Fiduciaria, depósito en Caja de Valores y una versión digital para operar en PSAV, con Tech Demeter (Justoken) como proveedor tecnológico. Se colocó a través de siete sociedades de bolsa, y su suplemento de prospecto habilita cinco PSAV para la versión digital: Satoshi Tango, Ripio, Belo, Allaria Crypto y Buenbit. Los dos campos entraron como aporte de sus dueños, valuados en USD 2,19 millones.</p>
           <p class="case__lesson">El camino público está probado; lo colocado queda lejos del tope, y una parte grande fue aporte de los dueños.</p>
           <div class="case__src"><span class="ok">Verificado</span>LexLatin<sup class="fn">7</sup>Abogados.com.ar<sup class="fn">14</sup>Calificadora UNTREF ACR UP<sup class="fn">15</sup></div>
         </article>
@@ -1493,6 +1645,83 @@ section.ch{position:relative}
       tb&&tb.insertAdjacentHTML('beforeend',`<tr><td>${r.n}</td><td class="num">${(r.v<0?'−':'')+fmt(Math.abs(r.v))}</td></tr>`)});
     el('text',{x:W-R,y:14,'text-anchor':'end','font-size':11.5,fill:C.muted},svg,'5.000 fichas → USD 3,70 por ficha al año');
   })();
+
+  /* ---------- Plazos reales de los casos con CNV ---------- */
+  (function(){
+    const svg=document.getElementById('casetime');if(!svg)return;const W=760,L=130,R=20,T=34,laneH=74,H=T+2*laneH+30;
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    const t0=new Date(2024,7,1),t1=new Date(2026,4,1);const x=d=>L+(W-L-R)*(d-t0)/(t1-t0);
+    [new Date(2025,0,1),new Date(2026,0,1)].forEach(d=>{el('line',{x1:x(d),x2:x(d),y1:T-12,y2:H-24,stroke:C.grid},svg);el('text',{x:x(d)+4,y:T-16,'font-size':11,fill:C.muted,'font-family':'JetBrains Mono, monospace'},svg,d.getFullYear())});
+    const lanes=[
+      {n:'Landtoken I',s:'Campos',ev:[[new Date(2025,2,17),'int'],[new Date(2025,7,20),'cnv'],[new Date(2025,11,4),'cond'],[new Date(2025,11,18),'emi']],dur:'≈ 9 meses'},
+      {n:'ILLA Belgrano I',s:'Edificio',ev:[[new Date(2024,8,20),'int'],[new Date(2025,5,25),'cnv'],[new Date(2025,8,9),'cond'],[new Date(2025,11,2),'emi']],dur:'≈ 14 meses',dig:new Date(2026,3,8)},
+    ];
+    lanes.forEach((ln,i)=>{const y=T+i*laneH+30;
+      el('text',{x:0,y:y-2,'font-size':13.5,'font-weight':600,fill:C.text},svg,ln.n);
+      el('text',{x:0,y:y+14,'font-size':11.5,fill:C.muted},svg,ln.s);
+      const a=x(ln.ev[0][0]),b=x(ln.ev[3][0]);
+      el('rect',{x:a,y:y-4,width:b-a,height:8,rx:4,fill:'rgba(229,178,74,.18)'},svg);
+      el('text',{x:(a+b)/2,y:y-14,'text-anchor':'middle','font-size':12,fill:C.brand,'font-family':'JetBrains Mono, monospace'},svg,ln.dur);
+      ln.ev.forEach(([d,k])=>{const xx=x(d);
+        if(k==='int')el('circle',{cx:xx,cy:y,r:6,fill:C.bg1,stroke:C.sec,'stroke-width':2},svg);
+        else if(k==='cnv')el('rect',{x:xx-6,y:y-6,width:12,height:12,transform:`rotate(45 ${xx} ${y})`,fill:C.pub,stroke:C.bg1,'stroke-width':2},svg);
+        else if(k==='cond')el('circle',{cx:xx,cy:y,r:5.5,fill:C.sec,stroke:C.bg1,'stroke-width':2},svg);
+        else el('circle',{cx:xx,cy:y,r:7.5,fill:C.brand,stroke:C.bg1,'stroke-width':2},svg);
+        const lab=d.toLocaleDateString('es-AR',{month:'short',year:'2-digit'}).replace('.','');
+        if(k!=='cond')el('text',{x:xx,y:y+24,'text-anchor':'middle','font-size':10.5,fill:C.muted,'font-family':'JetBrains Mono, monospace'},svg,lab)});
+      if(ln.dig){const xx=x(ln.dig);el('line',{x1:x(ln.ev[3][0])+9,x2:xx-7,y1:y,y2:y,stroke:C.axis,'stroke-dasharray':'3 4'},svg);
+        el('circle',{cx:xx,cy:y,r:6,fill:C.bg1,stroke:C.pub,'stroke-width':2},svg);
+        el('text',{x:xx,y:y+24,'text-anchor':'middle','font-size':10.5,fill:css('--route-pub-ink'),'font-family':'JetBrains Mono, monospace'},svg,'abr 26');
+        el('text',{x:xx,y:y-14,'text-anchor':'end','font-size':11,fill:css('--route-pub-ink')},svg,'versión digital aprobada')}
+    });
+  })();
+
+  /* ---------- Rangos de costo (log) ---------- */
+  (function(){
+    const svg=document.getElementById('costrange');if(!svg)return;
+    const rows=[
+      {n:'Diagnóstico de Xcapit',p:'4 semanas',a:8000,b:12000},
+      {n:'Plataforma mínima de Xcapit',p:'Desarrollo a medida',a:40000,b:150000},
+      {n:'Armado de ILLA Belgrano I',p:'Organización, estructuración y colocación',a:135886,b:135886,pub:true},
+      {n:'Armado de Landtoken I',p:'Estimado, con el primer año de fiduciario',a:334950,b:334950,pub:true},
+    ];
+    const W=720,L=260,R=90,T=8,rowH=44,H=T+rows.length*rowH+26;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    const lo=3,hi=6;const x=v=>L+(W-L-R)*(Math.log10(v)-lo)/(hi-lo);
+    [1e3,1e4,1e5,1e6].forEach(t=>{el('line',{x1:x(t),x2:x(t),y1:T,y2:H-24,stroke:C.grid},svg);el('text',{x:x(t),y:H-8,'text-anchor':'middle','font-size':11,fill:C.muted,'font-family':'JetBrains Mono, monospace'},svg,t>=1e6?'USD 1M':'USD '+fmt(t/1000)+'K')});
+    const k=v=>'USD '+fmt(Math.round(v/1000))+'K';
+    rows.forEach((r,i)=>{const y=T+i*rowH+14;
+      el('text',{x:0,y:y+2,'font-size':13,'font-weight':500,fill:C.text},svg,r.n);
+      el('text',{x:0,y:y+18,'font-size':11,fill:C.muted},svg,r.p);
+      const c=r.pub?C.pub:C.sec;
+      if(r.a===r.b){el('circle',{cx:x(r.a),cy:y+6,r:7,fill:c},svg);el('text',{x:x(r.a)+13,y:y+10,'font-size':12,fill:C.sec,'font-family':'JetBrains Mono, monospace'},svg,k(r.a))}
+      else{el('rect',{x:x(r.a),y:y,width:Math.max(12,x(r.b)-x(r.a)),height:12,rx:6,fill:c},svg);el('text',{x:x(r.b)+10,y:y+10.5,'font-size':12,fill:C.sec,'font-family':'JetBrains Mono, monospace'},svg,k(r.a)+'–'+k(r.b))}
+    });
+  })();
+
+  /* ---------- Comisiones al inversor (apiladas) ---------- */
+  function feeBars(id,rows,max){
+    const svg=document.getElementById(id);if(!svg)return;const W=720,L=170,R=90,T=6,rowH=42,H=T+rows.length*rowH+26;
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);const x=v=>L+(W-L-R)*v/max;const pct=v=>fmt(v)+'%';
+    for(let t=0;t<=max;t+=1){el('line',{x1:x(t),x2:x(t),y1:T,y2:H-24,stroke:t===0?C.axis:C.grid},svg);el('text',{x:x(t),y:H-8,'text-anchor':'middle','font-size':11,fill:C.muted,'font-family':'JetBrains Mono, monospace'},svg,t+'%')}
+    rows.forEach((r,i)=>{const y=T+i*rowH+10;let acc=0;
+      el('text',{x:0,y:y+8,'font-size':13,'font-weight':500,fill:C.text},svg,r.n);
+      el('text',{x:0,y:y+23,'font-size':11,fill:C.muted},svg,r.p);
+      r.seg.forEach(([v,c,lab])=>{if(v<=0){acc+=0;return}const x0=x(acc),w=x(acc+v)-x0;el('rect',{x:x0,y:y,width:Math.max(2,w-1.5),height:18,rx:3,fill:c},svg);
+        if(w>34)el('text',{x:x0+w/2,y:y+13,'text-anchor':'middle','font-size':10.5,fill:C.bg1,'font-weight':600,'font-family':'JetBrains Mono, monospace'},svg,lab||pct(v));acc+=v});
+      el('text',{x:x(acc)+8,y:y+13.5,'font-size':12,fill:C.sec,'font-family':'JetBrains Mono, monospace'},svg,r.total||pct(acc));
+    });
+  }
+  feeBars('exitfees',[
+    {n:'Metro Futuro',p:'Rescate',seg:[[6,C.brand]]},
+    {n:'Lofty',p:'Venta en la plataforma',seg:[[3,C.brand]]},
+    {n:'Raíz Finance',p:'Solo si salís antes de tiempo',seg:[[2,C.brand]]},
+    {n:'Prypco Mint',p:'Reventa',seg:[[1,C.brand]]},
+    {n:'Brick-ly',p:'Sin penalidad',seg:[[0,C.brand]],total:'0%'},
+  ],7);
+  feeBars('feebars',[
+    {n:'Prypco Mint',p:'Dubái',seg:[[4.1,C.pub],[1,C.brand]]},
+    {n:'Lofty',p:'EE.UU.',seg:[[2.5,C.pub],[3,C.brand]]},
+  ],6);
 
   })();
 </script>

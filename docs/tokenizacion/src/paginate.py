@@ -3,16 +3,16 @@
 Uso, desde la raíz del repo, después de exportar los PDF:
     python3 docs/tokenizacion/src/paginate.py
 Después se corre build.py de nuevo y se re-exportan los PDF: el índice ya sale con páginas.
-Requiere PyMuPDF (pip install pymupdf).
+Requiere pypdf (pip install pypdf).
 """
 import os,re,json
-import pymupdf
+import pypdf
 SRC=os.path.dirname(os.path.abspath(__file__)); OUT=os.path.dirname(SRC)
 res={}
 for name in ['informe-tokenizacion-lucid','roadmap-tokenizacion-inmuebles']:
-    d=pymupdf.open(os.path.join(OUT,name+'.pdf')); pages={}
-    for i,p in enumerate(d):
-        for sid in re.findall(r'@@([a-z0-9-]+)@@',p.get_text()):
+    r=pypdf.PdfReader(os.path.join(OUT,name+'.pdf')); pages={}
+    for i,p in enumerate(r.pages):
+        for sid in re.findall(r'@@([a-z0-9-]+)@@',p.extract_text() or ''):
             pages.setdefault(sid,i+1)
     res[name+'.html']=pages
     print(name,pages)

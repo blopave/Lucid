@@ -17,6 +17,7 @@ OUT=os.path.dirname(SRC)
 def R(n): return open(os.path.join(SRC,n),encoding='utf-8').read()
 fonts=R('fonts.css')
 css=R('base.css')
+diagrams=R('diagrams.css')
 js=R('charts.js')
 EXTRA='''
 .example{border:1px solid rgba(229,178,74,.3);border-radius:var(--radius-lg);background:var(--bg-1);padding:18px 20px;margin:24px 0;display:grid;gap:10px}
@@ -96,7 +97,7 @@ def build(body_path,title,footer,out):
     # cualquier enlace restante fuera de secciones: texto plano
     b=re.sub(r'<a href="[^"]*">(.*?)</a>',r'\1',b,flags=re.S)
     c=css.replace('content:"lucid · Cómo tokenizar un inmueble en Argentina"',f'content:"{footer}"')
-    page=f'<meta charset="utf-8">\n<title>{title}</title>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">\n<style>\n{fonts}\n{c}\n{EXTRA}\n</style>\n{b}\n<script>{js}</script>\n'
+    page=f'<meta charset="utf-8">\n<title>{title}</title>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">\n<style>\n{fonts}\n{c}\n{EXTRA}\n{diagrams}\n</style>\n{b}\n<script>{js}</script>\n'
     open(out,'w',encoding='utf-8').write(page)
     print(out, len(page), page.count('<a '))
 DOCS=[

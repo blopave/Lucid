@@ -15,6 +15,42 @@ confirma se marca o queda afuera.
 
 ---
 
+## Actualización 7 · 24/09/2026 (road map con gráficos y capítulo de salida)
+
+**Qué se hizo:** a pedido del dueño, el road map se reescribió para que sea más simple y visual: diagramas nuevos en cada paso (circuito de la plata, proceso en una página, filtros del paso 1, caja legal, bifurcación de caminos, decisiones de una ficha, lista blanca, doble canal, ciclo mensual, esquema de lucid) y el detalle de proveedores, plazos y costos pasó a dos anexos. Se sumó el capítulo C, "Si querés vender tu parte", con la pregunta del dueño: cómo se vende una participación y qué ventaja da trabajar con varios PSAV. Un investigador leyó las RG completas en el Boletín Oficial, los prospectos en la AIF y los términos de cada plataforma.
+
+**Texto reescrito:** los diagramas y los textos acortados reusan datos ya auditados (actualizaciones 5 y 6); no suman cifras nuevas. Los rótulos de "quién participa" en cada paso son una síntesis del propio road map, no un dato externo. Los gráficos de costo de armado y de comisiones dibujan cifras ya confirmadas (Xcapit, prospectos de Landtoken I e ILLA Belgrano I, Prypco, Lofty).
+
+**Texto nuevo auditado** (road map: capítulo C, pie del doble canal en el paso 6, anexo H, decisiones abiertas; informe: caso Landtoken y remisión a los anexos):
+
+| Afirmación | Fuente | Nivel | Veredicto |
+| --- | --- | --- | --- |
+| Hasta cinco PSAV por emisión; interoperables, sincronizados en tiempo real y responsables por diferencias | RG 1150, art. 5 inc. e) | A | Confirmado |
+| La ficha no se transfiere fuera de los PSAV designados ni a protocolos descentralizados; el código bloquea lo no permitido | RG 1150, art. 5 inc. f) | A | Confirmado |
+| Solo negocian usuarios de las plataformas de los PSAV designados | RG 1081, art. 15 | A | Confirmado |
+| PSAV de respaldo arriba de 7 millones de UVA; plan de migración; sustitución con aviso a la CNV | RG 1081, arts. 12 inc. j), 30 inc. b) y 15 | A | Confirmado |
+| El pase de la versión digital a la tradicional se puede pedir siempre, con cuenta comitente | RG 1081, art. 16 | A | Confirmado |
+| Certificado de tenencia a pedido del inversor, en todo momento | RG 1150, art. 28 | A | Confirmado |
+| Ninguna norma obliga a dar precio, contraparte o liquidez | RG 1069, 1081 y 1150, búsqueda en el texto completo | A | Confirmado por ausencia |
+| Landtoken I: cinco PSAV habilitados (Satoshi Tango, Ripio, Belo, Allaria Crypto y Buenbit); cadena de respaldo Satoshi Tango → Ripio → Belo o Allaria Crypto; valores listados en BYMA; "no puede garantizarse el desarrollo de un mercado secundario" | Suplemento de prospecto (AIF C11C654D), pp. 5, 11–21 y 44 | A | Confirmado |
+| ILLA Belgrano I: fondo de liquidez de 2,87% para recomprar a exclusivo criterio del fiduciario | Suplemento (AIF D3F3F048), art. 7.3 | A | Confirmado |
+| ILLA Belgrano I: libro de órdenes propio de Volsmart, sin conexión con mercados ni con otros PSAV; PSAV adicionales solo para depósitos y retiros; "la liquidez para la compra-venta no está garantizada pero sí lo está la conversión" | Documento de representaciones digitales (AIF 59CF32A4), pp. 9 y 12–17 | A | Confirmado |
+| Metro Futuro: rescate en las condiciones que fija, con 6% de penalidad | metrofuturo.com.ar/tyc, cl. 11.5–11.7 | A sobre sus términos | Confirmado |
+| Raíz: venta en el mercado de la plataforma, 2% por salida anticipada | raiz.finance/faqs | C | Se presenta como "según las empresas" |
+| Brick-ly: mercado interno entre usuarios verificados, sin penalidad, sujeto a que haya comprador | brick-ly.com/preguntas-frecuentes | C | Se presenta como "según las empresas" |
+| R3AL Blocks: se cobra cuando se vende el inmueble | r3al.io/faqs | C | Confirmado como dicho de la empresa |
+| IOSCO: valores nativos con "niveles bajos de liquidez en el mercado secundario" (nov 2025) | IOSCO FR/17/25, p. 26 | A | Confirmado |
+| RealT: 58 casas, 254 dueños en promedio, la propiedad cambia de manos más o menos una vez por año | Swinkels (2023), Financial Innovation 9:45 | A | Confirmado |
+| Dubái: reventa habilitada en febrero de 2026 | Dubai Media Office (09/02/2026) | A | Confirmado; coincide con el informe |
+
+### Correcciones
+
+- **Landtoken I:** los dos documentos listaban cuatro PSAV (SatoshiTango, Ripio, Belo y Allaria Crypto) según el informe de la calificadora previo a la colocación. El suplemento de prospecto habilita cinco: suma Buenbit. Se corrigió con el prospecto como fuente.
+
+**Quedó afuera:** el volumen de la especie LK1QD (una sola fuente de datos de mercado, sin cruzar con BYMA), si hoy se operan las fichas de Landtoken en alguna app, si la ficha de ILLA ya circula, volúmenes de reventa de Raíz, Brick-ly, R3AL, Pala y RealT, y el mecanismo propio de reventa de Pala.
+
+---
+
 ## Actualización 6 · 24/09/2026 (plazos reales y costos para el inversor)
 
 **Qué se hizo:** dos investigadores reconstruyeron los plazos de los casos con la CNV y relevaron lo que paga el inversor. Las fechas se controlaron contra los PDF de la AIF (avisos de resultados, suplementos, documento de emisión digital, hecho relevante de ILLA); las tarifas, reabriendo cada página.

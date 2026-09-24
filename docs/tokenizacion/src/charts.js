@@ -176,4 +176,81 @@
     el('text',{x:W-R,y:14,'text-anchor':'end','font-size':11.5,fill:C.muted},svg,'5.000 fichas → USD 3,70 por ficha al año');
   })();
 
+  /* ---------- Plazos reales de los casos con CNV ---------- */
+  (function(){
+    const svg=document.getElementById('casetime');if(!svg)return;const W=760,L=130,R=20,T=34,laneH=74,H=T+2*laneH+30;
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    const t0=new Date(2024,7,1),t1=new Date(2026,4,1);const x=d=>L+(W-L-R)*(d-t0)/(t1-t0);
+    [new Date(2025,0,1),new Date(2026,0,1)].forEach(d=>{el('line',{x1:x(d),x2:x(d),y1:T-12,y2:H-24,stroke:C.grid},svg);el('text',{x:x(d)+4,y:T-16,'font-size':11,fill:C.muted,'font-family':'JetBrains Mono, monospace'},svg,d.getFullYear())});
+    const lanes=[
+      {n:'Landtoken I',s:'Campos',ev:[[new Date(2025,2,17),'int'],[new Date(2025,7,20),'cnv'],[new Date(2025,11,4),'cond'],[new Date(2025,11,18),'emi']],dur:'≈ 9 meses'},
+      {n:'ILLA Belgrano I',s:'Edificio',ev:[[new Date(2024,8,20),'int'],[new Date(2025,5,25),'cnv'],[new Date(2025,8,9),'cond'],[new Date(2025,11,2),'emi']],dur:'≈ 14 meses',dig:new Date(2026,3,8)},
+    ];
+    lanes.forEach((ln,i)=>{const y=T+i*laneH+30;
+      el('text',{x:0,y:y-2,'font-size':13.5,'font-weight':600,fill:C.text},svg,ln.n);
+      el('text',{x:0,y:y+14,'font-size':11.5,fill:C.muted},svg,ln.s);
+      const a=x(ln.ev[0][0]),b=x(ln.ev[3][0]);
+      el('rect',{x:a,y:y-4,width:b-a,height:8,rx:4,fill:'rgba(229,178,74,.18)'},svg);
+      el('text',{x:(a+b)/2,y:y-14,'text-anchor':'middle','font-size':12,fill:C.brand,'font-family':'JetBrains Mono, monospace'},svg,ln.dur);
+      ln.ev.forEach(([d,k])=>{const xx=x(d);
+        if(k==='int')el('circle',{cx:xx,cy:y,r:6,fill:C.bg1,stroke:C.sec,'stroke-width':2},svg);
+        else if(k==='cnv')el('rect',{x:xx-6,y:y-6,width:12,height:12,transform:`rotate(45 ${xx} ${y})`,fill:C.pub,stroke:C.bg1,'stroke-width':2},svg);
+        else if(k==='cond')el('circle',{cx:xx,cy:y,r:5.5,fill:C.sec,stroke:C.bg1,'stroke-width':2},svg);
+        else el('circle',{cx:xx,cy:y,r:7.5,fill:C.brand,stroke:C.bg1,'stroke-width':2},svg);
+        const lab=d.toLocaleDateString('es-AR',{month:'short',year:'2-digit'}).replace('.','');
+        if(k!=='cond')el('text',{x:xx,y:y+24,'text-anchor':'middle','font-size':10.5,fill:C.muted,'font-family':'JetBrains Mono, monospace'},svg,lab)});
+      if(ln.dig){const xx=x(ln.dig);el('line',{x1:x(ln.ev[3][0])+9,x2:xx-7,y1:y,y2:y,stroke:C.axis,'stroke-dasharray':'3 4'},svg);
+        el('circle',{cx:xx,cy:y,r:6,fill:C.bg1,stroke:C.pub,'stroke-width':2},svg);
+        el('text',{x:xx,y:y+24,'text-anchor':'middle','font-size':10.5,fill:css('--route-pub-ink'),'font-family':'JetBrains Mono, monospace'},svg,'abr 26');
+        el('text',{x:xx,y:y-14,'text-anchor':'end','font-size':11,fill:css('--route-pub-ink')},svg,'versión digital aprobada')}
+    });
+  })();
+
+  /* ---------- Rangos de costo (log) ---------- */
+  (function(){
+    const svg=document.getElementById('costrange');if(!svg)return;
+    const rows=[
+      {n:'Diagnóstico de Xcapit',p:'4 semanas',a:8000,b:12000},
+      {n:'Plataforma mínima de Xcapit',p:'Desarrollo a medida',a:40000,b:150000},
+      {n:'Armado de ILLA Belgrano I',p:'Organización, estructuración y colocación',a:135886,b:135886,pub:true},
+      {n:'Armado de Landtoken I',p:'Estimado, con el primer año de fiduciario',a:334950,b:334950,pub:true},
+    ];
+    const W=720,L=260,R=90,T=8,rowH=44,H=T+rows.length*rowH+26;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
+    const lo=3,hi=6;const x=v=>L+(W-L-R)*(Math.log10(v)-lo)/(hi-lo);
+    [1e3,1e4,1e5,1e6].forEach(t=>{el('line',{x1:x(t),x2:x(t),y1:T,y2:H-24,stroke:C.grid},svg);el('text',{x:x(t),y:H-8,'text-anchor':'middle','font-size':11,fill:C.muted,'font-family':'JetBrains Mono, monospace'},svg,t>=1e6?'USD 1M':'USD '+fmt(t/1000)+'K')});
+    const k=v=>'USD '+fmt(Math.round(v/1000))+'K';
+    rows.forEach((r,i)=>{const y=T+i*rowH+14;
+      el('text',{x:0,y:y+2,'font-size':13,'font-weight':500,fill:C.text},svg,r.n);
+      el('text',{x:0,y:y+18,'font-size':11,fill:C.muted},svg,r.p);
+      const c=r.pub?C.pub:C.sec;
+      if(r.a===r.b){el('circle',{cx:x(r.a),cy:y+6,r:7,fill:c},svg);el('text',{x:x(r.a)+13,y:y+10,'font-size':12,fill:C.sec,'font-family':'JetBrains Mono, monospace'},svg,k(r.a))}
+      else{el('rect',{x:x(r.a),y:y,width:Math.max(12,x(r.b)-x(r.a)),height:12,rx:6,fill:c},svg);el('text',{x:x(r.b)+10,y:y+10.5,'font-size':12,fill:C.sec,'font-family':'JetBrains Mono, monospace'},svg,k(r.a)+'–'+k(r.b))}
+    });
+  })();
+
+  /* ---------- Comisiones al inversor (apiladas) ---------- */
+  function feeBars(id,rows,max){
+    const svg=document.getElementById(id);if(!svg)return;const W=720,L=170,R=90,T=6,rowH=42,H=T+rows.length*rowH+26;
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);const x=v=>L+(W-L-R)*v/max;const pct=v=>fmt(v)+'%';
+    for(let t=0;t<=max;t+=1){el('line',{x1:x(t),x2:x(t),y1:T,y2:H-24,stroke:t===0?C.axis:C.grid},svg);el('text',{x:x(t),y:H-8,'text-anchor':'middle','font-size':11,fill:C.muted,'font-family':'JetBrains Mono, monospace'},svg,t+'%')}
+    rows.forEach((r,i)=>{const y=T+i*rowH+10;let acc=0;
+      el('text',{x:0,y:y+8,'font-size':13,'font-weight':500,fill:C.text},svg,r.n);
+      el('text',{x:0,y:y+23,'font-size':11,fill:C.muted},svg,r.p);
+      r.seg.forEach(([v,c,lab])=>{if(v<=0){acc+=0;return}const x0=x(acc),w=x(acc+v)-x0;el('rect',{x:x0,y:y,width:Math.max(2,w-1.5),height:18,rx:3,fill:c},svg);
+        if(w>34)el('text',{x:x0+w/2,y:y+13,'text-anchor':'middle','font-size':10.5,fill:C.bg1,'font-weight':600,'font-family':'JetBrains Mono, monospace'},svg,lab||pct(v));acc+=v});
+      el('text',{x:x(acc)+8,y:y+13.5,'font-size':12,fill:C.sec,'font-family':'JetBrains Mono, monospace'},svg,r.total||pct(acc));
+    });
+  }
+  feeBars('exitfees',[
+    {n:'Metro Futuro',p:'Rescate',seg:[[6,C.brand]]},
+    {n:'Lofty',p:'Venta en la plataforma',seg:[[3,C.brand]]},
+    {n:'Raíz Finance',p:'Solo si salís antes de tiempo',seg:[[2,C.brand]]},
+    {n:'Prypco Mint',p:'Reventa',seg:[[1,C.brand]]},
+    {n:'Brick-ly',p:'Sin penalidad',seg:[[0,C.brand]],total:'0%'},
+  ],7);
+  feeBars('feebars',[
+    {n:'Prypco Mint',p:'Dubái',seg:[[4.1,C.pub],[1,C.brand]]},
+    {n:'Lofty',p:'EE.UU.',seg:[[2.5,C.pub],[3,C.brand]]},
+  ],6);
+
   })();
