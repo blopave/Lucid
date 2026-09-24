@@ -1,10 +1,11 @@
 # Documentos de tokenización
 
-Dos documentos vivos de lucid, con la identidad de la marca (canon §1–3):
+Tres documentos vivos de lucid, con la identidad de la marca (canon §1–3):
 
 | Archivo | Qué es | Para quién |
 | --- | --- | --- |
 | `informe-tokenizacion-lucid.pdf` | Informe completo: qué es la tokenización, mercados, redes, Argentina, casos globales y locales, escenarios, preguntas de la gente, verificación. | Respaldo y referencia: socios, inversores, asesores. |
+| `estrategia-venta-inmuebles-tokenizados.pdf` | Estrategia de venta basada en la confianza verificable: oferta pública o privada, canales, públicos, competencia, mensaje, reglas de publicidad y plan. | El equipo de lucid. Documento de trabajo interno. |
 | `roadmap-tokenizacion-inmuebles.pdf` | Road map para tokenizar un inmueble en Argentina, fase por fase, con casos reales como ejemplo. | El dueño de un activo y el equipo de lucid. |
 
 Los `.html` de esta carpeta son la versión lista para imprimir de cada PDF.

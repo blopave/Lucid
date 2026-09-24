@@ -152,6 +152,7 @@
       bindTip(b,`<b>${r.n}</b><span>USD ${fmt(r.v)} miles de millones</span>`);
       tb&&tb.insertAdjacentHTML('beforeend',`<tr><td>${r.n}</td><td class="num">${fmt(r.v)}</td></tr>`)});
   }
+  linBars('cuentas',[{n:'Personas con cuenta',v:12.3},{n:'Cuentas que operan por mes',v:1.09}],14,2,'','cuentas-table','Personas con cuenta');
   linBars('growth',[{n:'Marzo de 2025',v:6.4},{n:'Septiembre de 2026',v:38.67}],40,10,'','growth-table','Septiembre de 2026');
   linBars('segments',[{n:'Bonos del Tesoro de EE.UU.',v:14.94},{n:'Crédito privado',v:7.98},{n:'Materias primas',v:4.92},{n:'Acciones',v:3.13},{n:'Inmuebles',v:0.226}],16,4,'','segments-table','Inmuebles');
   (function(){const svg=document.getElementById('products');if(!svg)return;

@@ -103,7 +103,8 @@ def build(body_path,title,footer,out):
 DOCS=[
     ('informe.body.html','Tokenización: el mundo y Argentina','lucid · Informe: tokenización en el mundo y en Argentina','informe-tokenizacion-lucid.html'),
     ('roadmap.body.html','Road map de tokenización','lucid · Road map: cómo tokenizar un inmueble en Argentina','roadmap-tokenizacion-inmuebles.html'),
+    ('estrategia.body.html','Estrategia de venta','lucid · Estrategia de venta de inmuebles tokenizados','estrategia-venta-inmuebles-tokenizados.html'),
 ]
 if __name__=='__main__':
     for body,title,footer,out in DOCS:
-        build(body,title,footer,os.path.join(OUT,out))
+        if os.path.exists(os.path.join(SRC,body)): build(body,title,footer,os.path.join(OUT,out))

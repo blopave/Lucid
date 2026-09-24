@@ -15,6 +15,50 @@ confirma se marca o queda afuera.
 
 ---
 
+## Actualización 9 · 24/09/2026 (estrategia de venta y corrección de Metro Futuro)
+
+**Qué se hizo:** documento nuevo, `estrategia-venta-inmuebles-tokenizados.pdf`, a pedido del dueño: una estrategia de venta basada en la confianza verificable, pensada para cualquier canal. Tres investigadores relevaron las reglas de publicidad (normas leídas en Infoleg y el Boletín Oficial), los públicos y la confianza, y cómo comunica la competencia (sitios leídos el 24/09/2026 y comparados con el registro de PSAV de la CNV). Todo lo que es lectura propia está rotulado en el documento.
+
+**Texto nuevo auditado:**
+
+| Afirmación | Fuente | Nivel | Veredicto |
+| --- | --- | --- | --- |
+| Oferta pública incluye internet y redes sociales | Ley 26.831, art. 2 | A | Confirmado |
+| Publicidad sin inducir a error sobre rentabilidad, liquidez o garantías; denominaciones reservadas | Ley 26.831, arts. 112 y 113; NORMAS CNV T.XII C.II art. 7 | A | Confirmado |
+| Notas periodísticas no son publicidad encargada | Ley 26.831, art. 115 | A | Confirmado |
+| Sanciones por oferta pública no autorizada; captación de ahorro sin autorización, pena mínima de 2 años con difusión masiva | Ley 26.831, art. 117; Código Penal, art. 310 | A | Confirmado |
+| Leyenda de oferta pública autorizada y "esta autorización sólo significa…"; prospecto preliminar con leyenda; publicidad veraz | NORMAS CNV T.II C.IX arts. 7, 8 y 13 | A | Confirmado |
+| No usar "Fondo" en un fideicomiso financiero | NORMAS CNV T.V C.IV art. 10 | A | Confirmado |
+| Oferta privada: sin medios masivos; reuniones de hasta 50; web con contraseña; hasta 35 compradores, 15 no calificados; advertencia firmada; reventa de 3 a 6 meses; listas de distribución excluidas | NORMAS CNV T.XX C.I arts. 2, 3, 4, 7 y 10 | A | Confirmado |
+| Leyenda vigente del PSAV: "Inscripto bajo el N°… en el Registro de PSAV de la CNV (República Argentina)" | NORMAS CNV T.XIV C.III art. 5, texto de la RG 1058 | A | Confirmado. La leyenda de la RG 994 ("no implica licencia ni supervisión") fue reemplazada |
+| Separación entre promoción de PSAV y de mercado de capitales; uso del nombre del PSAV por socios; referenciamiento informado en 5 días; comisiones destacadas | NORMAS CNV T.XIV C.III arts. 31 a 34 | A | Confirmado |
+| Publicidad de valores tokenizados en lenguaje llano; sujeta a reglas de valores | NORMAS CNV T.XXII C.I arts. 33 y 34 | A | Confirmado |
+| Precisiones de la publicidad forman parte del contrato | Ley 24.240, art. 8; CCyC, art. 1103 | A | Confirmado |
+| CNV intimó a Belo (PSAV) y al emisor de ARGt por un "rendimiento garantizado" de 32% TNA (12/03/2026) | CNV, noticia y resolución | A | Confirmado |
+| Advertencias de la CNV sobre famosos (2022), señales de fraude (2022), aclaración sobre Generación Zoe (2021), estafas que imitan instituciones | argentina.gob.ar/cnv | A | Confirmado |
+| 12,3M de personas con cuenta en Caja de Valores, 24,6M de cuentas, 1,09M operan por mes, 40% mujeres (mayo 2026) | Datos de BYMA vía Infobae y El Cronista | B | Confirmado |
+| Hogares que alquilan: 21,0% del país; 36,8% en CABA | INDEC, Censo 2022 | A | Confirmado |
+| Depósitos privados en dólares USD 40.879M a fin de agosto de 2026, máximo de la serie | Informe Monetario del BCRA vía Criteria y Ámbito | B | Confirmado |
+| Bitso: 71% de lo comprado en Argentina en 2025 fueron dólares digitales | Bitso vía Infobae | C | Como dato de la empresa sobre sus clientes |
+| 1.183.381 argentinos en el exterior; 390.798 en España; 212.091 en EE.UU. | ONU, International Migrant Stock 2024 | A | Confirmado |
+| 57% "estafa tecnológica que el Estado debería prohibir" (70% en mayores de 55), 72% "demasiado complicado", 7 de 10 sobre el sistema financiero | Sentimientos Públicos, encuesta online feb 2025 | A sobre su relevamiento | Confirmado, rotulado como encuesta online |
+| 35,6% confía en los bancos | Luis Costa & Asociados vía La Nación | C | Rotulado "publicada en una sola nota" |
+| Generación Zoe: 7,5% mensual; 12 años en Corrientes (confirmada dic 2025), 11 años en Salta | Infobae; Fiscales Penales de Salta | A/B | Confirmado |
+| RainbowEx: 1%–2% diario, colapso oct 2024, USD 3,5M congelados | La Nación, Ámbito | B | Confirmado |
+| $LIBRA: caída de ~89% en horas; causa abierta | Chequeado, Perfil | B | Confirmado |
+| Promesas, mensajes sobre la CNV y tasas de siete competidores, textuales | Sitios de cada empresa; registro de PSAV | A sobre sí mismas | Confirmado; categorías del registro controladas |
+| Arrived, Prypco Mint, Fundrise y Lofty: prácticas de transparencia | Sitios de cada empresa | A sobre sí mismas | Confirmado |
+
+### Correcciones
+
+- **Metro Futuro:** el road map (anexo H) y el informe (parte VIII) decían que "su sitio aclara que sus emisiones no están registradas ni aprobadas por la CNV". La aclaración existe, pero en la ficha y los documentos de algunas emisiones (Aldeana Pilar, Altos de Benavídez, Grand Atlántida), no en todo el sitio; otras fichas no la traen. Se reemplazó por la cita textual con esas dos fuentes. El pie general del sitio sigue diciendo que su registro "no implica licencia ni supervisión".
+
+**Quedó afuera:** usuarios de Bitso, Belo y Ripio en Argentina (sin fuente de la empresa), víctimas y montos totales de Generación Zoe y RainbowEx (cifras sin fuente judicial), confianza en bancos de Latinobarómetro y Edelman (no accesibles), una norma específica sobre influencers (no existe; solo advertencias), y si la Ley 24.240 se aplica a quien compra valores tokenizados (sin jurisprudencia revisada).
+
+**Validación pendiente:** ningún abogado revisó todavía la aplicación de estas normas a lucid; el documento lo dice en portada y en cada lectura propia.
+
+---
+
 ## Actualización 8 · 24/09/2026 (informe con gráficos)
 
 **Qué se hizo:** el informe siguió el mismo criterio que el road map (actualización 7): menos tablas en el cuerpo y más gráficos. Gráficos nuevos: crecimiento del mercado (resumen), la ficha por capas (parte I), ERC-20 frente a ERC-3643 (parte II), montos por segmento y la regla de hierro (parte IV), productos más grandes fuera del ladrillo (parte IV), el régimen de la CNV en línea de tiempo y el mapa de proveedores (parte VII), costo de armar una emisión (parte IX), escenarios en tarjetas (parte X) y el embudo de la demanda (parte XIII). Los hitos pasaron a líneas de tiempo. Las tablas de segmentos, productos, normas y jugadores, y la de formatos técnicos, pasaron a un anexo nuevo, completas y con sus fuentes.
