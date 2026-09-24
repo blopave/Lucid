@@ -15,6 +15,72 @@ confirma se marca o queda afuera.
 
 ---
 
+## Actualización 3 · 24/09/2026 (datos al día y fecha de corte única)
+
+**Qué se hizo:**
+- Se releyeron hoy, en su fuente original, todas las cifras que cambian con el tiempo.
+- Se buscaron novedades de Argentina, la región y el mundo desde junio de 2026. Tres verificadores trabajaron en paralelo, solo con WebFetch sobre las fuentes primarias.
+- Se sacaron las referencias al informe de julio 2026 y las fechas repetidas: cada documento tiene una sola fecha de corte, `CORTE` en `src/build.py`.
+
+**Cifras actualizadas** (RWA.xyz y emisores, nivel A salvo que se indique):
+
+| Dato | Antes | Ahora |
+| --- | --- | --- |
+| Activos tokenizados que circulan libremente | USD 38.830M | USD 38.670M |
+| Activos representados | USD 354.360M | USD 357.980M |
+| Ethereum (valor en circulación) | USD 16.610M | USD 16.550M (43%) |
+| BNB Chain / Solana / Stellar | 5,78 / 4,49 / 3,36 | 5,68 / 4,41 / 3,37 (USD miles de millones) |
+| Provenance, representado | USD 22.970M | USD 23.040M |
+| Bonos del Tesoro de EE.UU. tokenizados | USD 14.930M | USD 14.940M |
+| USYC (Circle) | USD 2.510M | USD 2.430M |
+| Crédito privado (en circulación / representado) | 8.100 / 36.470 | 7.980 / 36.550 (USD millones) |
+| Materias primas | USD 5.000M | USD 4.920M |
+| Tether Gold / Pax Gold | 2.700 / 1.890 | 2.650 / 1.850 (USD millones) |
+| Acciones tokenizadas | USD 3.140M | USD 3.130M |
+| Ondo en acciones tokenizadas | USD 870M | USD 867M |
+| BUIDL | USD 2.230M | USD 2.240M |
+| Securitize | USD 4.680M | USD 4.720M |
+| Maple, activos administrados (C, según la empresa) | USD 4.840M | USD 4.760M |
+| Dólar en liras turcas (B) | 48,84 | 48,86 |
+
+**Sin cambios, confirmados de nuevo:**
+- Inmuebles: USD 226M en circulación y USD 1.340M representados.
+- USDY: USD 2.270M, rendía 3,60%.
+- WTGXX: USD 1.230M.
+- ERC-3643: más de USD 32.000M, según su asociación.
+- Registro de PSAV de la CNV: 81 empresas. R3AL Blocks sigue sin figurar.
+- La prohibición del BCRA (Banco Central) sigue vigente.
+- INDEC: el dato del 2.º trimestre de 2026 todavía no se publicó; sigue USD 259.305M al 31/03/2026.
+- Landtoken: sigue con una sola serie.
+- Ripio: nada nuevo después del AL30.
+
+**Novedades incorporadas:**
+- **Chainalysis, informe 2026** (publicado el 23/09/2026, A). Reemplaza al de 2025.
+  - Argentina recibió USD 88.500M en los 12 meses a junio de 2026 (+15,3%) y sigue segunda de la región.
+  - Brasil: USD 252.500M (−1,6%). México: USD 77.600M (+25,5%). Venezuela: USD 39.100M. Colombia: USD 29.100M. Región: USD 593.800M (+9,8%).
+  - En Argentina, las billeteras con al menos USD 10.000 en dólares digitales crecieron 82% desde julio de 2024.
+  - Se sacó el dato de 2025 sobre "más de la mitad de las compras en pesos", que el informe 2026 no trae.
+- **RG 1165 de la CNV** (07/09/2026, A): incluye a los PSAV en la matriz de actividades compatibles. No es una norma de tokenización. No hubo normas nuevas de tokenización después de la RG 1150.
+- **Hong Kong:** su corporación hipotecaria colocó unos HKD 12.000M en bonos digitales (10/06/2026, HKMA, A).
+- **DTCC:** operaciones reales con activos tokenizados junto a unas 40 firmas el 15/07/2026; el servicio se lanza en octubre de 2026 (A).
+- **SEC:** propuesta de "Regulation Crypto Assets" (18/08/2026, A). La plataforma de la Bolsa de Nueva York sigue sin lanzarse; presentó su regla en abril de 2026 (Federal Register, A).
+- **GENIUS Act:** todavía sin normas finales; entra en vigencia a más tardar el 18/01/2027 (texto de la ley, A).
+- **Dubái:** desde julio de 2026 se puede comprar en la reventa desde AED 1.000; siguen siendo 10 propiedades (Gulf News, B).
+- **RealT:** en abril de 2026 perdió el control de la cartera, que pasó a un fiduciario independiente (Outlier Media, B). No hay novedades posteriores a la liquidación anunciada el 02/07/2026.
+
+**No se sumó (plan, sin emisión, o fuentes contradictorias):**
+- el piloto de Kazajistán en Alatau City, que es un plan;
+- el acuerdo de TAP Real Estate por el Zermatt Resort, que es un acuerdo;
+- el hotel Trump en Maldivas, donde las fuentes se contradicen.
+
+**Pendiente:**
+- Lofty: el sitio bloquea las lecturas, así que se mantiene el dato de sep 2023 rotulado como "según la empresa".
+- El Boletín Oficial no se revisó directamente para julio a septiembre.
+- La prohibición brasileña en los registros inmobiliarios no se reverificó hoy.
+- **Próxima revalidación:** antes del 24/12/2026, y el 29/09/2026 si el INDEC publica el dato nuevo.
+
+---
+
 ## Auditoría 2 · 24/09/2026 (texto final completo)
 
 **Alcance:** los dos documentos enteros, auditados sobre el texto ya armado y no sobre notas previas.
@@ -103,7 +169,7 @@ confirma se marca o queda afuera.
 - Los montos colocados por Landtoken (efectivo), Pala, Metro Futuro y Lena Buró.
 - Si ya circulan las fichas de ILLA Belgrano.
 - El dato del INDEC del 2.º trimestre de 2026, cuando se publique.
-- **Próxima revalidación de cifras de mercado:** antes del 23/12/2026.
+- **Próxima revalidación de cifras de mercado:** ver la actualización 3.
 
 ---
 

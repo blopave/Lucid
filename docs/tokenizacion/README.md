@@ -19,6 +19,7 @@ Los `.html` de esta carpeta son la versión lista para imprimir de cada PDF.
 
 ## Cómo actualizar
 
+0. **Fecha de corte.** Si se actualizan datos, cambiar `CORTE` en `src/build.py`: es la única fecha visible de los documentos y se refleja en los dos.
 1. Editar el contenido en `src/informe.body.html` o `src/roadmap.body.html`. Los estilos compartidos están en `src/base.css` y los gráficos en `src/charts.js`, cuyos datos están escritos en el propio archivo.
 2. Generar los HTML desde la raíz del repo:
 

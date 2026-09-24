@@ -151,8 +151,8 @@
       tb&&tb.insertAdjacentHTML('beforeend',`<tr><td>${r.n}</td><td class="num">${fmt(r.v)}</td></tr>`)});
   }
   linBars('market',[{n:'Bonos del Tesoro de EE.UU.',v:14.93},{n:'Crédito privado',v:8.10},{n:'Materias primas (oro)',v:5.00},{n:'Resto',v:10.80}],16,4,'','market-table');
-  linBars('networks',[{n:'Ethereum',v:16.61},{n:'BNB Chain',v:5.78},{n:'Solana',v:4.49},{n:'Stellar',v:3.36},{n:'Resto',v:8.59}],18,3,'','networks-table');
-  linBars('latam',[{n:'Brasil',v:318.8},{n:'Argentina',v:93.9},{n:'México',v:71.2},{n:'Colombia',v:44.2},{n:'Chile',v:23.8}],350,50,'','latam-table','Argentina');
+  linBars('networks',[{n:'Ethereum',v:16.55},{n:'BNB Chain',v:5.68},{n:'Solana',v:4.41},{n:'Stellar',v:3.37},{n:'Resto',v:8.66}],18,3,'','networks-table');
+  linBars('latam',[{n:'Brasil',v:252.5},{n:'Argentina',v:88.5},{n:'México',v:77.6},{n:'Venezuela',v:39.1},{n:'Colombia',v:29.1}],300,50,'','latam-table','Argentina');
 
   /* ---------- Waterfall ---------- */
   (function(){

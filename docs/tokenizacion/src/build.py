@@ -9,6 +9,9 @@ ese HTML (ver docs/tokenizacion/README.md).
 """
 import re,html,os,json
 
+# Fecha de corte de los datos: se cambia acá y se refleja en ambos documentos.
+CORTE='24/09/2026'
+
 SRC=os.path.dirname(os.path.abspath(__file__))
 OUT=os.path.dirname(SRC)
 def R(n): return open(os.path.join(SRC,n),encoding='utf-8').read()
@@ -84,6 +87,7 @@ def notes_for(sec):
     return sec
 def build(body_path,title,footer,out):
     b=R(body_path)
+    b=b.replace('{{CORTE}}',CORTE)
     b=re.sub(r'<section class="ch".*?</section>',lambda m:notes_for(m.group(0)),b,flags=re.S)
     b=re.sub(r'(<section class="ch" id="([^"]+)">)',lambda m:m.group(1)+f'<span class="pgmark" aria-hidden="true">@@{m.group(2)}@@</span>',b)
     pj=os.path.join(SRC,'pages.json')
