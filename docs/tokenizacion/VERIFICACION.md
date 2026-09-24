@@ -15,6 +15,16 @@ confirma se marca o queda afuera.
 
 ---
 
+## Actualización 8 · 24/09/2026 (informe con gráficos)
+
+**Qué se hizo:** el informe siguió el mismo criterio que el road map (actualización 7): menos tablas en el cuerpo y más gráficos. Gráficos nuevos: crecimiento del mercado (resumen), la ficha por capas (parte I), ERC-20 frente a ERC-3643 (parte II), montos por segmento y la regla de hierro (parte IV), productos más grandes fuera del ladrillo (parte IV), el régimen de la CNV en línea de tiempo y el mapa de proveedores (parte VII), costo de armar una emisión (parte IX), escenarios en tarjetas (parte X) y el embudo de la demanda (parte XIII). Los hitos pasaron a líneas de tiempo. Las tablas de segmentos, productos, normas y jugadores, y la de formatos técnicos, pasaron a un anexo nuevo, completas y con sus fuentes.
+
+**Texto reescrito:** los gráficos dibujan cifras ya auditadas (actualizaciones 1 a 6); no suman datos nuevos. "La regla de hierro" es un esquema cualitativo rotulado como tal. En el gráfico de productos se usan solo montos en circulación de RWA.xyz (USYC, USDY, BUIDL, WTGXX, Tether Gold, Pax Gold); Maple y Securitize quedaron solo en la tabla del anexo porque miden otra cosa.
+
+**Texto nuevo auditado:** la sección "Y cuando el inversor quiere vender" (parte IX) y la respuesta "¿Cuándo puedo vender?" (parte XII) usan solo afirmaciones confirmadas en la actualización 7: las cuatro puertas de salida (Brick-ly y Raíz como "según las empresas", Metro Futuro por sus términos, R3AL Blocks), RG 1081 art. 16, RG 1150 art. 5, la advertencia del prospecto de Landtoken I y la conclusión de la IOSCO.
+
+---
+
 ## Actualización 7 · 24/09/2026 (road map con gráficos y capítulo de salida)
 
 **Qué se hizo:** a pedido del dueño, el road map se reescribió para que sea más simple y visual: diagramas nuevos en cada paso (circuito de la plata, proceso en una página, filtros del paso 1, caja legal, bifurcación de caminos, decisiones de una ficha, lista blanca, doble canal, ciclo mensual, esquema de lucid) y el detalle de proveedores, plazos y costos pasó a dos anexos. Se sumó el capítulo C, "Si querés vender tu parte", con la pregunta del dueño: cómo se vende una participación y qué ventaja da trabajar con varios PSAV. Un investigador leyó las RG completas en el Boletín Oficial, los prospectos en la AIF y los términos de cada plataforma.

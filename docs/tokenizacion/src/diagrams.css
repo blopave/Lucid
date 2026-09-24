@@ -149,3 +149,25 @@
   .print-index .idx-group li small{margin-top:0}
 }
 .exits--4{grid-template-columns:repeat(2,1fr)}
+
+/* ---------- Informe: tarjetas y líneas de tiempo ---------- */
+.pillars--3{grid-template-columns:repeat(3,1fr)}
+.pillars--5{grid-template-columns:repeat(5,1fr)}
+.pillars--5 small{font-size:12px}
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.sc{border:1px solid var(--border);border-top:4px solid var(--text-muted);border-radius:12px;background:var(--bg-1);padding:14px;display:grid;gap:8px;align-content:start}
+.sc .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.sc p{margin:0;font-size:12.5px;line-height:1.45}
+.sc .sc__eff{color:var(--text-primary);border-top:1px solid var(--border);padding-top:8px}
+.sc--up{border-top-color:var(--positive)} .sc--up .k{color:var(--positive)}
+.sc--mid{border-top-color:var(--brand)} .sc--mid .k{color:var(--brand)}
+.sc--down{border-top-color:var(--negative)} .sc--down .k{color:var(--negative)}
+/* hitos como línea de tiempo */
+.hitos{position:relative;padding-left:0}
+.hitos li{grid-template-columns:82px 18px 1fr;gap:10px;border-bottom:0;padding:7px 0;position:relative}
+.hitos li::before{content:"";grid-column:2;grid-row:1;justify-self:center;margin-top:5px;width:11px;height:11px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px var(--bg)}
+.hitos li::after{content:"";position:absolute;left:calc(82px + 10px + 8px);top:0;bottom:0;width:1px;background:var(--border-strong);z-index:-1}
+.hitos li time{grid-column:1;grid-row:1;text-align:right}
+.hitos li > span{grid-column:3;grid-row:1}
+@media print{.scen,.sc{break-inside:avoid}}
+@media (max-width:720px){.pillars--3,.pillars--5,.scen{grid-template-columns:1fr}}

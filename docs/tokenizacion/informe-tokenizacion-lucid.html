@@ -541,6 +541,28 @@ section.ch{position:relative}
 }
 .exits--4{grid-template-columns:repeat(2,1fr)}
 
+/* ---------- Informe: tarjetas y líneas de tiempo ---------- */
+.pillars--3{grid-template-columns:repeat(3,1fr)}
+.pillars--5{grid-template-columns:repeat(5,1fr)}
+.pillars--5 small{font-size:12px}
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.sc{border:1px solid var(--border);border-top:4px solid var(--text-muted);border-radius:12px;background:var(--bg-1);padding:14px;display:grid;gap:8px;align-content:start}
+.sc .k{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.sc p{margin:0;font-size:12.5px;line-height:1.45}
+.sc .sc__eff{color:var(--text-primary);border-top:1px solid var(--border);padding-top:8px}
+.sc--up{border-top-color:var(--positive)} .sc--up .k{color:var(--positive)}
+.sc--mid{border-top-color:var(--brand)} .sc--mid .k{color:var(--brand)}
+.sc--down{border-top-color:var(--negative)} .sc--down .k{color:var(--negative)}
+/* hitos como línea de tiempo */
+.hitos{position:relative;padding-left:0}
+.hitos li{grid-template-columns:82px 18px 1fr;gap:10px;border-bottom:0;padding:7px 0;position:relative}
+.hitos li::before{content:"";grid-column:2;grid-row:1;justify-self:center;margin-top:5px;width:11px;height:11px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px var(--bg)}
+.hitos li::after{content:"";position:absolute;left:calc(82px + 10px + 8px);top:0;bottom:0;width:1px;background:var(--border-strong);z-index:-1}
+.hitos li time{grid-column:1;grid-row:1;text-align:right}
+.hitos li > span{grid-column:3;grid-row:1}
+@media print{.scen,.sc{break-inside:avoid}}
+@media (max-width:720px){.pillars--3,.pillars--5,.scen{grid-template-columns:1fr}}
+
 </style>
 <div class="shell">
   <main>
@@ -572,13 +594,13 @@ section.ch{position:relative}
       <p class="ch__label">Contenido</p>
       <h2>Índice</h2>
       <div class="idx-group"><p class="idx-k">Para empezar</p><ol><li><span class="idx-n">—</span><div><b>Resumen ejecutivo</b><small>Lo esencial en una página</small></div><span class="idx-p" data-for="resumen">4</span></li></ol></div>
-      <div class="idx-group"><p class="idx-k">Fundamentos</p><ol><li><span class="idx-n">I</span><div><b>Qué es la tokenización</b><small>Definición, por qué ahora, la cadena de valor</small></div><span class="idx-p" data-for="p1">6</span></li><li><span class="idx-n">II</span><div><b>Los tipos de fichas</b><small>Por función, por formato y por estructura legal</small></div><span class="idx-p" data-for="p2">8</span></li><li><span class="idx-n">III</span><div><b>Las redes</b><small>Dónde viven los activos y cómo se elige</small></div><span class="idx-p" data-for="p3">10</span></li></ol></div>
-      <div class="idx-group"><p class="idx-k">El mundo</p><ol><li><span class="idx-n">IV</span><div><b>Los mercados que ya funcionan</b><small>Segmentos, regulación, quién tokeniza qué</small></div><span class="idx-p" data-for="p4">12</span></li><li><span class="idx-n">V</span><div><b>Hitos y casos globales</b><small>De Santander 2019 a la SEC 2026</small></div><span class="idx-p" data-for="p5">15</span></li><li><span class="idx-n">VI</span><div><b>Casos de inmuebles en el mundo</b><small>Dubái, Aspen, Kobe, RealT; lo que no se concretó</small></div><span class="idx-p" data-for="casos-mundo">20</span></li></ol></div>
-      <div class="idx-group"><p class="idx-k">Argentina</p><ol><li><span class="idx-n">VII</span><div><b>El marco argentino</b><small>Normas, jugadores y los cuatro roles</small></div><span class="idx-p" data-for="p6">25</span></li><li><span class="idx-n">VIII</span><div><b>Casos argentinos y la región</b><small>Landtoken, ILLA Belgrano, Agrotoken, SeSocio</small></div><span class="idx-p" data-for="casos-argentina">29</span></li></ol></div>
-      <div class="idx-group"><p class="idx-k">Cómo opera</p><ol><li><span class="idx-n">IX</span><div><b>Cómo funciona en la realidad</b><small>El camino del inversor y el del emisor</small></div><span class="idx-p" data-for="p7">36</span></li><li><span class="idx-n">X</span><div><b>Mirada de amplio espectro</b><small>Escenarios y qué pasa cuando se rompe</small></div><span class="idx-p" data-for="p8">38</span></li></ol></div>
-      <div class="idx-group"><p class="idx-k">Lo que viene</p><ol><li><span class="idx-n">XI</span><div><b>El patrón y el futuro</b><small>Ocho patrones y las tendencias de 2026</small></div><span class="idx-p" data-for="p10">41</span></li><li><span class="idx-n">XII</span><div><b>Las preguntas de la gente</b><small>En lenguaje llano</small></div><span class="idx-p" data-for="p11">44</span></li></ol></div>
-      <div class="idx-group"><p class="idx-k">Para lucid</p><ol><li><span class="idx-n">XIII</span><div><b>Qué significa para lucid</b><small>La demanda, dónde se para lucid, el plan de 180 días</small></div><span class="idx-p" data-for="p9">47</span></li></ol></div>
-      <div class="idx-group"><p class="idx-k">Cierre</p><ol><li><span class="idx-n">XIV</span><div><b>Verificación y cierre</b><small>Cómo se verificó cada dato</small></div><span class="idx-p" data-for="p12">49</span></li><li><span class="idx-n">—</span><div><b>Glosario</b></div><span class="idx-p" data-for="glosario">51</span></li></ol></div>
+      <div class="idx-group"><p class="idx-k">Fundamentos</p><ol><li><span class="idx-n">I</span><div><b>Qué es la tokenización</b><small>Definición, por qué ahora, la cadena de valor</small></div><span class="idx-p" data-for="p1">6</span></li><li><span class="idx-n">II</span><div><b>Los tipos de fichas</b><small>Por función, por formato y por estructura legal</small></div><span class="idx-p" data-for="p2">8</span></li><li><span class="idx-n">III</span><div><b>Las redes</b><small>Dónde viven los activos y cómo se elige</small></div><span class="idx-p" data-for="p3">11</span></li></ol></div>
+      <div class="idx-group"><p class="idx-k">El mundo</p><ol><li><span class="idx-n">IV</span><div><b>Los mercados que ya funcionan</b><small>Segmentos, regulación, quién tokeniza qué</small></div><span class="idx-p" data-for="p4">13</span></li><li><span class="idx-n">V</span><div><b>Hitos y casos globales</b><small>De Santander 2019 a la SEC 2026</small></div><span class="idx-p" data-for="p5">17</span></li><li><span class="idx-n">VI</span><div><b>Casos de inmuebles en el mundo</b><small>Dubái, Aspen, Kobe, RealT; lo que no se concretó</small></div><span class="idx-p" data-for="casos-mundo">21</span></li></ol></div>
+      <div class="idx-group"><p class="idx-k">Argentina</p><ol><li><span class="idx-n">VII</span><div><b>El marco argentino</b><small>Normas, jugadores y los cuatro roles</small></div><span class="idx-p" data-for="p6">26</span></li><li><span class="idx-n">VIII</span><div><b>Casos argentinos y la región</b><small>Landtoken, ILLA Belgrano, Agrotoken, SeSocio</small></div><span class="idx-p" data-for="casos-argentina">30</span></li></ol></div>
+      <div class="idx-group"><p class="idx-k">Cómo opera</p><ol><li><span class="idx-n">IX</span><div><b>Cómo funciona en la realidad</b><small>El camino del inversor y el del emisor</small></div><span class="idx-p" data-for="p7">37</span></li><li><span class="idx-n">X</span><div><b>Mirada de amplio espectro</b><small>Escenarios y qué pasa cuando se rompe</small></div><span class="idx-p" data-for="p8">40</span></li></ol></div>
+      <div class="idx-group"><p class="idx-k">Lo que viene</p><ol><li><span class="idx-n">XI</span><div><b>El patrón y el futuro</b><small>Ocho patrones y las tendencias de 2026</small></div><span class="idx-p" data-for="p10">43</span></li><li><span class="idx-n">XII</span><div><b>Las preguntas de la gente</b><small>En lenguaje llano</small></div><span class="idx-p" data-for="p11">46</span></li></ol></div>
+      <div class="idx-group"><p class="idx-k">Para lucid</p><ol><li><span class="idx-n">XIII</span><div><b>Qué significa para lucid</b><small>La demanda, dónde se para lucid, el plan de 180 días</small></div><span class="idx-p" data-for="p9">49</span></li></ol></div>
+      <div class="idx-group"><p class="idx-k">Cierre</p><ol><li><span class="idx-n">XIV</span><div><b>Verificación y cierre</b><small>Cómo se verificó cada dato</small></div><span class="idx-p" data-for="p12">55</span></li><li><span class="idx-n">A</span><div><b>Anexo: el detalle</b><small>Las tablas completas del mercado, las normas y los jugadores</small></div><span class="idx-p" data-for="anexo">51</span></li><li><span class="idx-n">—</span><div><b>Glosario</b></div><span class="idx-p" data-for="glosario">57</span></li></ol></div>
     </nav>
 
 <section class="ch" id="resumen"><span class="pgmark" aria-hidden="true">@@resumen@@</span>
@@ -591,6 +613,15 @@ section.ch{position:relative}
         <div class="role"><span class="ex">Argentina</span><h4>2 inmuebles</h4><p>con oferta pública aprobada por la CNV —Landtoken e ILLA Belgrano—, un régimen propio hasta el 31/12/2027 y 81 PSAV inscriptos.</p></div>
         <div class="role role--own"><span class="ex">La oportunidad</span><h4>La marca de confianza</h4><p>El mercado regulado y la tecnología ya tienen jugadores. El ahorro minorista con marca propia sigue abierto.</p></div>
       </div>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">Cuánto creció el mercado</p>
+          <p class="fig__sub">Activos reales tokenizados que circulan libremente, en miles de millones de dólares.</p>
+          <div class="scroll"><svg id="growth" role="img" aria-labelledby="gr-t" style="min-width:480px;width:100%;display:block"><title id="gr-t">Activos tokenizados: unos USD 6.400 millones en marzo de 2025 y USD 38.670 millones a la fecha de corte</title></svg></div>
+        </div>
+        <figcaption>Las cifras de distintos años no siempre son comparables, porque las plataformas de datos miden distinto: la dirección no está en duda, la cifra exacta de crecimiento sí (parte V).</figcaption>
+      </figure>
+
       <h3>Tres defensas que un gigante no va a construir</h3>
       <p>Frente a los jugadores globales, la defensa no es la tecnología —se compra o se alquila— sino tres cosas que un gigante no va a construir para un mercado relativamente chico: la originación de buenos activos locales, la marca y confianza en Argentina, y la comunidad. Es la tesis estratégica del informe, no un dato.</p>
       <div class="note note--warn">
@@ -608,10 +639,19 @@ section.ch{position:relative}
       <p class="lead">Tokenizar es emitir una ficha digital (en inglés, token), anotada en un registro público compartido, que representa un derecho legal sobre un activo: un bono, una parte de un fondo, un préstamo, un inmueble o una onza de oro.</p>
       <p>El registro público (en inglés, blockchain) es un libro de registro compartido entre muchas computadoras, muy difícil de falsificar o borrar. Hace de “anotador” de quién tiene qué, sin depender de una sola entidad central. Un contrato automático (en inglés, smart contract) ejecuta solo las reglas pactadas, por ejemplo repartir intereses o dividendos.</p>
 
-      <div class="note">
-        <p class="note__k">La aclaración clave</p>
-        <p>La ficha casi nunca es el activo en sí, sino un derecho sobre él. Entre la ficha y el activo hay una estructura legal —un fondo, un fideicomiso o una sociedad creada solo para eso— que es la dueña formal. Esa estructura le da valor exigible a la ficha; sin ella, la ficha es un número en una pantalla.</p>
-      </div>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">La aclaración clave: la ficha es un derecho, no el activo</p>
+          <svg class="dg" viewBox="0 0 720 250" role="img" aria-label="Tres capas: la ficha digital, la estructura legal que es la dueña formal, y el activo real">
+            <rect class="bx" x="150" y="8" width="420" height="58" rx="12"/><text x="170" y="32" class="t-mono t-brand">1 · LO QUE COMPRA EL INVERSOR</text><text x="170" y="53" class="t-strong">La ficha digital, anotada en un registro público</text>
+            <path class="ln" d="M360,68 V86"/>
+            <rect class="bx-core" x="110" y="88" width="500" height="70" rx="12"/><text x="130" y="112" class="t-mono t-brand">2 · LO QUE LE DA VALOR</text><text x="130" y="133" class="t-strong">La estructura legal, dueña formal del activo</text><text x="130" y="150" class="t-muted">Un fondo, un fideicomiso o una sociedad creada solo para eso</text>
+            <path class="ln" d="M360,160 V178"/>
+            <rect class="bx" x="70" y="180" width="580" height="62" rx="12"/><text x="90" y="204" class="t-mono t-brand">3 · LO QUE HAY ATRÁS</text><text x="90" y="226" class="t-strong">El activo real: un bono, un préstamo, un inmueble, una onza de oro</text>
+          </svg>
+        </div>
+        <figcaption>La ficha casi nunca es el activo en sí, sino un derecho sobre él. La estructura legal le da valor exigible; sin ella, la ficha es un número en una pantalla.</figcaption>
+      </figure>
 
       <h3>Por qué importa, y por qué ahora</h3>
       <div class="roles">
@@ -666,20 +706,32 @@ section.ch{position:relative}
 
       <h3>Los formatos técnicos</h3>
       <p>Un formato (estándar) es un molde común, como el PDF para los documentos: define cómo se construye la ficha para que sea compatible con billeteras y plataformas.</p>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Formato</th><th>Para qué sirve</th></tr></thead>
-          <tbody>
-            <tr><td>ERC-20</td><td>El formato base de los dólares digitales. La mayoría de los bonos y fondos tokenizados lo usan. No controla por sí solo quién puede tener la ficha.</td></tr>
-            <tr><td>ERC-3643</td><td>La referencia para activos regulados: la verificación de identidad va adentro de la ficha, y una transferencia a alguien no verificado falla por diseño.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>Hay otros formatos para usos puntuales —ERC-721 para piezas únicas, ERC-1155 y ERC-1400—, pero para un producto como este alcanza con entender la diferencia entre los dos de la tabla.</p>
-      <div class="note">
-        <p class="note__k">Cómo explicarlo</p>
-        <p>La diferencia entre ERC-20 y ERC-3643 es la que hay entre efectivo y una entrada con tu nombre. El efectivo lo puede tener cualquiera; la entrada nominativa solo vale para quien figura en la lista. Para activos regulados, hace falta lo segundo.</p>
-      </div>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">Efectivo o entrada con tu nombre</p>
+          <p class="fig__sub">Los dos formatos que importan para este producto.</p>
+          <svg class="dg" viewBox="0 0 720 230" role="img" aria-label="Con ERC-20 la ficha pasa a cualquiera; con ERC-3643 solo pasa a quien está en la lista de verificados">
+            <defs><marker id="i2a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ar"/></marker><marker id="i2b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--positive)"/></marker></defs>
+            <rect class="bx-soft" x="0" y="0" width="350" height="230" rx="14"/>
+            <text x="18" y="26" class="t-mono">ERC-20 · COMO EL EFECTIVO</text>
+            <circle cx="70" cy="120" r="26" class="bx-core"/><text x="70" y="124" text-anchor="middle" class="t-mono t-brand">FICHA</text>
+            <path class="ln" d="M98,112 C150,90 170,62 214,62" marker-end="url(#i2a)"/><path class="ln" d="M98,120 H214" marker-end="url(#i2a)"/><path class="ln" d="M98,128 C150,150 170,178 214,178" marker-end="url(#i2a)"/>
+            <rect class="bx" x="222" y="44" width="112" height="36" rx="8"/><text x="236" y="67" class="t-strong">Cualquiera</text>
+            <rect class="bx" x="222" y="102" width="112" height="36" rx="8"/><text x="236" y="125" class="t-strong">Cualquiera</text>
+            <rect class="bx" x="222" y="160" width="112" height="36" rx="8"/><text x="236" y="183" class="t-strong">Cualquiera</text>
+            <text x="18" y="218" class="t-muted">Base de los dólares digitales y de muchos fondos.</text>
+            <rect class="bx-soft" x="370" y="0" width="350" height="230" rx="14"/>
+            <text x="388" y="26" class="t-mono t-brand">ERC-3643 · ENTRADA CON TU NOMBRE</text>
+            <circle cx="440" cy="120" r="26" class="bx-core"/><text x="440" y="124" text-anchor="middle" class="t-mono t-brand">FICHA</text>
+            <path d="M468,112 C520,90 540,62 584,62" stroke="var(--positive)" stroke-width="2" fill="none" marker-end="url(#i2b)"/><path d="M468,120 H584" stroke="var(--positive)" stroke-width="2" fill="none" marker-end="url(#i2b)"/><path class="ln-dash" d="M468,128 C520,150 540,178 584,178"/>
+            <rect class="bx" x="592" y="44" width="112" height="36" rx="8"/><text x="606" y="67" class="t-strong">Verificado</text>
+            <rect class="bx" x="592" y="102" width="112" height="36" rx="8"/><text x="606" y="125" class="t-strong">Verificado</text>
+            <rect class="bx-soft" x="592" y="160" width="112" height="36" rx="8" style="stroke:var(--negative)"/><text x="606" y="183" class="t-strong">Sin verificar</text>
+            <text x="388" y="218" class="t-muted">Falla por diseño si no estás en la lista.</text>
+          </svg>
+        </div>
+        <figcaption>ERC-20 no controla por sí solo quién puede tener la ficha. ERC-3643 lleva la verificación de identidad adentro: para activos regulados hace falta lo segundo. Hay otros formatos para usos puntuales —ERC-721 para piezas únicas, ERC-1155 y ERC-1400—, pero para un producto como este alcanza con esta diferencia.</figcaption>
+      </figure>
 
       <h3>Las tres estructuras legales</h3>
       <div class="types">
@@ -719,14 +771,14 @@ section.ch{position:relative}
         <p>Para un producto minorista de inmuebles conviene una red rápida y de comisiones casi nulas, no Ethereum directo: por ejemplo, nadie quiere pagar USD 20 de comisión para cobrar USD 4 de renta. La jugada más repetida es no casarse con una sola red: emitir en varias a la vez, como Franklin Templeton con BENJI en nueve redes (Franklin Templeton<sup class="fn">3</sup>).</p>
       </div>
       <h3>Las seis variables para elegir red</h3>
-      <div class="gloss">
-        <div><dt>Seguridad y trayectoria</dt><dd>Cuánto valor custodió sin incidentes. Manda cuando el emisor es institucional.</dd></div>
-        <div><dt>Costo por operación</dt><dd>Decisivo en productos minoristas; irrelevante con tickets de millones.</dd></div>
-        <div><dt>Velocidad</dt><dd>Cuánto tarda una operación en quedar firme.</dd></div>
-        <div><dt>Ecosistema</dt><dd>Dónde están los inversores, los dólares digitales y los servicios.</dd></div>
-        <div><dt>Cumplimiento</dt><dd>Si hacen falta controles de identidad incorporados.</dd></div>
-        <div><dt>Interoperabilidad</dt><dd>Poder moverse a otras redes sin quedar preso.</dd></div>
-      </div>
+      <ol class="pillars pillars--3">
+        <li><span>1</span><b>Seguridad y trayectoria</b><small>Cuánto valor custodió sin incidentes. Manda cuando el emisor es institucional.</small></li>
+        <li><span>2</span><b>Costo por operación</b><small>Decisivo en productos minoristas; irrelevante con tickets de millones.</small></li>
+        <li><span>3</span><b>Velocidad</b><small>Cuánto tarda una operación en quedar firme.</small></li>
+        <li><span>4</span><b>Ecosistema</b><small>Dónde están los inversores, los dólares digitales y los servicios.</small></li>
+        <li><span>5</span><b>Cumplimiento</b><small>Si hacen falta controles de identidad incorporados.</small></li>
+        <li><span>6</span><b>Interoperabilidad</b><small>Poder moverse a otras redes sin quedar preso.</small></li>
+      </ol>
       <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://app.rwa.xyz/networks</code></li><li><span>2</span><code>https://app.rwa.xyz/platforms/figure</code></li><li><span>3</span><code>https://digitalassets.franklintempleton.com/benji</code></li></ol></div>
     </section>
 
@@ -735,50 +787,54 @@ section.ch{position:relative}
       <header class="step-open"><span class="step-num step-num--roman">IV</span><div class="step-meta"><p class="ch__label">Parte IV</p><p class="step-title">Los mercados que ya funcionan</p></div></header>
       <h2>Cuanto más rinde, <em>menos líquido</em> es</h2>
       <p class="lead">El mercado ya no depende de un solo segmento. Los bonos del Tesoro de EE.UU. son el más grande; las acciones son el que más rápido crece; los inmuebles son todavía el más chico.</p>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Segmento</th><th>Cuánto circula (USD)</th><th>Nota</th></tr></thead>
-          <tbody>
-            <tr><td>Bonos del Tesoro de EE.UU.</td><td class="num">14.940M</td><td>El producto más grande es USYC de Circle, con USD 2.430M.</td></tr>
-            <tr><td>Crédito privado</td><td class="num">7.980M</td><td>Otros USD 36.550M representados. Préstamos a empresas o personas, sin rescate diario.</td></tr>
-            <tr><td>Materias primas</td><td class="num">4.920M</td><td>Casi todo oro: no paga renta, sigue el precio del metal.</td></tr>
-            <tr><td>Acciones tokenizadas</td><td class="num">3.130M</td><td>Ondo, bStocks, xStocks y Securitize son los mayores emisores.</td></tr>
-            <tr><td>Inmuebles</td><td class="num">226M</td><td>Otros USD 1.340M representados. Ticket bajo, renta de mediano plazo.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="font-size:var(--text-sm)">Datos: RWA.xyz, Tesoro<sup class="fn">1</sup>, crédito<sup class="fn">2</sup>, materias primas<sup class="fn">3</sup>, acciones<sup class="fn">4</sup>, inmuebles<sup class="fn">5</sup>.</p>
-      <div class="note">
-        <p class="note__k">La regla de hierro</p>
-        <p>Los bonos del Tesoro rinden poco pero se puede salir todos los días; el crédito privado y los inmuebles apuntan a rendir más, pero hay que esperar. No existe “mucho rendimiento y mucha liquidez” al mismo tiempo. Es lo que siempre hay que explicarle al inversor.</p>
-      </div>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">Cuánto circula en cada segmento</p>
+          <p class="fig__sub">Activos tokenizados que circulan libremente, en miles de millones de dólares.</p>
+          <div class="scroll"><svg id="segments" role="img" aria-labelledby="sg-t" style="min-width:480px;width:100%;display:block"><title id="sg-t">Activos tokenizados por segmento</title></svg></div>
+        </div>
+        <figcaption>Los inmuebles, con USD 226 millones, casi no se ven al lado del resto. Las notas de cada segmento y los montos “representados” están en el anexo. Datos: RWA.xyz, Tesoro<sup class="fn">1</sup>, crédito<sup class="fn">2</sup>, materias primas<sup class="fn">3</sup>, acciones<sup class="fn">4</sup>, inmuebles<sup class="fn">5</sup>.</figcaption>
+      </figure>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">La regla de hierro</p>
+          <p class="fig__sub">Esquema para explicar, no datos: dónde se ubica cada segmento.</p>
+          <svg class="dg" viewBox="0 0 720 280" role="img" aria-label="Esquema: los bonos del Tesoro dan salida diaria y rinden poco; el crédito privado y los inmuebles apuntan a rendir más pero hay que esperar; nadie ofrece mucho rendimiento y mucha liquidez a la vez">
+            <defs><marker id="i4a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ar"/></marker></defs>
+            <path class="ln" d="M70,240 H690" marker-end="url(#i4a)"/><path class="ln" d="M70,240 V20" marker-end="url(#i4a)"/>
+            <text x="690" y="264" text-anchor="end" class="t-mono">MÁS FÁCIL SALIR →</text>
+            <text x="58" y="30" text-anchor="end" class="t-mono" transform="rotate(-90 58 30)">APUNTA A RENDIR MÁS →</text>
+            <rect x="450" y="30" width="230" height="90" rx="12" style="fill:none;stroke:var(--negative);stroke-dasharray:5 5"/>
+            <text x="565" y="68" text-anchor="middle" class="t-strong t-neg">No existe</text><text x="565" y="88" text-anchor="middle" class="t-muted">mucho rendimiento y</text><text x="565" y="104" text-anchor="middle" class="t-muted">mucha liquidez a la vez</text>
+            <circle cx="170" cy="70" r="9" class="dot-priv"/><text x="186" y="66" class="t-strong">Inmuebles</text><text x="186" y="84" class="t-muted">Renta de mediano plazo</text>
+            <circle cx="230" cy="120" r="9" class="dot-priv"/><text x="246" y="116" class="t-strong">Crédito privado</text><text x="246" y="134" class="t-muted">Sin rescate diario</text>
+            <circle cx="600" cy="200" r="9" class="dot-pub"/><text x="584" y="196" text-anchor="end" class="t-strong">Bonos del Tesoro de EE.UU.</text><text x="584" y="214" text-anchor="end" class="t-muted">Se sale todos los días</text>
+          </svg>
+        </div>
+        <figcaption>Los bonos del Tesoro rinden poco pero se puede salir todos los días; el crédito privado y los inmuebles apuntan a rendir más, pero hay que esperar. Es lo que siempre hay que explicarle al inversor.</figcaption>
+      </figure>
 
       <h3>La regulación se está ordenando</h3>
       <p>En EE.UU., la GENIUS Act fijó en julio de 2025 las primeras reglas federales para los dólares digitales (Casa Blanca<sup class="fn">6</sup>); entra en vigencia a más tardar el 18/01/2027 (texto de la ley<sup class="fn">7</sup>), y tres divisiones de la SEC aclararon en enero de 2026 que un valor tokenizado sigue siendo un valor (SEC<sup class="fn">8</sup>). En la Unión Europea, el reglamento MiCA se aplica por completo desde diciembre de 2024, con un período de transición que terminó en julio de 2026 (ESMA<sup class="fn">9</sup>). La tendencia de fondo: la tokenización se vuelve parte de la infraestructura normal de las finanzas.</p>
 
       <h3>Quién tokeniza qué, fuera del ladrillo</h3>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Vertical</th><th>Quién</th><th>El dato</th></tr></thead>
-          <tbody>
-            <tr><td>Bonos y fondos</td><td>BlackRock (BUIDL), Circle (USYC), Franklin Templeton (BENJI), Ondo (USDY), WisdomTree (WTGXX)</td><td>BUIDL: USD 2.240M; USDY: USD 2.270M; WTGXX: USD 1.230M.</td></tr>
-            <tr><td>Crédito privado</td><td>Figure, Maple, Centrifuge</td><td>Maple declara USD 4.760M administrados; Centrifuge tiene alrededor de USD 1.000M en circulación, con fuertes variaciones mensuales.</td></tr>
-            <tr><td>Oro</td><td>Tether (XAUT), Paxos (PAXG)</td><td>USD 2.650M y USD 1.850M. Cada ficha es una onza en bóveda.</td></tr>
-            <tr><td>Acciones</td><td>Ondo, xStocks, Securitize</td><td>Ondo tiene unos USD 867M en acciones tokenizadas.</td></tr>
-            <tr><td>Infraestructura</td><td>Securitize, Tokeny, Plume</td><td>Securitize: USD 4.720M; el formato ERC-3643 surgió del protocolo T-REX de Tokeny.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="font-size:var(--text-sm)">Fuentes: RWA.xyz<sup class="fn">1</sup>, Maple<sup class="fn">10</sup>, RWA.xyz, Centrifuge<sup class="fn">11</sup>, RWA.xyz, materias primas<sup class="fn">3</sup>, RWA.xyz, acciones<sup class="fn">4</sup>, RWA.xyz, Securitize<sup class="fn">12</sup>, ERC-3643<sup class="fn">13</sup>, propuesta EIP-3643<sup class="fn">14</sup>.</p>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">Los productos más grandes, fuera del ladrillo</p>
+          <p class="fig__sub">Monto en circulación de cada producto, en miles de millones de dólares.</p>
+          <div class="scroll"><svg id="products" role="img" aria-labelledby="pr-t" style="min-width:480px;width:100%;display:block"><title id="pr-t">Monto en circulación por producto tokenizado</title></svg></div>
+        </div>
+        <figcaption>Bonos y fondos en dorado; oro en gris. Quién hace qué en cada vertical, incluidos el crédito privado, las acciones y la infraestructura, está en el anexo. Fuentes: RWA.xyz<sup class="fn">1</sup>, RWA.xyz, materias primas<sup class="fn">3</sup>.</figcaption>
+      </figure>
 
       <h3>Ondo: el puente más parecido a un producto de ahorro</h3>
-      <p>Ondo empaqueta activos serios para inversores de fuera de EE.UU. Su producto USDY es un “dólar que rinde”: una deuda emitida por una entidad aislada de la quiebra, respaldada por bonos del Tesoro, cuyo precio sube a medida que acumula interés. A la fecha de corte rendía 3,60% anual, variable, y valía USD 1,1473, según Ondo; no es una promesa de rendimiento (Ondo<sup class="fn">15</sup>).</p>
-      <p>Un cambio de 2026 muestra lo rápido que se mueve el sector: en julio, Ondo abandonó el proyecto de una red propia, Ondo Chain, y lo reemplazó por una red privada de operaciones de alta velocidad (CoinDesk<sup class="fn">16</sup>).</p>
+      <p>Ondo empaqueta activos serios para inversores de fuera de EE.UU. Su producto USDY es un “dólar que rinde”: una deuda emitida por una entidad aislada de la quiebra, respaldada por bonos del Tesoro, cuyo precio sube a medida que acumula interés. A la fecha de corte rendía 3,60% anual, variable, y valía USD 1,1473, según Ondo; no es una promesa de rendimiento (Ondo<sup class="fn">10</sup>).</p>
+      <p>Un cambio de 2026 muestra lo rápido que se mueve el sector: en julio, Ondo abandonó el proyecto de una red propia, Ondo Chain, y lo reemplazó por una red privada de operaciones de alta velocidad (CoinDesk<sup class="fn">11</sup>).</p>
       <div class="note">
         <p class="note__k">Lo que enseña para un producto de inmuebles</p>
         <p>USDY dice: “poné tus dólares digitales acá y cobrá el interés de los bonos del Tesoro”. Un producto de inmuebles dice lo mismo con el alquiler como respaldo. En los dos casos, lo que da confianza es la estructura aislada de la quiebra, no la tecnología.</p>
       </div>
-      <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://app.rwa.xyz/treasuries</code></li><li><span>2</span><code>https://app.rwa.xyz/private-credit</code></li><li><span>3</span><code>https://app.rwa.xyz/commodities</code></li><li><span>4</span><code>https://app.rwa.xyz/stocks</code></li><li><span>5</span><code>https://app.rwa.xyz/real-estate</code></li><li><span>6</span><code>https://www.whitehouse.gov/fact-sheets/2025/07/fact-sheet-president-donald-j-trump-signs-genius-act-into-law/</code></li><li><span>7</span><code>https://www.govinfo.gov/content/pkg/PLAW-119publ27/html/PLAW-119publ27.htm</code></li><li><span>8</span><code>https://www.sec.gov/newsroom/speeches-statements/corp-fin-statement-tokenized-securities-012826-statement-tokenized-securities</code></li><li><span>9</span><code>https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica</code></li><li><span>10</span><code>https://maple.finance</code></li><li><span>11</span><code>https://app.rwa.xyz/platforms/centrifuge</code></li><li><span>12</span><code>https://app.rwa.xyz/platforms/securitize</code></li><li><span>13</span><code>https://www.erc3643.org</code></li><li><span>14</span><code>https://eips.ethereum.org/EIPS/eip-3643</code></li><li><span>15</span><code>https://ondo.finance/usdy</code></li><li><span>16</span><code>https://www.coindesk.com/business/2026/07/28/ondo-drops-tokenized-asset-blockchain-plans-for-private-high-speed-trading-network</code></li></ol></div>
+      <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://app.rwa.xyz/treasuries</code></li><li><span>2</span><code>https://app.rwa.xyz/private-credit</code></li><li><span>3</span><code>https://app.rwa.xyz/commodities</code></li><li><span>4</span><code>https://app.rwa.xyz/stocks</code></li><li><span>5</span><code>https://app.rwa.xyz/real-estate</code></li><li><span>6</span><code>https://www.whitehouse.gov/fact-sheets/2025/07/fact-sheet-president-donald-j-trump-signs-genius-act-into-law/</code></li><li><span>7</span><code>https://www.govinfo.gov/content/pkg/PLAW-119publ27/html/PLAW-119publ27.htm</code></li><li><span>8</span><code>https://www.sec.gov/newsroom/speeches-statements/corp-fin-statement-tokenized-securities-012826-statement-tokenized-securities</code></li><li><span>9</span><code>https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica</code></li><li><span>10</span><code>https://ondo.finance/usdy</code></li><li><span>11</span><code>https://www.coindesk.com/business/2026/07/28/ondo-drops-tokenized-asset-blockchain-plans-for-private-high-speed-trading-network</code></li></ol></div>
     </section>
 
     <!-- ============ PARTE V · HITOS Y CASOS GLOBALES ============ -->
@@ -982,16 +1038,14 @@ section.ch{position:relative}
         </article>
       </div>
 
-      <div class="note">
-        <p class="note__k">El patrón de los que funcionan</p>
-        <ul>
-          <li><strong>Registro oficial detrás de la ficha:</strong> Dubái con su registro de la propiedad; Aspen y Kobe dentro de la ley de valores.</li>
-          <li><strong>Bancos y custodios conocidos en la cadena:</strong> Kobe con SMBC y Daiwa; Dubái con su Banco Central.</li>
-          <li><strong>Papeles al día antes de vender:</strong> RealT y Harbor cayeron por escrituras e hipotecas, no por la tecnología.</li>
-          <li><strong>Renta real, en dinero real:</strong> nunca en la ficha propia de la plataforma.</li>
-          <li><strong>Reventa que llega después:</strong> Aspen tardó dos años y Dubái nueve meses en habilitarla.</li>
-        </ul>
-      </div>
+      <h3>El patrón de los que funcionan</h3>
+      <ol class="pillars pillars--5">
+        <li><span>1</span><b>Registro oficial detrás de la ficha</b><small>Dubái con su registro de la propiedad; Aspen y Kobe dentro de la ley de valores.</small></li>
+        <li><span>2</span><b>Bancos y custodios conocidos en la cadena</b><small>Kobe con SMBC y Daiwa; Dubái con su Banco Central.</small></li>
+        <li><span>3</span><b>Papeles al día antes de vender</b><small>RealT y Harbor cayeron por escrituras e hipotecas, no por la tecnología.</small></li>
+        <li><span>4</span><b>Renta real, en dinero real</b><small>Nunca en la ficha propia de la plataforma.</small></li>
+        <li><span>5</span><b>Reventa que llega después</b><small>Aspen tardó dos años y Dubái nueve meses en habilitarla.</small></li>
+      </ol>
       <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://app.rwa.xyz/real-estate</code></li><li><span>2</span><code>https://gulfnews.com/business/property/dubai-lowers-entry-to-tokenised-real-estate-with-dh1000-minimum-1.500618981</code></li><li><span>3</span><code>https://dubailand.gov.ae/en/news-media/dld-launches-the-mena-s-first-tokenized-real-estate-project-through-the-prypco-mint-platform</code></li><li><span>4</span><code>https://dubailand.gov.ae/en/news-media/dubai-land-department-achieves-world-first-with-instant-sell-out-of-tokenized-real-estate/</code></li><li><span>5</span><code>https://dubailand.gov.ae/en/news-media/dubai-land-department-unveils-first-of-its-kind-property-token-ownership-certificate</code></li><li><span>6</span><code>https://www.coindesk.com/business/2026/02/20/dubai-unveils-secondary-market-for-usd5-million-tokenized-real-estate-via-xrp-ledger</code></li><li><span>7</span><code>https://www.aspentimes.com/trending/in-18-million-deal-nearly-one-fifth-of-st-regis-aspen-sells-through-digital-tokens/</code></li><li><span>8</span><code>https://www.tzero.com/news/tzero-ats-begins-trading-the-st-regis-aspen-digital-security</code></li><li><span>9</span><code>https://www.iolite.net/en/news/odx-launches-first-domestic-st-trading</code></li><li><span>10</span><code>https://cointelegraph.com/news/japan-digital-securities-trading-december</code></li><li><span>11</span><code>https://observatorioblockchain.com/tokenizacion/reental-y-la-primera-emision-inmobiliaria-tokenizada-en-espana/</code></li><li><span>12</span><code>https://www.lofty.ai</code></li><li><span>13</span><code>https://algorand.co/case-studies/lofty-transform-real-estate-industry</code></li><li><span>14</span><code>https://www.lofty.ai/how-it-works</code></li><li><span>15</span><code>https://www.alta.org/news-and-publications/news/20220607-Propy-Launches-Blockchain-based-Title-and-Escrow-Services</code></li><li><span>16</span><code>https://www.coindesk.com/business/2025/01/09/mantra-blockchain-to-tokenize-1-b-of-real-world-assets-for-uae-based-property-firm-damac</code></li><li><span>17</span><code>https://www.coindesk.com/markets/2025/04/14/mantra-s-om-crashes-90-in-bizarre-selloff-as-team-alleges-forced-liquidations</code></li><li><span>18</span><code>https://www.coindesk.com/business/2024/07/03/mantra-to-tokenize-500m-real-estate-assets-for-uae-builder-mag-group</code></li><li><span>19</span><code>https://www.fxnewsgroup.com/forex-news/retail-forex/multibank-in-3-billion-real-estate-tokenization-agreement-with-mag-mavryk/</code></li><li><span>20</span><code>https://www.wxyz.com/news/crypto-real-estate-company-realt-collected-millions-from-investors-for-detroit-properties-it-doesnt-own</code></li><li><span>21</span><code>https://detroitmi.gov/news/city-scores-major-win-tenants-living-troubled-real-token-properties-are-subject-sweeping-lawsuit</code></li><li><span>22</span><code>https://www.bridgedetroit.com/real-token-detroit-rent-repairs/</code></li><li><span>23</span><code>https://cryptobriefing.com/realt-crypto-real-estate-collapse/</code></li><li><span>24</span><code>https://outliermedia.org/newsletter/realt-loses-control/</code></li><li><span>25</span><code>https://outliermedia.org/newsletter/is-this-the-end-of-real-t/</code></li><li><span>26</span><code>https://www.irei.com/news/harbor-launches-20m-tokenized-offering-student-housing-property/</code></li><li><span>27</span><code>https://finance.yahoo.com/news/tokenized-real-estate-falters-another-090000644.html</code></li><li><span>28</span><code>https://techcrunch.com/2025/05/23/landa-promised-real-estate-investing-for-5-now-its-gone-dark/</code></li></ol></div>
     </section>
 
@@ -1001,48 +1055,34 @@ section.ch{position:relative}
       <h2>Un marco armado por etapas, <em>con fecha de vencimiento</em></h2>
       <p class="lead">Argentina no tiene una “ley cripto” única, sino una secuencia de normas que ya permite tokenizar valores con oferta pública. El régimen de la CNV (Comisión Nacional de Valores) funciona como período de prueba hasta el 31/12/2027.</p>
 
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Norma</th><th>Fecha</th><th>Qué hizo</th></tr></thead>
-          <tbody>
-            <tr><td>Ley 27.739<sup class="fn">1</sup></td><td class="num">mar 2024</td><td>Reformó la ley de prevención de lavado y creó el registro de PSAV (Proveedores de Servicios de Activos Virtuales) en la CNV.</td></tr>
-            <tr><td>RG 994<sup class="fn">2</sup> y RG 1058<sup class="fn">3</sup></td><td class="num">2024–2025</td><td>Reglamentaron el registro y las exigencias a los PSAV: patrimonio, ciberseguridad, custodia y prevención de lavado.</td></tr>
-            <tr><td>RG 1060<sup class="fn">4</sup></td><td class="num">abr 2025</td><td>Consulta pública sobre representación digital de valores.</td></tr>
-            <tr><td>RG 1069<sup class="fn">5</sup></td><td class="num">jun 2025</td><td>Primera etapa: fideicomisos financieros y títulos de deuda con activos reales, con un PSAV como depositario digital.</td></tr>
-            <tr><td>RG 1081<sup class="fn">6</sup></td><td class="num">ago 2025</td><td>Sumó acciones, obligaciones negociables y CEDEARs; hasta 5 PSAV por emisión.</td></tr>
-            <tr><td>RG 1087<sup class="fn">7</sup></td><td class="num">oct 2025</td><td>Emisores y fideicomisos frecuentes; si el 100% se emite en formato digital, no hace falta listar en un mercado.</td></tr>
-            <tr><td>RG 1150<sup class="fn">8</sup></td><td class="num">jun 2026</td><td>Amplió el régimen a valores de autorización automática, fondos cerrados, fondos abiertos ETF y certificados CEVA vinculados a ETP; estiró el período de prueba al 31/12/2027.</td></tr>
-            <tr><td>Decreto 475/2026<sup class="fn">9</sup></td><td class="num">jun 2026</td><td>Eximió del impuesto a los débitos y créditos bancarios a las cuentas que los PSAV inscriptos usan para su actividad.</td></tr>
-            <tr><td>RG 1165<sup class="fn">10</sup></td><td class="num">sep 2026</td><td>Incluyó a los PSAV en la matriz de actividades compatibles de los agentes del mercado. No es una norma de tokenización.</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">Cómo se armó el régimen de la CNV</p>
+          <p class="fig__sub">Resoluciones generales (RG), emisiones inmobiliarias aprobadas y el vencimiento del período de prueba.</p>
+          <ul class="legend"><li><span class="sw sw--dot"></span>Norma</li><li><span class="sw sw--pub"></span>Emisión inmobiliaria aprobada</li></ul>
+          <div class="scroll"><svg id="timeline" role="img" aria-labelledby="tl-t" style="min-width:720px;width:100%;display:block"><title id="tl-t">Línea de tiempo del régimen de tokenización de la CNV, de abril 2025 a diciembre 2027</title></svg></div>
+        </div>
+        <figcaption>Antes, la Ley 27.739 (2024) creó el registro de PSAV. Todas las normas, con su fecha y lo que hizo cada una, están en el anexo. Fuente: Boletín Oficial<sup class="fn">1</sup>.</figcaption>
+      </figure>
 
       <h3>Lo esencial, en cuatro puntos</h3>
-      <ol>
-        <li><strong>El camino típico es el fideicomiso financiero.</strong> El fideicomiso emite certificados que quedan en la Caja de Valores, y la ficha digital es su “sombra”: una representación del valor que sigue existiendo en el sistema tradicional.</li>
-        <li><strong>Para operar hay que ser o trabajar con un PSAV.</strong> El registro de la CNV<sup class="fn">11</sup> tiene 81 empresas inscriptas. Para el régimen de tokenización hace falta estar inscripto en sus cinco categorías, y 34 lo están (art. 14, texto de la RG 1150<sup class="fn">8</sup>). Quien solo pone la tecnología no necesita inscribirse. Estar inscripto no equivale a que la CNV supervise cada producto.</li>
-        <li><strong>Los bancos todavía no pueden ofrecer cripto.</strong> La prohibición del Banco Central<sup class="fn">12</sup> de 2022 (Comunicación “A” 7506) sigue vigente.</li>
-        <li><strong>La demanda de base existe.</strong> Argentina es el segundo país de la región en cripto recibida, según el informe 2026 de Chainalysis<sup class="fn">13</sup>. Las cifras, en la parte siguiente.</li>
+      <ol class="pillars">
+        <li><span>1</span><b>El camino típico es el fideicomiso financiero</b><small>El fideicomiso emite certificados que quedan en la Caja de Valores, y la ficha digital es su “sombra”: una representación del valor que sigue existiendo en el sistema tradicional.</small></li>
+        <li><span>2</span><b>Para operar hay que ser o trabajar con un PSAV</b><small>El registro de la CNV<sup class="fn">2</sup> tiene 81 empresas inscriptas. Para el régimen de tokenización hace falta estar inscripto en sus cinco categorías, y 34 lo están (art. 14, texto de la RG 1150<sup class="fn">1</sup>). Quien solo pone la tecnología no necesita inscribirse. Estar inscripto no equivale a que la CNV supervise cada producto.</small></li>
+        <li><span>3</span><b>Los bancos todavía no pueden ofrecer cripto</b><small>La prohibición del Banco Central<sup class="fn">3</sup> de 2022 (Comunicación “A” 7506) sigue vigente.</small></li>
+        <li><span>4</span><b>La demanda de base existe</b><small>Argentina es el segundo país de la región en cripto recibida, según el informe 2026 de Chainalysis<sup class="fn">4</sup>. Las cifras, en la parte siguiente.</small></li>
       </ol>
 
       <h3>Los jugadores locales</h3>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Empresa</th><th>Modelo</th><th>Qué hace</th></tr></thead>
-          <tbody>
-            <tr><td>Landtoken + Allaria</td><td>Mercado de capitales</td><td>Fideicomiso financiero con oferta pública sobre campos; ticket USD 50.</td></tr>
-            <tr><td>Volsmart</td><td>Mercado de capitales</td><td>PSAV de ILLA Belgrano, edificio con oferta pública, y a la vez su titular de registro y proveedor tecnológico; ticket USD 100.</td></tr>
-            <tr><td>Pala · Casa Token</td><td>Tecnología con marca propia</td><td>Plataforma para más de 20 desarrolladoras, con escribanos que certifican a distancia.</td></tr>
-            <tr><td>Blockenfy</td><td>Tecnología con marca propia</td><td>Tecnología para que otros lancen productos tokenizados; más de 10 países, según la empresa.</td></tr>
-            <tr><td>Metro Futuro</td><td>Venta directa</td><td>Arma, emite y vende proyectos desde USD 100. Es PSAV, pero con tres de las cinco categorías que pide el régimen de tokenización.</td></tr>
-            <tr><td>R3AL Blocks</td><td>Marketplace</td><td>Tokeniza desarrollos con fideicomisos privados y custodia de Fireblocks, según la empresa (R3AL Blocks<sup class="fn">14</sup>).</td></tr>
-            <tr><td>Reental</td><td>Marketplace</td><td>Opera en Salta con Grupo MDay; su cuarto proyecto juntó USD 958.800 en 24 horas.</td></tr>
-            <tr><td>Agrotoken</td><td>Activos reales, agro</td><td>Granos tokenizados que los bancos aceptan como garantía.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="font-size:var(--text-sm)">Fuentes: El Economista (Pala)<sup class="fn">15</sup>, Blockenfy<sup class="fn">16</sup>, Metro Futuro<sup class="fn">17</sup>, R3AL Blocks<sup class="fn">18</sup>, El Tribuno (Reental)<sup class="fn">19</sup>, iProfesional (ILLA)<sup class="fn">20</sup>.</p>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">El mapa de proveedores en Argentina</p>
+          <p class="fig__sub">Cuánto del proceso te resuelven, y si trabajan con oferta pública o por fuera.</p>
+          <ul class="legend"><li><span class="sw sw--dot"></span>PSAV con las cinco categorías</li><li><span class="sw sw--ring"></span>No inscripto, o sin las cinco</li></ul>
+          <div class="scroll"><svg id="provmap" role="img" aria-labelledby="pm-t" style="min-width:600px;width:100%;display:block"><title id="pm-t">Mapa de proveedores por alcance del servicio y camino regulatorio</title></svg></div>
+        </div>
+        <figcaption>Afuera del mapa quedan Reental, que opera en Salta con Grupo MDay, y Agrotoken, que tokeniza granos. La tabla de jugadores está en el anexo.</figcaption>
+      </figure>
       <p>El mapa de proveedores está en el paso 4 del road map, y el detalle de cada uno y de sus costos, en sus anexos. Lo que sigue relativamente vacío es la marca masiva de confianza para el ahorrista común. El mercado de capitales regulado lo ocupan Landtoken y Volsmart; la tecnología, Pala y Blockenfy; el ahorro minorista con marca propia está abierto.</p>
 
       <h3>Los cuatro roles, aplicados a un proyecto argentino</h3>
@@ -1051,7 +1091,7 @@ section.ch{position:relative}
         <div class="role role--own"><span class="ex">BlackRock en BUIDL</span><h4>Activo y marca</h4><p>Originar buenos activos, poner la cara y administrar el fideicomiso. Es lo que no se terceriza.</p></div>
         <div class="role"><span class="ex">Securitize en BUIDL</span><h4>Tokenización y cumplimiento</h4><p>Un proveedor local (Pala, Blockenfy) o internacional.</p></div>
         <div class="role"><span class="ex">BNY Mellon en BUIDL</span><h4>Custodia y estructura</h4><p>Fideicomiso financiero, Caja de Valores y un PSAV depositario.</p></div>
-        <div class="role"><span class="ex">Circle en BUIDL</span><h4>Entrada y salida del dinero</h4><p>Un PSAV que permita entrar y salir en dólares digitales y en pesos. En BUIDL, Circle<sup class="fn">21</sup> permite cambiar las fichas por USDC.</p></div>
+        <div class="role"><span class="ex">Circle en BUIDL</span><h4>Entrada y salida del dinero</h4><p>Un PSAV que permita entrar y salir en dólares digitales y en pesos. En BUIDL, Circle<sup class="fn">5</sup> permite cambiar las fichas por USDC.</p></div>
       </div>
 
       <h3>Los cuatro modelos de venta</h3>
@@ -1061,8 +1101,8 @@ section.ch{position:relative}
         <div class="model"><h4>Mercado de capitales<small>Ej.: Landtoken, Volsmart</small></h4><div class="chain"><span>Fideicomiso</span><i>→</i><span class="me">Sociedad de bolsa o PSAV</span><i>→</i><span>Inversor</span></div></div>
         <div class="model"><h4>Marketplace<small>Ej.: R3AL Blocks, Reental</small></h4><div class="chain"><span>Desarrollador</span><i>→</i><span class="me">Marketplace</span><i>→</i><span>Inversor</span></div></div>
       </div>
-      <p>El armado fino del fideicomiso —su autorización, la estructura de los valores, los costos y la fiscalidad— se define con un abogado de mercado de capitales y un contador. El tratamiento en Ganancias y Bienes Personales depende de qué representa la ficha: el inmueble, un certificado de fideicomiso o acciones de una sociedad (Zocaro, UNLP<sup class="fn">22</sup>).</p>
-      <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://www.ey.com/es_ar/technical/law/ey-law-alerts-argentina/ley-27739-modificaciones-sistema-plaft</code></li><li><span>2</span><code>https://www.argentina.gob.ar/noticias/la-cnv-crea-el-registro-de-proveedores-de-servicios-de-activos-virtuales-psav</code></li><li><span>3</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/322539/20250314</code></li><li><span>4</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/324012/20250414</code></li><li><span>5</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/326947/20250613</code></li><li><span>6</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/330173/20250821</code></li><li><span>7</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/333326/20251023</code></li><li><span>8</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/343010/20260611</code></li><li><span>9</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/343279/20260618</code></li><li><span>10</span><code>https://www.argentina.gob.ar/noticias/nueva-matriz-de-compatibilidades-para-agentes-plataformas-de-financiamiento-colectivo-psavs</code></li><li><span>11</span><code>https://www.cnv.gov.ar/SitioWeb/Reportes/ListadoRegistrosPsav</code></li><li><span>12</span><code>https://www.bcra.gob.ar/criptoactivos/</code></li><li><span>13</span><code>https://www.chainalysis.com/blog/latin-america-crypto-adoption-2026/</code></li><li><span>14</span><code>https://r3al.io/faqs</code></li><li><span>15</span><code>https://eleconomista.com.ar/negocios/el-mercado-inmobiliario-acelera-su-transformacion-digital-tokenizacion-ya-redefine-forma-vender-e-invertir-n97524</code></li><li><span>16</span><code>https://blockenfy.com/</code></li><li><span>17</span><code>https://www.metrofuturo.com.ar</code></li><li><span>18</span><code>https://r3al.io</code></li><li><span>19</span><code>https://www.eltribuno.com/salta/2026-4-14-21-24-0-alianza-reental-mday-salta-suma-un-cuarto-proyecto-de-inversion-inmobiliaria-tokenizada</code></li><li><span>20</span><code>https://www.iprofesional.com/realestate/444971-como-funciona-fideicomiso-inmobiliario-se-puede-invertir-desde-100-dolares</code></li><li><span>21</span><code>https://www.circle.com/pressroom/circle-announces-usdc-smart-contract-for-transfers-by-blackrocks-buidl-fund-investors</code></li><li><span>22</span><code>https://portal.amelica.org/ameli/journal/373/3732662003/html/</code></li></ol></div>
+      <p>El armado fino del fideicomiso —su autorización, la estructura de los valores, los costos y la fiscalidad— se define con un abogado de mercado de capitales y un contador. El tratamiento en Ganancias y Bienes Personales depende de qué representa la ficha: el inmueble, un certificado de fideicomiso o acciones de una sociedad (Zocaro, UNLP<sup class="fn">6</sup>).</p>
+      <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/343010/20260611</code></li><li><span>2</span><code>https://www.cnv.gov.ar/SitioWeb/Reportes/ListadoRegistrosPsav</code></li><li><span>3</span><code>https://www.bcra.gob.ar/criptoactivos/</code></li><li><span>4</span><code>https://www.chainalysis.com/blog/latin-america-crypto-adoption-2026/</code></li><li><span>5</span><code>https://www.circle.com/pressroom/circle-announces-usdc-smart-contract-for-transfers-by-blackrocks-buidl-fund-investors</code></li><li><span>6</span><code>https://portal.amelica.org/ameli/journal/373/3732662003/html/</code></li></ol></div>
     </section>
 
     <!-- ============ PARTE VIII · CASOS ARGENTINOS Y LA REGIÓN ============ -->
@@ -1223,27 +1263,40 @@ section.ch{position:relative}
       <p>La liquidez real de cada ruta de salida es la pregunta que hay que hacer antes de entrar. Los tickets de entrada hoy dibujan una escalera completa: USD 50 en Landtoken (LexLatin<sup class="fn">1</sup>), USD 100 en ILLA Belgrano (iProfesional<sup class="fn">2</sup>) y Metro Futuro (Metro Futuro<sup class="fn">3</sup>), USD 5 millones en BUIDL de BlackRock, que además solo admite grandes inversores (Crane Data<sup class="fn">4</sup>).</p>
 
       <h3>El camino del emisor</h3>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Paso</th><th>Qué se hace</th></tr></thead>
-          <tbody>
-            <tr><td>1 · El activo</td><td>Elegir y documentar el activo. Acá se gana o se pierde todo lo demás.</td></tr>
-            <tr><td>2 · La estructura legal</td><td>Constituir el vehículo que aísla el activo y emite los valores; en Argentina, típicamente un fideicomiso financiero.</td></tr>
-            <tr><td>3 · Tasación y auditoría</td><td>Valuación independiente y revisión de la documentación.</td></tr>
-            <tr><td>4 · La autorización</td><td>En el camino público, presentar el prospecto ante la CNV.</td></tr>
-            <tr><td>5 · La red y el socio técnico</td><td>Elegir el registro público y el proveedor que tokeniza.</td></tr>
-            <tr><td>6 · La emisión</td><td>Crear las fichas con sus reglas de cumplimiento incorporadas.</td></tr>
-            <tr><td>7 · La colocación</td><td>Vender por sociedad de bolsa, por plataforma propia o por ambas.</td></tr>
-            <tr><td>8 · La administración</td><td>Cobrar la renta, repartirla y reportar, todos los meses.</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <ol class="pillars">
+        <li><span>1</span><b>El activo</b><small>Elegir y documentar el activo. Acá se gana o se pierde todo lo demás.</small></li>
+        <li><span>2</span><b>La estructura legal</b><small>Constituir el vehículo que aísla el activo y emite los valores; en Argentina, típicamente un fideicomiso financiero.</small></li>
+        <li><span>3</span><b>Tasación y auditoría</b><small>Valuación independiente y revisión de la documentación.</small></li>
+        <li><span>4</span><b>La autorización</b><small>En el camino público, presentar el prospecto ante la CNV.</small></li>
+        <li><span>5</span><b>La red y el socio técnico</b><small>Elegir el registro público y el proveedor que tokeniza.</small></li>
+        <li><span>6</span><b>La emisión</b><small>Crear las fichas con sus reglas de cumplimiento incorporadas.</small></li>
+        <li><span>7</span><b>La colocación</b><small>Vender por sociedad de bolsa, por plataforma propia o por ambas.</small></li>
+        <li><span>8</span><b>La administración</b><small>Cobrar la renta, repartirla y reportar, todos los meses.</small></li>
+      </ol>
       <div class="note">
         <p class="note__k">El principio rector</p>
         <p>La tokenización no elimina la cadena de confianza tradicional —el registro de la propiedad, el escribano, el fiduciario, el auditor—: la vuelve más eficiente y la conecta con un público nuevo. El desarrollo paso a paso para inmuebles está en el road map de lucid.</p>
       </div>
       <p>Sobre los costos, los prospectos aprobados por la CNV dan la mejor referencia del camino con oferta pública. Landtoken estimó USD 334.950 para armar su emisión, y la colocación se caía si no juntaba USD 400.000 (suplemento de prospecto<sup class="fn">5</sup>). ILLA Belgrano previó USD 135.886 en organización, estructuración y colocación (suplemento de prospecto<sup class="fn">6</sup>). Del lado de la tecnología, casi ningún proveedor publica precios: Xcapit cotiza USD 40.000–150.000 una plataforma mínima (Xcapit<sup class="fn">7</sup>) y Brickken vende su software desde €299 por mes (Brickken<sup class="fn">8</sup>). El detalle por proveedor está en el road map de lucid.</p>
-      <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://www.lexlatin.com/noticias/cnv-argentina-autoriza-emision-certificados-participacion-tokenizados</code></li><li><span>2</span><code>https://www.iprofesional.com/realestate/444971-como-funciona-fideicomiso-inmobiliario-se-puede-invertir-desde-100-dolares</code></li><li><span>3</span><code>https://www.metrofuturo.com.ar</code></li><li><span>4</span><code>https://cranedata.com/archives/all-articles/10236/</code></li><li><span>5</span><code>https://aif2.cnv.gov.ar/Presentations/publicview/C11C654D-D466-4E07-9ECB-331C38F9952A</code></li><li><span>6</span><code>https://aif2.cnv.gov.ar/Presentations/publicview/D3F3F048-9CAE-438A-A4DF-831A2556FEC6</code></li><li><span>7</span><code>https://www.xcapit.com/en/blog/tokenizacion-activos-argentina-2026-fideicomiso-blockchain</code></li><li><span>8</span><code>https://www.brickken.com/plans</code></li></ol></div>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">El orden de magnitud de armar una emisión</p>
+          <p class="fig__sub">En dólares. Escala logarítmica: cada línea multiplica por 10. Son cosas distintas: sirven para ver la escala, no para compararlas entre sí.</p>
+          <div class="scroll"><svg id="costrange" role="img" aria-labelledby="cr-t" style="min-width:520px;width:100%;display:block"><title id="cr-t">Rangos de costo publicados: diagnóstico y plataforma de Xcapit, armado de ILLA Belgrano y de Landtoken</title></svg></div>
+        </div>
+      </figure>
+
+      <h3>Y cuando el inversor quiere vender</h3>
+      <p>Es la pregunta que aparece siempre. Tu parte se puede vender, pero nadie está obligado a comprártela: la norma de la CNV no le pide a ningún PSAV que dé precio ni contraparte. Hay cuatro puertas de salida, y cada proyecto habilita una o varias.</p>
+      <div class="exits exits--4">
+        <div class="exit"><span class="k">Puerta 1</span><b>Revenderle a otro inversor</b><small>En la plataforma, cuando aparezca un comprador verificado. Brick-ly lo hace sin penalidad y Raíz cobra 2% si salís antes de tiempo, según las empresas.</small></div>
+        <div class="exit"><span class="k">Puerta 2</span><b>Que te la recompren</b><small>El emisor o la plataforma, en las condiciones que fije: Metro Futuro cobra 6% en todo rescate.</small></div>
+        <div class="exit"><span class="k">Puerta 3 · Solo con la CNV</span><b>Pasar a la bolsa</b><small>La ficha se cambia siempre por el valor tradicional, y se vende por una sociedad de bolsa (art. 16, RG 1081).</small></div>
+        <div class="exit"><span class="k">Puerta 4</span><b>Esperar al final</b><small>Al terminar el plazo se vende el activo y se reparte. R3AL Blocks paga así.</small></div>
+      </div>
+      <p>Una emisión con la CNV puede tener hasta cinco PSAV, interoperables y con un solo registro (art. 5, RG 1150), y solo pueden comprar sus usuarios verificados. Más PSAV suman compradores posibles y respaldo si uno cae, pero no garantizan que haya comprador: Landtoken, con cinco, advierte en su prospecto que “no puede garantizarse el desarrollo de un mercado secundario”. El detalle, paso a paso y con los casos, está en el capítulo C del road map.</p>
+      <p style="font-size:var(--text-sm)">Fuentes: RG 1081<sup class="fn">9</sup>, RG 1150<sup class="fn">10</sup>, suplemento de prospecto de Landtoken I<sup class="fn">5</sup>, Brick-ly<sup class="fn">11</sup>, Raíz<sup class="fn">12</sup>, Metro Futuro<sup class="fn">13</sup>, R3AL Blocks<sup class="fn">14</sup>.</p>
+      <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://www.lexlatin.com/noticias/cnv-argentina-autoriza-emision-certificados-participacion-tokenizados</code></li><li><span>2</span><code>https://www.iprofesional.com/realestate/444971-como-funciona-fideicomiso-inmobiliario-se-puede-invertir-desde-100-dolares</code></li><li><span>3</span><code>https://www.metrofuturo.com.ar</code></li><li><span>4</span><code>https://cranedata.com/archives/all-articles/10236/</code></li><li><span>5</span><code>https://aif2.cnv.gov.ar/Presentations/publicview/C11C654D-D466-4E07-9ECB-331C38F9952A</code></li><li><span>6</span><code>https://aif2.cnv.gov.ar/Presentations/publicview/D3F3F048-9CAE-438A-A4DF-831A2556FEC6</code></li><li><span>7</span><code>https://www.xcapit.com/en/blog/tokenizacion-activos-argentina-2026-fideicomiso-blockchain</code></li><li><span>8</span><code>https://www.brickken.com/plans</code></li><li><span>9</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/330173/20250821</code></li><li><span>10</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/343010/20260611</code></li><li><span>11</span><code>https://brick-ly.com/preguntas-frecuentes/</code></li><li><span>12</span><code>https://raiz.finance/faqs</code></li><li><span>13</span><code>https://metrofuturo.com.ar/tyc</code></li><li><span>14</span><code>https://r3al.io/faqs</code></li></ol></div>
     </section>
 
     <!-- ============ PARTE X · MIRADA DE AMPLIO ESPECTRO ============ -->
@@ -1258,15 +1311,10 @@ section.ch{position:relative}
 
       <h3>En Argentina, el marco es la variable</h3>
       <p>El FMI<sup class="fn">1</sup> (diciembre 2025) y el BIS<sup class="fn">2</sup> (junio 2025) advirtieron que en países emergentes los dólares digitales pueden usarse para esquivar controles de cambio y acelerar la sustitución de la moneda local. Un producto que cobra y paga en dólares digitales depende de que ese circuito siga abierto.</p>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Escenario</th><th>Qué pasa</th><th>Qué le hace al negocio</th></tr></thead>
-          <tbody>
-            <tr><td>Optimista</td><td>Sigue bajando la inflación, el marco se consolida y la CNV extiende el período de prueba más allá de 2027.</td><td>Viento de cola: capital buscando rendir, reglas claras.</td></tr>
-            <tr><td>Base</td><td>Macro estable pero frágil; el marco sigue como hoy, con incertidumbre electoral en 2027.</td><td>Negocio viable con techo: hay que construir confianza y no prometer liquidez.</td></tr>
-            <tr><td>Pesimista</td><td>Vuelve el cepo o se restringen los dólares digitales; el período de prueba no se renueva.</td><td>Se complica el circuito del dólar y la emisión de productos nuevos.</td></tr>
-          </tbody>
-        </table>
+      <div class="scen">
+        <div class="sc sc--up"><span class="k">Escenario optimista</span><p>Sigue bajando la inflación, el marco se consolida y la CNV extiende el período de prueba más allá de 2027.</p><p class="sc__eff">Viento de cola: capital buscando rendir, reglas claras.</p></div>
+        <div class="sc sc--mid"><span class="k">Escenario base</span><p>Macro estable pero frágil; el marco sigue como hoy, con incertidumbre electoral en 2027.</p><p class="sc__eff">Negocio viable con techo: hay que construir confianza y no prometer liquidez.</p></div>
+        <div class="sc sc--down"><span class="k">Escenario pesimista</span><p>Vuelve el cepo o se restringen los dólares digitales; el período de prueba no se renueva.</p><p class="sc__eff">Se complica el circuito del dólar y la emisión de productos nuevos.</p></div>
       </div>
       <p>Las elecciones de 2027 y el vencimiento del período de prueba de la CNV (31/12/2027, RG 1150<sup class="fn">3</sup>) caen el mismo año: es el punto de mayor incertidumbre del horizonte cercano. Los escenarios son una lectura propia, no un pronóstico.</p>
 
@@ -1304,16 +1352,16 @@ section.ch{position:relative}
       <header class="step-open"><span class="step-num step-num--roman">XI</span><div class="step-meta"><p class="ch__label">Parte XI</p><p class="step-title">El patrón y el futuro</p></div></header>
       <h2>Ocho patrones que se repiten <em>en los que ganan</em></h2>
       <p class="lead">Mirando juntos los casos globales, los inmobiliarios y los argentinos, aparecen ocho patrones. Son, en la práctica, la receta de lo que funciona.</p>
-      <div class="gloss">
-        <div><dt>El activo aburrido gana</dt><dd>Los que ganaron empezaron por lo más líquido y menos riesgoso —bonos, campos, granos— y resolvieron el cumplimiento antes de ir a lo difícil.</dd></div>
-        <div><dt>La estructura legal es el producto</dt><dd>Lo que se vende no es la ficha: es la protección si la plataforma cae.</dd></div>
-        <div><dt>Respaldo oficial, legitimidad</dt><dd>Dubái con su registro de la propiedad; Landtoken con la CNV (LexLatin<sup class="fn">1</sup>).</dd></div>
-        <div><dt>La alianza de roles</dt><dd>Marca, tecnología especializada, custodio regulado y circuito del dinero. Nadie construye todo solo.</dd></div>
-        <div><dt>Ticket bajo y comunidad</dt><dd>Desde USD 50–100, con una estructura legal clara por activo.</dd></div>
-        <div><dt>Doble canal</dt><dd>Sociedad de bolsa, sin cripto a la vista, y PSAV a la vez. Cada público entra por su puerta.</dd></div>
-        <div><dt>Utilidad desde el día uno</dt><dd>Las fichas que sirven para algo concreto, como los granos de Agrotoken usados de garantía (Santander<sup class="fn">2</sup>), se adoptan solas.</dd></div>
-        <div><dt>El regulador como socio</dt><dd>Los que fueron de frente al regulador construyeron ventajas que los que lo esquivaron no tienen.</dd></div>
-      </div>
+      <ol class="pillars">
+        <li><span>1</span><b>El activo aburrido gana</b><small>Los que ganaron empezaron por lo más líquido y menos riesgoso —bonos, campos, granos— y resolvieron el cumplimiento antes de ir a lo difícil.</small></li>
+        <li><span>2</span><b>La estructura legal es el producto</b><small>Lo que se vende no es la ficha: es la protección si la plataforma cae.</small></li>
+        <li><span>3</span><b>Respaldo oficial, legitimidad</b><small>Dubái con su registro de la propiedad; Landtoken con la CNV (LexLatin<sup class="fn">1</sup>).</small></li>
+        <li><span>4</span><b>La alianza de roles</b><small>Marca, tecnología especializada, custodio regulado y circuito del dinero. Nadie construye todo solo.</small></li>
+        <li><span>5</span><b>Ticket bajo y comunidad</b><small>Desde USD 50–100, con una estructura legal clara por activo.</small></li>
+        <li><span>6</span><b>Doble canal</b><small>Sociedad de bolsa, sin cripto a la vista, y PSAV a la vez. Cada público entra por su puerta.</small></li>
+        <li><span>7</span><b>Utilidad desde el día uno</b><small>Las fichas que sirven para algo concreto, como los granos de Agrotoken usados de garantía (Santander<sup class="fn">2</sup>), se adoptan solas.</small></li>
+        <li><span>8</span><b>El regulador como socio</b><small>Los que fueron de frente al regulador construyeron ventajas que los que lo esquivaron no tienen.</small></li>
+      </ol>
 
       <h3>Las tendencias de 2026</h3>
       <div class="tbl">
@@ -1360,13 +1408,13 @@ section.ch{position:relative}
         <div><h4>¿Me pueden hackear?</h4><p>En el modelo regulado, la inversión no depende de una contraseña. La ficha solo se puede transferir entre cuentas verificadas; los valores viven en canales regulados; y perder la contraseña se resuelve verificando identidad, como en un banco. El riesgo que queda es el de siempre en internet: que te engañen para autorizar algo.</p></div>
         <div><h4>¿Qué me cobran?</h4><p>Alguna combinación de comisión de administración, cargo por operación y diferencia entre precio de compra y de venta en la reventa. Como referencia, el fondo de Franklin Templeton detrás de BENJI declaraba en 2024 un gasto total de 0,20% anual, con una exención temporal de comisiones (0,26% sin ella) (SEC<sup class="fn">1</sup>); los productos de inmuebles cobran bastante más porque administran un activo físico. En las plataformas de inmuebles que publican sus tarifas completas, como Prypco Mint en Dubái (Prypco<sup class="fn">2</sup>) y Lofty en EE.UU. (Lofty<sup class="fn">3</sup>), entrar y salir cuesta entre 5% y 6% del monto; el detalle está en el road map. Si no ves la comisión antes de invertir, no inviertas.</p></div>
         <div><h4>¿Sube y baja como Bitcoin?</h4><p>No. El valor sigue al del activo, que se establece con tasaciones independientes, y a la renta que produce. En la reventa puede haber diferencias por oferta y demanda, pero es la lógica del ladrillo, en formato chico.</p></div>
-        <div><h4>¿Cuándo puedo vender?</h4><p>Nadie serio puede prometer “vendés cuando quieras”: los mercados de reventa son jóvenes en todo el mundo, y en EE.UU. algunas ofertas privadas no se pueden revender durante un año. Lo que sí se puede exigir es conocer el mecanismo y los plazos de salida antes de invertir.</p></div>
+        <div><h4>¿Cuándo puedo vender?</h4><p>Cuando aparezca alguien que compre, o por la salida que tenga prevista el proyecto. Nadie serio puede prometer “vendés cuando quieras”: los mercados de reventa son jóvenes en todo el mundo, y la IOSCO, que reúne a los reguladores de valores, encontró en 2025 niveles bajos de reventa en los valores emitidos como fichas (IOSCO<sup class="fn">4</sup>). En Argentina, con oferta pública, la ficha se puede cambiar siempre por el valor tradicional y venderse por una sociedad de bolsa (art. 16, RG 1081<sup class="fn">5</sup>). En EE.UU., algunas ofertas privadas no se pueden revender durante un año. Lo que sí se puede exigir es conocer el mecanismo, el costo y los plazos de salida antes de invertir.</p></div>
         <div><h4>¿Y cómo cobro la plata en la mano?</h4><p>La renta se acredita en la cuenta, normalmente en dólares digitales. Desde ahí se convierte a pesos o dólares y se transfiere al banco del titular, o se deja invertida. El eslabón crítico es el proveedor regulado que convierte el dólar digital en dinero bancario.</p></div>
         <div><h4>¿Y los impuestos?</h4><p>Dependen del vehículo: no es lo mismo tener una parte de un inmueble, un certificado de fideicomiso o acciones de una sociedad. Tres preguntas para el contador: si entra en Bienes Personales y cómo se valúa, si la renta paga Ganancias y con qué alícuota, y cómo se declara la compra y la venta.</p></div>
-        <div><h4>¿Se hereda?</h4><p>Sí. La muerte abre la sucesión y transmite la herencia (art. 2277 del Código Civil y Comercial<sup class="fn">4</sup>), y un derecho sobre un fideicomiso entra como cualquier derecho patrimonial, igual que una cuenta en una sociedad de bolsa. En el modelo en que la plataforma guarda la llave, los herederos acceden por la vía sucesoria normal, sin claves secretas.</p></div>
+        <div><h4>¿Se hereda?</h4><p>Sí. La muerte abre la sucesión y transmite la herencia (art. 2277 del Código Civil y Comercial<sup class="fn">6</sup>), y un derecho sobre un fideicomiso entra como cualquier derecho patrimonial, igual que una cuenta en una sociedad de bolsa. En el modelo en que la plataforma guarda la llave, los herederos acceden por la vía sucesoria normal, sin claves secretas.</p></div>
         <div><h4>¿Cuál es la trampa?</h4><p>Que todos ganan algo distinto, y está a la vista: el desarrollador consigue financiamiento de más gente, la plataforma cobra comisiones transparentes y el inversor accede desde montos chicos. Cuando el modelo de negocio de cada uno es visible, no hay trampa que esconder.</p></div>
       </div>
-      <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://www.sec.gov/Archives/edgar/data/1786958/000174177324003833/c497.htm</code></li><li><span>2</span><code>https://help.prypco.com/mint/en/articles/13774809</code></li><li><span>3</span><code>https://www.lofty.ai/how-it-works</code></li><li><span>4</span><code>https://servicios.infoleg.gob.ar/infolegInternet/anexos/235000-239999/235975/norma.htm</code></li></ol></div>
+      <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://www.sec.gov/Archives/edgar/data/1786958/000174177324003833/c497.htm</code></li><li><span>2</span><code>https://help.prypco.com/mint/en/articles/13774809</code></li><li><span>3</span><code>https://www.lofty.ai/how-it-works</code></li><li><span>4</span><code>https://www.iosco.org/library/pubdocs/pdf/IOSCOPD809.pdf</code></li><li><span>5</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/330173/20250821</code></li><li><span>6</span><code>https://servicios.infoleg.gob.ar/infolegInternet/anexos/235000-239999/235975/norma.htm</code></li></ol></div>
     </section>
 
     <!-- ============ PARTE XIII · QUÉ SIGNIFICA PARA LUCID ============ -->
@@ -1376,17 +1424,19 @@ section.ch{position:relative}
       <p class="lead">Las partes anteriores describen el mercado. Esta es la lectura propia de lucid: cuánta demanda podría haber y por dónde empezar. Salvo el dato del INDEC, lo que sigue son supuestos y decisiones, no datos verificados.</p>
       <h3>La demanda en números</h3>
       <p>Los argentinos tienen USD 259.305 millones en billetes y depósitos fuera del sistema local, según el INDEC al 31/03/2026. Es el universo de ahorro que podría buscar un respaldo que rinda.</p>
-      <div class="tbl">
-        <table>
-          <thead><tr><th>Capa</th><th>Cuánto</th><th>Cómo se llega</th></tr></thead>
-          <tbody>
-            <tr><td>Mercado total <span class="tag tag--pub">Dato</span></td><td class="num">USD 259.305M</td><td>Moneda y depósitos del sector privado fuera del país o del sistema (INDEC<sup class="fn">1</sup>, 1.er trimestre 2026). Dato oficial.</td></tr>
-            <tr><td>Mercado alcanzable <span class="tag tag--priv">Supuesto</span></td><td class="num">USD 10.000–20.000M</td><td>Supuesto: la parte de ese ahorro en manos de gente cómoda con dólares digitales. Como referencia, Argentina recibió USD 88.500M en cripto en los 12 meses a junio de 2026, según Chainalysis<sup class="fn">2</sup>.</td></tr>
-            <tr><td>Captura inicial <span class="tag tag--priv">Supuesto</span></td><td class="num">USD 100–600M en 3 años</td><td>Supuesto: entre 1% y 3% del mercado alcanzable, como cualquier jugador nuevo.</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>Solo la primera fila es un dato. Las otras dos son supuestos para ordenar la magnitud: qué porcentaje del ahorro está listo para dólares digitales, el ticket promedio y la tasa de conversión son perillas que hay que afinar con datos propios. El INDEC actualiza el dato cada trimestre.</p>
+      <figure>
+        <div class="fig">
+          <p class="fig__title">De todo el ahorro a lo que lucid podría captar</p>
+          <p class="fig__sub">En dólares. Solo el primer escalón es un dato; los otros dos son supuestos.</p>
+          <svg class="dg" viewBox="0 0 720 250" role="img" aria-label="Embudo: USD 259.305 millones de ahorro fuera del sistema; supuesto de 10.000 a 20.000 millones alcanzables; supuesto de 100 a 600 millones de captura inicial en 3 años">
+            <path d="M40,10 H680 L620,80 H100 Z" class="bx-pub"/><text x="360" y="38" text-anchor="middle" class="t-mono t-pub">DATO · INDEC</text><text x="360" y="62" text-anchor="middle" class="t-title">USD 259.305M</text>
+            <path d="M104,86 H616 L556,156 H164 Z" class="bx-priv"/><text x="360" y="114" text-anchor="middle" class="t-mono t-priv">SUPUESTO · ALCANZABLE</text><text x="360" y="138" text-anchor="middle" class="t-title">USD 10.000–20.000M</text>
+            <path d="M168,162 H552 L492,232 H228 Z" class="bx-core"/><text x="360" y="190" text-anchor="middle" class="t-mono t-brand">SUPUESTO · 3 AÑOS</text><text x="360" y="214" text-anchor="middle" class="t-title">USD 100–600M</text>
+          </svg>
+        </div>
+        <figcaption>Arriba: moneda y depósitos del sector privado fuera del país o del sistema, al 31/03/2026 (INDEC). En el medio: la parte de ese ahorro en manos de gente cómoda con dólares digitales; como referencia, Argentina recibió USD 88.500M en cripto en los 12 meses a junio de 2026, según Chainalysis. Abajo: entre 1% y 3% del mercado alcanzable, como cualquier jugador nuevo. Fuentes: INDEC<sup class="fn">1</sup>, Chainalysis<sup class="fn">2</sup>.</figcaption>
+      </figure>
+      <p>Solo el primer escalón es un dato. Las otras dos son supuestos para ordenar la magnitud: qué porcentaje del ahorro está listo para dólares digitales, el ticket promedio y la tasa de conversión son perillas que hay que afinar con datos propios. El INDEC actualiza el dato cada trimestre.</p>
 
       <h3>Dónde se para lucid</h3>
       <p>La propuesta es que las propiedades se publiquen y se compren en lucid, y que por debajo un PSAV inscripto en las cinco categorías verifique la identidad, lleve el registro y mueva la plata. Según el equipo, parte de la gente de lucid opera un exchange inscripto como PSAV que podría cumplir ese rol. La tecnología se contrata al proveedor que cotice mejor. lucid se queda con lo que no se terceriza: elegir los activos, explicarlos y responder por ellos.</p>
@@ -1403,6 +1453,90 @@ section.ch{position:relative}
       </div>
       <div class="note"><p class="note__k">Lo único que no hay que apurar</p><p>Ganar en un solo activo y una sola comunidad antes de escalar. Primero confianza, después volumen.</p></div>
       <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://www.indec.gob.ar/uploads/informesdeprensa/bal_06_26F22D340551.pdf</code></li><li><span>2</span><code>https://www.chainalysis.com/blog/latin-america-crypto-adoption-2026/</code></li></ol></div>
+    </section>
+
+    <!-- ============ ANEXO · EL DETALLE ============ -->
+    <section class="ch" id="anexo"><span class="pgmark" aria-hidden="true">@@anexo@@</span>
+      <header class="step-open"><span class="step-num step-num--roman">A</span><div class="step-meta"><p class="ch__label">Anexo</p><p class="step-title">El detalle</p></div></header>
+      <h2>Las tablas <em>completas</em></h2>
+      <p class="lead">Los datos que en el cuerpo del informe aparecen como gráficos, con todas sus notas.</p>
+      <h3>Los segmentos del mercado</h3>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Segmento</th><th>Cuánto circula (USD)</th><th>Nota</th></tr></thead>
+          <tbody>
+            <tr><td>Bonos del Tesoro de EE.UU.</td><td class="num">14.940M</td><td>El producto más grande es USYC de Circle, con USD 2.430M.</td></tr>
+            <tr><td>Crédito privado</td><td class="num">7.980M</td><td>Otros USD 36.550M representados. Préstamos a empresas o personas, sin rescate diario.</td></tr>
+            <tr><td>Materias primas</td><td class="num">4.920M</td><td>Casi todo oro: no paga renta, sigue el precio del metal.</td></tr>
+            <tr><td>Acciones tokenizadas</td><td class="num">3.130M</td><td>Ondo, bStocks, xStocks y Securitize son los mayores emisores.</td></tr>
+            <tr><td>Inmuebles</td><td class="num">226M</td><td>Otros USD 1.340M representados. Ticket bajo, renta de mediano plazo.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:var(--text-sm)">Datos: RWA.xyz, Tesoro<sup class="fn">1</sup>, crédito<sup class="fn">2</sup>, materias primas<sup class="fn">3</sup>, acciones<sup class="fn">4</sup>, inmuebles<sup class="fn">5</sup>.</p>
+
+      <h3>Quién tokeniza qué, fuera del ladrillo</h3>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Vertical</th><th>Quién</th><th>El dato</th></tr></thead>
+          <tbody>
+            <tr><td>Bonos y fondos</td><td>BlackRock (BUIDL), Circle (USYC), Franklin Templeton (BENJI), Ondo (USDY), WisdomTree (WTGXX)</td><td>BUIDL: USD 2.240M; USDY: USD 2.270M; WTGXX: USD 1.230M.</td></tr>
+            <tr><td>Crédito privado</td><td>Figure, Maple, Centrifuge</td><td>Maple declara USD 4.760M administrados; Centrifuge tiene alrededor de USD 1.000M en circulación, con fuertes variaciones mensuales.</td></tr>
+            <tr><td>Oro</td><td>Tether (XAUT), Paxos (PAXG)</td><td>USD 2.650M y USD 1.850M. Cada ficha es una onza en bóveda.</td></tr>
+            <tr><td>Acciones</td><td>Ondo, xStocks, Securitize</td><td>Ondo tiene unos USD 867M en acciones tokenizadas.</td></tr>
+            <tr><td>Infraestructura</td><td>Securitize, Tokeny, Plume</td><td>Securitize: USD 4.720M; el formato ERC-3643 surgió del protocolo T-REX de Tokeny.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:var(--text-sm)">Fuentes: RWA.xyz<sup class="fn">1</sup>, Maple<sup class="fn">6</sup>, RWA.xyz, Centrifuge<sup class="fn">7</sup>, RWA.xyz, materias primas<sup class="fn">3</sup>, RWA.xyz, acciones<sup class="fn">4</sup>, RWA.xyz, Securitize<sup class="fn">8</sup>, ERC-3643<sup class="fn">9</sup>, propuesta EIP-3643<sup class="fn">10</sup>.</p>
+
+      <h3>Las normas argentinas, una por una</h3>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Norma</th><th>Fecha</th><th>Qué hizo</th></tr></thead>
+          <tbody>
+            <tr><td>Ley 27.739<sup class="fn">11</sup></td><td class="num">mar 2024</td><td>Reformó la ley de prevención de lavado y creó el registro de PSAV (Proveedores de Servicios de Activos Virtuales) en la CNV.</td></tr>
+            <tr><td>RG 994<sup class="fn">12</sup> y RG 1058<sup class="fn">13</sup></td><td class="num">2024–2025</td><td>Reglamentaron el registro y las exigencias a los PSAV: patrimonio, ciberseguridad, custodia y prevención de lavado.</td></tr>
+            <tr><td>RG 1060<sup class="fn">14</sup></td><td class="num">abr 2025</td><td>Consulta pública sobre representación digital de valores.</td></tr>
+            <tr><td>RG 1069<sup class="fn">15</sup></td><td class="num">jun 2025</td><td>Primera etapa: fideicomisos financieros y títulos de deuda con activos reales, con un PSAV como depositario digital.</td></tr>
+            <tr><td>RG 1081<sup class="fn">16</sup></td><td class="num">ago 2025</td><td>Sumó acciones, obligaciones negociables y CEDEARs; hasta 5 PSAV por emisión.</td></tr>
+            <tr><td>RG 1087<sup class="fn">17</sup></td><td class="num">oct 2025</td><td>Emisores y fideicomisos frecuentes; si el 100% se emite en formato digital, no hace falta listar en un mercado.</td></tr>
+            <tr><td>RG 1150<sup class="fn">18</sup></td><td class="num">jun 2026</td><td>Amplió el régimen a valores de autorización automática, fondos cerrados, fondos abiertos ETF y certificados CEVA vinculados a ETP; estiró el período de prueba al 31/12/2027.</td></tr>
+            <tr><td>Decreto 475/2026<sup class="fn">19</sup></td><td class="num">jun 2026</td><td>Eximió del impuesto a los débitos y créditos bancarios a las cuentas que los PSAV inscriptos usan para su actividad.</td></tr>
+            <tr><td>RG 1165<sup class="fn">20</sup></td><td class="num">sep 2026</td><td>Incluyó a los PSAV en la matriz de actividades compatibles de los agentes del mercado. No es una norma de tokenización.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Los jugadores locales</h3>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Empresa</th><th>Modelo</th><th>Qué hace</th></tr></thead>
+          <tbody>
+            <tr><td>Landtoken + Allaria</td><td>Mercado de capitales</td><td>Fideicomiso financiero con oferta pública sobre campos; ticket USD 50.</td></tr>
+            <tr><td>Volsmart</td><td>Mercado de capitales</td><td>PSAV de ILLA Belgrano, edificio con oferta pública, y a la vez su titular de registro y proveedor tecnológico; ticket USD 100.</td></tr>
+            <tr><td>Pala · Casa Token</td><td>Tecnología con marca propia</td><td>Plataforma para más de 20 desarrolladoras, con escribanos que certifican a distancia.</td></tr>
+            <tr><td>Blockenfy</td><td>Tecnología con marca propia</td><td>Tecnología para que otros lancen productos tokenizados; más de 10 países, según la empresa.</td></tr>
+            <tr><td>Metro Futuro</td><td>Venta directa</td><td>Arma, emite y vende proyectos desde USD 100. Es PSAV, pero con tres de las cinco categorías que pide el régimen de tokenización.</td></tr>
+            <tr><td>R3AL Blocks</td><td>Marketplace</td><td>Tokeniza desarrollos con fideicomisos privados y custodia de Fireblocks, según la empresa (R3AL Blocks<sup class="fn">21</sup>).</td></tr>
+            <tr><td>Reental</td><td>Marketplace</td><td>Opera en Salta con Grupo MDay; su cuarto proyecto juntó USD 958.800 en 24 horas.</td></tr>
+            <tr><td>Agrotoken</td><td>Activos reales, agro</td><td>Granos tokenizados que los bancos aceptan como garantía.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:var(--text-sm)">Fuentes: El Economista (Pala)<sup class="fn">22</sup>, Blockenfy<sup class="fn">23</sup>, Metro Futuro<sup class="fn">24</sup>, R3AL Blocks<sup class="fn">25</sup>, El Tribuno (Reental)<sup class="fn">26</sup>, iProfesional (ILLA)<sup class="fn">27</sup>.</p>
+
+      <h3>Los formatos técnicos</h3>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Formato</th><th>Para qué sirve</th></tr></thead>
+          <tbody>
+            <tr><td>ERC-20</td><td>El formato base de los dólares digitales. La mayoría de los bonos y fondos tokenizados lo usan. No controla por sí solo quién puede tener la ficha.</td></tr>
+            <tr><td>ERC-3643</td><td>La referencia para activos regulados: la verificación de identidad va adentro de la ficha, y una transferencia a alguien no verificado falla por diseño.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="notes-wrap"><p class="notes__k">Notas y fuentes</p><ol class="notes"><li><span>1</span><code>https://app.rwa.xyz/treasuries</code></li><li><span>2</span><code>https://app.rwa.xyz/private-credit</code></li><li><span>3</span><code>https://app.rwa.xyz/commodities</code></li><li><span>4</span><code>https://app.rwa.xyz/stocks</code></li><li><span>5</span><code>https://app.rwa.xyz/real-estate</code></li><li><span>6</span><code>https://maple.finance</code></li><li><span>7</span><code>https://app.rwa.xyz/platforms/centrifuge</code></li><li><span>8</span><code>https://app.rwa.xyz/platforms/securitize</code></li><li><span>9</span><code>https://www.erc3643.org</code></li><li><span>10</span><code>https://eips.ethereum.org/EIPS/eip-3643</code></li><li><span>11</span><code>https://www.ey.com/es_ar/technical/law/ey-law-alerts-argentina/ley-27739-modificaciones-sistema-plaft</code></li><li><span>12</span><code>https://www.argentina.gob.ar/noticias/la-cnv-crea-el-registro-de-proveedores-de-servicios-de-activos-virtuales-psav</code></li><li><span>13</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/322539/20250314</code></li><li><span>14</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/324012/20250414</code></li><li><span>15</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/326947/20250613</code></li><li><span>16</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/330173/20250821</code></li><li><span>17</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/333326/20251023</code></li><li><span>18</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/343010/20260611</code></li><li><span>19</span><code>https://www.boletinoficial.gob.ar/detalleAviso/primera/343279/20260618</code></li><li><span>20</span><code>https://www.argentina.gob.ar/noticias/nueva-matriz-de-compatibilidades-para-agentes-plataformas-de-financiamiento-colectivo-psavs</code></li><li><span>21</span><code>https://r3al.io/faqs</code></li><li><span>22</span><code>https://eleconomista.com.ar/negocios/el-mercado-inmobiliario-acelera-su-transformacion-digital-tokenizacion-ya-redefine-forma-vender-e-invertir-n97524</code></li><li><span>23</span><code>https://blockenfy.com/</code></li><li><span>24</span><code>https://www.metrofuturo.com.ar</code></li><li><span>25</span><code>https://r3al.io</code></li><li><span>26</span><code>https://www.eltribuno.com/salta/2026-4-14-21-24-0-alianza-reental-mday-salta-suma-un-cuarto-proyecto-de-inversion-inmobiliaria-tokenizada</code></li><li><span>27</span><code>https://www.iprofesional.com/realestate/444971-como-funciona-fideicomiso-inmobiliario-se-puede-invertir-desde-100-dolares</code></li></ol></div>
     </section>
 
     <!-- ============ PARTE XIV · VERIFICACIÓN Y CIERRE ============ -->
@@ -1622,7 +1756,16 @@ section.ch{position:relative}
       bindTip(b,`<b>${r.n}</b><span>USD ${fmt(r.v)} miles de millones</span>`);
       tb&&tb.insertAdjacentHTML('beforeend',`<tr><td>${r.n}</td><td class="num">${fmt(r.v)}</td></tr>`)});
   }
-  linBars('market',[{n:'Bonos del Tesoro de EE.UU.',v:14.93},{n:'Crédito privado',v:8.10},{n:'Materias primas (oro)',v:5.00},{n:'Resto',v:10.80}],16,4,'','market-table');
+  linBars('growth',[{n:'Marzo de 2025',v:6.4},{n:'Septiembre de 2026',v:38.67}],40,10,'','growth-table','Septiembre de 2026');
+  linBars('segments',[{n:'Bonos del Tesoro de EE.UU.',v:14.94},{n:'Crédito privado',v:7.98},{n:'Materias primas',v:4.92},{n:'Acciones',v:3.13},{n:'Inmuebles',v:0.226}],16,4,'','segments-table','Inmuebles');
+  (function(){const svg=document.getElementById('products');if(!svg)return;
+    const rows=[{n:'Tether Gold (oro)',v:2.65,g:1},{n:'USYC · Circle',v:2.43},{n:'USDY · Ondo',v:2.27},{n:'BUIDL · BlackRock',v:2.24},{n:'Pax Gold (oro)',v:1.85,g:1},{n:'WTGXX · WisdomTree',v:1.23}];
+    const W=720,L=190,R=70,T=6,rowH=32,H=T+rows.length*rowH+26;svg.setAttribute('viewBox',`0 0 ${W} ${H}`);const x=v=>L+(W-L-R)*v/3;
+    for(let s=0;s<=3;s++){el('line',{x1:x(s),x2:x(s),y1:T,y2:H-24,stroke:s===0?C.axis:C.grid},svg);el('text',{x:x(s),y:H-8,'text-anchor':'middle','font-size':11,fill:C.muted,'font-family':'JetBrains Mono, monospace'},svg,fmt(s))}
+    rows.forEach((r,i)=>{const y=T+i*rowH+8;el('text',{x:0,y:y+12,'font-size':13,fill:C.text},svg,r.n);
+      el('path',{d:barPath(L,y+1,x(r.v)-L,14,4),fill:r.g?'rgba(164,180,202,.55)':C.brand},svg);
+      el('text',{x:x(r.v)+8,y:y+12.5,'font-size':12,fill:C.sec,'font-family':'JetBrains Mono, monospace'},svg,fmt(r.v))});
+  })();
   linBars('networks',[{n:'Ethereum',v:16.55},{n:'BNB Chain',v:5.68},{n:'Solana',v:4.41},{n:'Stellar',v:3.37},{n:'Resto',v:8.66}],18,3,'','networks-table');
   linBars('latam',[{n:'Brasil',v:252.5},{n:'Argentina',v:88.5},{n:'México',v:77.6},{n:'Venezuela',v:39.1},{n:'Colombia',v:29.1}],300,50,'','latam-table','Argentina');
 
