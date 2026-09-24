@@ -23,7 +23,7 @@
   /* ---------- Gantt ---------- */
   const phases=['1 · Activo','2 · Estructura legal','3 · Regulación','4 · Proveedor','5 · Emisión','6 · Colocación','7 · Vida del activo'];
   const priv=[[0,1.5],[0.5,2.5],[1,2],[1,2.5],[2.5,3],[3,5],[5,12]];
-  const pub =[[0,1.5],[1,4],[2,8],[2,4],[7.5,8],[8,10],[10,12]];
+  const pub =[[0,1.5],[1,4],[2,10],[2,4],[10,10.5],[10.5,11.5],[11.5,12]];
   (function(){
     const svg=document.getElementById('gantt');if(!svg)return;const W=760,L=150,R=16,T=26,rowH=38,H=T+phases.length*rowH+8;
     svg.setAttribute('viewBox',`0 0 ${W} ${H}`);const x=m=>L+(W-L-R)*m/12;
@@ -86,13 +86,15 @@
     el('text',{x:L+pw/2,y:H-8,'text-anchor':'middle','font-size':11,fill:C.muted,'font-family':'JetBrains Mono, monospace'},svg,'CUÁNTO DEL PROCESO TE RESUELVEN →');
     const P=[
       {n:'Blockenfy',c:0,y:.60,psav:false,d:'Tecnología de marca blanca, fichas con verificación incorporada. No arma lo legal.'},
-      {n:'Xcapit',c:0,y:.83,psav:false,d:'Desarrollo a medida. Diagnóstico USD 8–12K; plataforma USD 40–150K.'},
-      {n:'Brickken',c:1,y:.60,psav:false,d:'Software español con estructuración legal; sin caso argentino confirmado.'},
+      {n:'Koibanx',c:0,y:.72,psav:false,d:'Tecnología para entidades financieras. PSAV n.º 13 con cuatro de las cinco categorías.'},
+      {n:'Xcapit',c:0,y:.84,psav:false,d:'Desarrollo a medida. Diagnóstico USD 8–12K; plataforma USD 40–150K.'},
+      {n:'Brickken',c:1,y:.60,psav:false,d:'Software español por suscripción, desde €299 por mes; sin caso argentino confirmado.'},
       {n:'Pala · Casa Token',c:1,y:.83,psav:false,d:'Plataforma para desarrolladores con validación notarial. Declara USD 150M en oferta.'},
-      {n:'Volsmart',c:1,y:.22,psav:true,d:'PSAV n.º 85. Depositario y comercializador de ILLA Belgrano.'},
+      {n:'Volsmart',c:1,y:.22,psav:true,d:'PSAV n.º 85. En ILLA Belgrano fue PSAV, titular del registro y proveedor tecnológico.'},
       {n:'R3AL Blocks',c:2,y:.60,psav:false,d:'Estructura, emite y vende en su marketplace. Fideicomiso privado.'},
-      {n:'Metro Futuro',c:2,y:.83,psav:true,d:'PSAV n.º 100. Estructura, emite, vende y paga rentas. Fuera del régimen de oferta pública.'},
-      {n:'Landtoken + Allaria',c:2,y:.22,psav:true,d:'Fideicomiso financiero con oferta pública; Allaria Digital es PSAV n.º 132.'},
+      {n:'Brick-ly',c:2,y:.72,psav:false,d:'Marketplace de hoteles. Cobra una comisión por ficha vendida.'},
+      {n:'Metro Futuro',c:2,y:.84,psav:false,d:'PSAV n.º 100 con tres de las cinco categorías. Estructura, emite, vende y paga rentas, fuera del régimen de la CNV.'},
+      {n:'Landtoken + Allaria',c:2,y:.22,psav:true,d:'Fideicomiso financiero con oferta pública; Allaria Digital es PSAV n.º 132. Tecnología de Tech Demeter.'},
     ];
     P.forEach(p=>{const cx=L+colW*p.c+44,cy=T+ph*p.y;const g=el('g',{},svg);
       el('circle',{cx,cy,r:14,fill:'transparent'},g);

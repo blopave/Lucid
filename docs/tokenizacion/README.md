@@ -35,7 +35,7 @@ Los `.html` de esta carpeta son la versión lista para imprimir de cada PDF.
    Eso anota en `src/pages.json` dónde empieza cada capítulo. Después hay que
    volver a correr `build.py` y exportar los PDF otra vez. Si un cambio mueve
    páginas, se repite el ciclo hasta que `pages.json` no cambie.
-5. Actualizar la fecha de corte en la portada y, si cambió algún dato del informe de julio 2026, sumarlo a la tabla de la Parte XII.
+5. Actualizar la fecha de corte en la portada y, si cambió algún dato del informe de julio 2026, sumarlo a la parte "Verificación y cierre".
 
 `src/build.py` es un script local para generar documentos. No es parte del sitio, que sigue sin build (canon §5).
 

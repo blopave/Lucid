@@ -15,6 +15,104 @@ confirma se marca o queda afuera.
 
 ---
 
+## Actualización 6 · 24/09/2026 (plazos reales y costos para el inversor)
+
+**Qué se hizo:** dos investigadores reconstruyeron los plazos de los casos con la CNV y relevaron lo que paga el inversor. Las fechas se controlaron contra los PDF de la AIF (avisos de resultados, suplementos, documento de emisión digital, hecho relevante de ILLA); las tarifas, reabriendo cada página.
+
+**Texto nuevo auditado** (road map: "Siete pasos", "Qué cuesta", casos Lofty e ILLA; informe: casos Lofty e ILLA, "¿Qué me cobran?"):
+
+| Afirmación | Fuente | Nivel | Veredicto |
+| --- | --- | --- | --- |
+| Landtoken: 17/03/2025 primera aprobación; 01/04/2025 programa; 20/08/2025 autorización de oferta pública y versión digital; 04/12/2025 condicionamientos levantados | Suplemento de prospecto (AIF C11C654D) | A | Confirmado |
+| Landtoken: ofertas el 16/12/2025, emisión 18/12/2025, VN USD 4.777.518 con USD 150.000 en CP Digitales | Aviso de resultados (AIF D237765B) | A | Confirmado |
+| ILLA: 20/09/2024 acta del fiduciario; 25/06/2025 autorización; 09/09/2025 condicionamientos levantados | Suplemento resumido (AIF D3F3F048, OCR) y documento de emisión digital | A | Confirmado |
+| ILLA: licitación 28/11/2025, emisión 02/12/2025, USD 4.150.330, difusión extendida hasta el 27/11 | Aviso de resultados (AIF 29E02ACE) y aviso rectificatorio | A | Confirmado |
+| ILLA: versión digital autorizada el 08/04/2026; fecha para pedirla "no será anterior al 1 de junio de 2026"; sin anuncio posterior al 24/09/2026 | Hecho relevante (AIF F15A4041); listado de la CNV | A | Confirmado (lo último, por ausencia en el listado) |
+| Aviso de 5 días hábiles antes de la versión digital; exclusión si no se usa en 2 años | RG 1081 art. 4 (no modificado por la RG 1150); RG 1150 art. 38 | A | Confirmado |
+| Xcapit: 17–22 semanas técnicas (fases 0 a 3) | Blog de Xcapit (20/04/2026) | A, según la empresa | Confirmado |
+| Reental Salta 3: USD 1,36 millones en poco más de diez minutos; Salta 4: USD 958.800 en 24 horas | El Tribuno (14/04/2026) y Grupo MDay (parte interesada) | B/C | Se presenta como "según las empresas" |
+| Metro Futuro: 6% en todo rescate; tarifas de red y pago descontadas | metrofuturo.com.ar/tyc, cl. 11.6 y 11.7 | A | Confirmado |
+| Raíz: cuenta gratis; 2% por salida anticipada, bonificado | raiz.finance/faqs | A | Confirmado |
+| Brick-ly: sin penalidad por salida anticipada | brick-ly.com/preguntas-frecuentes | A | Confirmado |
+| Volsmart: registro sin costo, comisiones dentro de la plataforma; costo total antes de confirmar | volsmart.com/QH_TERMS.md; documento de emisión digital de ILLA | A | Confirmado |
+| Allaria Digital: margen en el precio y comisión de retiro, sin montos | Términos y condiciones, cl. 7 | A | Confirmado. "Cuenta sin costo" **no** figura en esos términos: no se usa |
+| Prypco Mint: 2% + 2% (registro) + 0,1% al comprar; 1% al vender | help.prypco.com, artículos 13774809 y 13782809 | A | Confirmado |
+| Lofty: 2,5% al comprar, 3% al vender, sin comisión anual | lofty.ai/how-it-works | A | Confirmado |
+
+### Correcciones
+
+- **Lofty:** los dos documentos decían "revender cuesta entre 5,5% y 10,5% ida y vuelta", tomado de una reseña. La fuente oficial dice 2,5% + 3% = 5,5% y no sostiene el 10,5%. Se reemplazó y se cambió la fuente.
+- **ILLA Belgrano:** el road map decía que "la ficha digital llegó cuatro meses después". Lo que llegó fue la aprobación de la CNV; al 24/09/2026 no hay fecha para empezar a circular. El informe decía "a junio de 2026 ... por anunciarse": se actualizó.
+- **Gráfico de plazos:** la estimación del camino con la CNV (emisión cerca del mes 8) era optimista frente a los casos reales (9 y 14 meses). Se corrió la emisión al mes 10 y se rotuló como estimación ajustada.
+
+**Quedó afuera:** la ficha "LAND" de Ripio (una sola nota que se contradice), la comisión de 0,5% de Ripio aplicada a esa ficha (su tabla no la nombra), el 1% de SatoshiTango (dato de 2022), el 5% de Miactivo (copia de terceros sin fecha, contradicha por su app), RealT (ficha archivada de un solo inmueble) y Arrived (no es tokenizado).
+
+---
+
+## Actualización 5 · 24/09/2026 (proveedores, costos y esquema de lucid)
+
+**Qué se hizo:** relevamiento de todas las empresas que tokenizan en Argentina y de lo que cuesta, a pedido del equipo de lucid, que va a elegir proveedor por costo. Tres investigadores trabajaron en paralelo: registro de la CNV y régimen, costos, y proveedores faltantes. Cada dato que entró se volvió a controlar contra la fuente descargada (planilla del registro, prospectos, textos de las RG) o reabriendo la página.
+
+**Texto nuevo auditado** (road map: paso 4, paso 6, "Qué cuesta", "Qué significa esto para lucid"; informe: Partes VII, VIII, IX y XIII):
+
+| Afirmación | Fuente | Nivel | Veredicto |
+| --- | --- | --- | --- |
+| 81 PSAV inscriptos, 34 en las cinco categorías; R3AL Blocks (n.º 148) y Tech Demeter no figuran | Planilla del registro de la CNV, generada el 24/09/2026 | A | Confirmado |
+| Metro Futuro n.º 100 con 3 de 5 categorías; Volsmart n.º 85, Allaria Digital n.º 132, Efaysto n.º 172 y Token ByU n.º 173 con las 5; Koibanx n.º 13 (sociedad de El Salvador) con 4; Miactivo n.º 11 solo custodia | Planilla del registro de la CNV | A | Confirmado |
+| El régimen exige las cinco categorías; quien solo provee tecnología no necesita ser PSAV; hasta cinco PSAV por emisión; plan de contingencia para migrar a otro PSAV | RG 1150, art. 14 y art. 5; RG 1081 (texto del Boletín Oficial) | A | Confirmado |
+| Metro Futuro: "esta emisión no ha sido registrada ni aprobada por dicho organismo" | metrofuturo.com.ar, leído el 24/09/2026 | A (sobre sí misma) | Confirmado |
+| Landtoken: gastos de estructuración estimados USD 334.950; colocación sin efecto por debajo de USD 400.000; fiduciario USD 15.000 por año más hasta 0,175%; administrador 3%, 0,75% anual y 20% de la ganancia; colocador 0,6% | Suplemento de prospecto final, AIF de la CNV | A | Confirmado |
+| Landtoken: PSAV SatoshiTango, Ripio, Belo y "Allaria Crypto"; red Polygon | Informe de calificación UNTREF ACR UP (11/08/2025), previo a la colocación | A | Confirmado, con la aclaración de que es previo |
+| ILLA Belgrano: USD 135.886 (2%) en organización, estructuración y colocación; fiduciario USD 3.500 por mes y USD 142.931 (2,11%); comercializador USD 39.966 (0,59%); colocación 1,5% en la tabla y 2% en el texto | Suplemento de prospecto resumido, AIF (tablas leídas sobre la imagen) | A | Confirmado; la diferencia 1,5% / 2% es del propio prospecto y se informa tal cual |
+| Volsmart fue PSAV, titular del registro y proveedor tecnológico de ILLA Belgrano | PAGBAM (05/06/2026) y LexLatin (10/06/2026) | B+B | Confirmado |
+| Tasas 2026: fiduciario financiero $5.611.000; PSAV persona jurídica $13.360.000; arancel de fideicomiso financiero 0,05% del monto autorizado | Resolución 1/2026 del Ministerio de Economía, anexo II | A | Confirmado |
+| Patrimonio mínimo PSAV: USD 150.000 (categorías 1, 2 y 4), la categoría más exigente manda, 50% con volumen menor a USD 2,5 millones | RG 1058, art. 9 | A | Confirmado |
+| Brickken: €299 a €1.999 por mes, tope €250.000 en el plan Core, sin costo de alta; marca blanca desde €2.500 por mes | brickken.com/plans, leída dos veces el 24/09/2026 | A | Confirmado |
+| Xcapit: diagnóstico USD 8.000–12.000; plataforma USD 40.000–150.000 | Blog de Xcapit (20/04/2026) | A | Confirmado, sin cambios |
+| Brick-ly: no cobra por publicar, comisión por ficha vendida | brick-ly.com/propietarios, leída el 24/09/2026 | A | Confirmado |
+| Sin precios públicos: Pala, Blockenfy, R3AL Blocks, Metro Futuro, Token ByU, Efaysto; sitio de Volsmart caído, el de Koibanx solo muestra el nombre | Sitios revisados el 24/09/2026 | A | Confirmado |
+| Koibanx vende tecnología de tokenización a entidades financieras | iProUP (08/10/2024) | C | Se presenta como "según la empresa" |
+| Raíz Finance (Devoto), Miactivo (Añelo), Win Investments, Slice Token, CryptoMate | raiz.finance; iProfesional; Vaca Muerta News; Tecnoenergía; Liga Profesional; Infobae; La Nación; El Cronista | A/B | Confirmado por el investigador que abrió cada nota; solo entran el tipo de activo y el rol, sin rentas |
+
+**Quedó afuera:**
+- **Atómico 3.** Un investigador dijo que la CNV lo suspendió y lo denunció; al reabrir, no apareció ninguna fuente (ni en las noticias de la CNV entre mayo y septiembre de 2025). No se usa.
+- **Rentas publicadas por proyectos** (Miactivo, Espacio Añelo, Efaysto, "renta protegida" de ILLA): el canon prohíbe citar rendimientos como promesa.
+- **Espacio Añelo** como segundo inmueble con oferta pública: una sola nota (Río Negro), sin tecnólogo ni PSAV confirmados.
+- **Tokenomics Real** (dice usar Brickken): solo lo dice la empresa, leído por un subagente.
+- **El honorario de Tech Demeter y el de Volsmart**: no figuran en ningún documento público.
+
+**Correcciones:**
+- Metro Futuro figuraba como "PSAV inscripto" sin aclarar que no tiene las cinco categorías del régimen: corregido en los dos documentos y en el gráfico, que ahora marca "PSAV con las cinco categorías".
+- Volsmart figuraba como "depositario y comercializador": en ILLA Belgrano fue PSAV, titular del registro y proveedor tecnológico, y el comercializador fue otro.
+- Landtoken: la red pasa de "sin confirmar" a Polygon, y la lista de PSAV se completa.
+
+**El exchange del equipo:** el equipo de lucid informó en la sesión de trabajo que parte de su gente opera un exchange inscripto como PSAV. Entra como "según el equipo", sin nombre, hasta verificarlo en el registro.
+
+---
+
+## Actualización 4 · 24/09/2026 (revisión de lectura del informe, bloque 1)
+
+**Qué se hizo:** revisión del informe desde el lector, sin cambiar datos salvo la corrección de abajo.
+- **Numeración:** había dos Partes VI y dos Partes X. El informe pasa a tener 14 partes (I–XIV).
+- **Nuevo orden:** los casos de inmuebles del mundo pasan a ser la Parte VI, junto a los casos globales. La lectura propia de lucid (demanda y plan de 180 días) pasa a la Parte XIII, "Qué significa para lucid". Las cifras y fuentes de las partes movidas no cambiaron.
+- **Repeticiones:** la historia de RealT estaba contada dos veces. Queda sólo en la Parte VI, con "Lo que enseña" y "Cómo se previene" y las dos fuentes de abril de 2026. La cifra de Chainalysis ya no se repite en el marco argentino.
+- **Lenguaje:** "fosos" pasa a ser "defensas". La tabla de formatos queda con ERC-20 y ERC-3643, y los otros tres sólo se mencionan.
+- **Supuestos marcados:** en la tabla de demanda, cada fila lleva una etiqueta "Dato" o "Supuesto".
+
+**Texto nuevo auditado:**
+
+| Afirmación | Fuente | Nivel | Veredicto |
+| --- | --- | --- | --- |
+| "Representados": anotados en un registro público pero sin circular libremente | Definición de RWA.xyz (distributed / represented), ya en el glosario | A | Confirmado |
+| Cuando no se aclara, las cifras son de activos que circulan libremente | Revisión del texto final: todas las cifras de RWA.xyz sin aclaración son valor "distributed" | A | Confirmado |
+| Groma USD 92M y Reental USD 80M | RWA.xyz, páginas de cada plataforma al 24/09/2026: "Distributed Asset Value" USD 92,19M y USD 79,96M | A | Confirmado |
+
+### Corrección
+
+- **Groma y Reental estaban mal ubicadas.** El texto las nombraba después de los USD 1.340M "representados", como si fueran parte de ese número. En RWA.xyz las dos figuran como valor en circulación ("Distributed"), y juntas suman unos USD 172M de los USD 226M en circulación. Se reescribió la frase. La tarjeta de Reental ("USD 80M en circulación") ya estaba bien.
+
+---
+
 ## Actualización 3 · 24/09/2026 (datos al día y fecha de corte única)
 
 **Qué se hizo:**
@@ -165,7 +263,7 @@ confirma se marca o queda afuera.
 ### Pendiente
 
 - Revisión de un abogado de mercado de capitales y de un contador.
-- El exchange propio del grupo inscripto como PSAV: no confirmado, quedó afuera.
+- El exchange propio del grupo inscripto como PSAV: informado por el equipo (actualización 5); falta el nombre para verificarlo en el registro.
 - Los montos colocados por Landtoken (efectivo), Pala, Metro Futuro y Lena Buró.
 - Si ya circulan las fichas de ILLA Belgrano.
 - El dato del INDEC del 2.º trimestre de 2026, cuando se publique.
